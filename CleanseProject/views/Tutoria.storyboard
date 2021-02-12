@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="84f-Gm-tdR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tRr-Jx-NIR">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,34 +16,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pGE-rs-c4O">
-                                <rect key="frame" x="20" y="194" width="374" height="602"/>
+                                <rect key="frame" x="20" y="238" width="374" height="558"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vri-eh-jjp" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="479.66666666666669"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="people"/>
-                                        </userDefinedRuntimeAttributes>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="437.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIENVENIDO A CLEANSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-3s-Wkv">
-                                        <rect key="frame" x="0.0" y="489.66666666666663" width="374" height="32.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="447.66666666666663" width="374" height="31.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epS-Sg-RG2">
-                                        <rect key="frame" x="0.0" y="532" width="374" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epS-Sg-RG2">
+                                        <rect key="frame" x="0.0" y="489.33333333333337" width="374" height="29.666666666666629"/>
                                         <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="bMT-dW-K35" kind="show" id="gRY-bg-q51"/>
+                                            <segue destination="bMT-dW-K35" kind="show" id="BPh-M4-1eY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-aR-mS0">
-                                        <rect key="frame" x="0.0" y="572" width="374" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-aR-mS0">
+                                        <rect key="frame" x="0.0" y="529" width="374" height="29"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -56,14 +51,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="E38-CA-sx5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pGE-rs-c4O" firstAttribute="top" secondItem="E38-CA-sx5" secondAttribute="top" constant="150" id="Gcm-ac-sio"/>
                             <constraint firstAttribute="bottom" secondItem="pGE-rs-c4O" secondAttribute="bottom" constant="100" id="ftV-QF-qDa"/>
                             <constraint firstAttribute="trailing" secondItem="pGE-rs-c4O" secondAttribute="trailing" constant="20" id="gJ8-u2-YYH"/>
                             <constraint firstItem="pGE-rs-c4O" firstAttribute="leading" secondItem="Qgq-li-aHv" secondAttribute="leading" constant="20" id="vtn-vu-U6X"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="E38-CA-sx5"/>
                     </view>
                     <navigationItem key="navigationItem" id="adx-wb-uZX"/>
                     <connections>
@@ -72,18 +67,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqh-yI-SHc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1193" y="147"/>
+            <point key="canvasLocation" x="-1354" y="209"/>
         </scene>
         <!--Login User-->
         <scene sceneID="8ZR-HX-2GO">
             <objects>
                 <viewController id="bMT-dW-K35" customClass="LoginUser" customModule="CleanseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJ2-7D-lFZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gRq-23-ffe">
-                                <rect key="frame" x="20" y="150" width="374" height="492"/>
+                                <rect key="frame" x="20" y="238" width="374" height="458"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="mst-qu-qyx">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="235"/>
@@ -92,33 +87,33 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-54-J9C">
-                                        <rect key="frame" x="0.0" y="250" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="249.99999999999997" width="374" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZo-bZ-NiP">
-                                        <rect key="frame" x="0.0" y="301" width="374" height="39"/>
+                                        <rect key="frame" x="0.0" y="298.66666666666663" width="374" height="36.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KC-Ho-lxz">
-                                        <rect key="frame" x="0.0" y="355" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="350" width="374" height="33.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jld-Yv-Uo7">
-                                        <rect key="frame" x="0.0" y="406" width="374" height="37.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="398.33333333333337" width="374" height="34.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-iH-Hto">
-                                        <rect key="frame" x="0.0" y="458.33333333333337" width="374" height="33.666666666666686"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-iH-Hto">
+                                        <rect key="frame" x="0.0" y="448" width="374" height="10"/>
                                         <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <state key="normal" title="Enviar">
-                                            <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <connections>
                                             <action selector="EnviarLogin:" destination="bMT-dW-K35" eventType="touchUpInside" id="RdK-Ln-hju"/>
@@ -128,14 +123,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="ffq-rt-oCz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="gRq-23-ffe" secondAttribute="bottom" constant="200" id="7pL-hx-X11"/>
                             <constraint firstAttribute="trailing" secondItem="gRq-23-ffe" secondAttribute="trailing" constant="20" id="QDK-N6-2yg"/>
                             <constraint firstItem="gRq-23-ffe" firstAttribute="top" secondItem="ffq-rt-oCz" secondAttribute="top" constant="150" id="czs-b8-kt3"/>
                             <constraint firstItem="gRq-23-ffe" firstAttribute="leading" secondItem="ffq-rt-oCz" secondAttribute="leading" constant="20" id="lhR-vq-Fyg"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ffq-rt-oCz"/>
                     </view>
                     <navigationItem key="navigationItem" id="5Je-IX-nRM"/>
                     <connections>
@@ -147,16 +142,32 @@
             </objects>
             <point key="canvasLocation" x="701" y="-42"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="1aw-Kw-P8P">
+            <objects>
+                <navigationController id="tRr-Jx-NIR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9nO-tq-vW8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="84f-Gm-tdR" kind="relationship" relationship="rootViewController" id="YlV-K2-Yoc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHX-dD-4gf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2370" y="209"/>
+        </scene>
+        <!--User Register-->
         <scene sceneID="Zaf-Xh-e15">
             <objects>
-                <viewController id="fJT-PG-I4n" sceneMemberID="viewController">
+                <viewController id="fJT-PG-I4n" customClass="UserRegister" customModule="CleanseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Hc-k0-wsR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="orm-yn-Fwn">
-                                <rect key="frame" x="20" y="130" width="374" height="627"/>
+                                <rect key="frame" x="20" y="148" width="374" height="663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIENVENIDO A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maE-cy-XHk">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
@@ -177,52 +188,52 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t26-cz-BIs">
-                                        <rect key="frame" x="0.0" y="215" width="374" height="30.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="215" width="374" height="32"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="userexample223" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Qf-DM-UT7" userLabel="Username">
-                                        <rect key="frame" x="0.0" y="260.33333333333331" width="374" height="41.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="262" width="374" height="43.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqz-bZ-dIZ">
-                                        <rect key="frame" x="0.0" y="316.66666666666669" width="374" height="30.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="320.66666666666669" width="374" height="32.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="eample@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ari-fD-99z" userLabel="Email">
-                                        <rect key="frame" x="0.0" y="362" width="374" height="41.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="368" width="374" height="43.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fco-SS-FSA">
-                                        <rect key="frame" x="0.0" y="418.33333333333337" width="374" height="30.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="426.66666666666663" width="374" height="32"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="******" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-gl-fHQ" userLabel="Password">
-                                        <rect key="frame" x="0.0" y="463.66666666666663" width="374" height="41.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="473.66666666666663" width="374" height="43.666666666666629"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHT-en-dca">
-                                        <rect key="frame" x="0.0" y="520" width="374" height="30.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="532.33333333333337" width="374" height="32"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="******" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thQ-r0-ODV" userLabel="ConfirmPass">
-                                        <rect key="frame" x="0.0" y="565.33333333333337" width="374" height="16.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="579.33333333333337" width="374" height="38.666666666666629"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I02-rc-ld3" userLabel="go button">
-                                        <rect key="frame" x="0.0" y="597" width="374" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I02-rc-ld3" userLabel="go button">
+                                        <rect key="frame" x="0.0" y="633" width="374" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="43y-si-D5P"/>
                                         </constraints>
@@ -232,216 +243,194 @@
                                             <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="enviarRegistro:" destination="fJT-PG-I4n" eventType="touchUpInside" id="wvF-mP-5oM"/>
                                             <segue destination="bMT-dW-K35" kind="show" id="nzw-Vy-Ksf"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="wdz-fB-6hH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="orm-yn-Fwn" firstAttribute="top" secondItem="wdz-fB-6hH" secondAttribute="top" constant="130" id="DLt-C9-aUt"/>
+                            <constraint firstItem="orm-yn-Fwn" firstAttribute="top" secondItem="wdz-fB-6hH" secondAttribute="top" constant="60" id="DLt-C9-aUt"/>
                             <constraint firstItem="orm-yn-Fwn" firstAttribute="leading" secondItem="wdz-fB-6hH" secondAttribute="leading" constant="20" id="fGx-Xo-TY1"/>
                             <constraint firstAttribute="bottom" secondItem="orm-yn-Fwn" secondAttribute="bottom" constant="85" id="mnk-SU-oZo"/>
                             <constraint firstAttribute="trailing" secondItem="orm-yn-Fwn" secondAttribute="trailing" constant="20" id="niW-ec-foD"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="wdz-fB-6hH"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jbj-zE-Hxb"/>
+                    <connections>
+                        <outlet property="confirmPassword" destination="thQ-r0-ODV" id="h4t-Ru-emD"/>
+                        <outlet property="emailRegister" destination="Ari-fD-99z" id="uhG-4C-YBa"/>
+                        <outlet property="nameRegister" destination="6Qf-DM-UT7" id="oak-0H-ajm"/>
+                        <outlet property="password" destination="xVG-gl-fHQ" id="fYd-Pf-2M3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAn-pi-N0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65" y="627"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="lyP-at-xkw">
             <objects>
                 <viewController id="pDW-gl-GXm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oxT-QO-9Rg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zs5-oD-kWH">
-                                <rect key="frame" x="10" y="706" width="394" height="33"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zs5-oD-kWH">
+                                <rect key="frame" x="10" y="750" width="394" height="33"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Profile">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="RP3-sm-2Aa" kind="show" id="iLn-1u-cKG"/>
-                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qk7-fp-ZOf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="715"/>
                             </mapView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tr2-pq-ft5">
-                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="uZE-bW-v5f"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="Cupones" id="oy6-CA-0so"/>
-                                    <tabBarItem title="Mapa" id="Nmw-SN-8JX"/>
-                                    <tabBarItem title="Perfil" id="dhN-cT-u9u"/>
-                                </items>
-                            </tabBar>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="u6y-cL-Gh1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Tr2-pq-ft5" firstAttribute="leading" secondItem="qk7-fp-ZOf" secondAttribute="leading" id="5Ul-2j-gE4"/>
+                            <constraint firstItem="zs5-oD-kWH" firstAttribute="top" secondItem="u6y-cL-Gh1" secondAttribute="top" constant="706" id="3fm-OG-cpn"/>
                             <constraint firstItem="qk7-fp-ZOf" firstAttribute="top" secondItem="u6y-cL-Gh1" secondAttribute="top" constant="44" id="AfH-sH-znf"/>
                             <constraint firstItem="u6y-cL-Gh1" firstAttribute="trailing" secondItem="zs5-oD-kWH" secondAttribute="trailing" constant="10" id="DIZ-Nj-Dy0"/>
-                            <constraint firstItem="Tr2-pq-ft5" firstAttribute="top" secondItem="zs5-oD-kWH" secondAttribute="bottom" constant="20" id="IHk-kc-hUa"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="qk7-fp-ZOf" secondAttribute="bottom" constant="-5" id="J9C-Yx-4lB"/>
-                            <constraint firstItem="Tr2-pq-ft5" firstAttribute="trailing" secondItem="qk7-fp-ZOf" secondAttribute="trailing" id="JRm-ln-M6I"/>
+                            <constraint firstItem="qk7-fp-ZOf" firstAttribute="centerX" secondItem="zs5-oD-kWH" secondAttribute="centerX" id="IGI-Ay-e1M"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qk7-fp-ZOf" secondAttribute="bottom" constant="10" id="J9C-Yx-4lB"/>
                             <constraint firstItem="zs5-oD-kWH" firstAttribute="leading" secondItem="u6y-cL-Gh1" secondAttribute="leading" constant="10" id="ZbQ-8N-7Mf"/>
-                            <constraint firstItem="Tr2-pq-ft5" firstAttribute="leading" secondItem="u6y-cL-Gh1" secondAttribute="leading" id="doS-gg-qV8"/>
-                            <constraint firstItem="Tr2-pq-ft5" firstAttribute="centerX" secondItem="zs5-oD-kWH" secondAttribute="centerX" id="gms-rT-Nrb"/>
-                            <constraint firstItem="Tr2-pq-ft5" firstAttribute="bottom" secondItem="u6y-cL-Gh1" secondAttribute="bottom" id="l8G-sI-UO6"/>
+                            <constraint firstItem="qk7-fp-ZOf" firstAttribute="leading" secondItem="u6y-cL-Gh1" secondAttribute="leading" id="ct4-NQ-f69"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="u6y-cL-Gh1"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="RAD-Ws-I4W"/>
                     <navigationItem key="navigationItem" id="sEa-rQ-tza"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQ5-Nu-Efs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="627"/>
+            <point key="canvasLocation" x="1694" y="715"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="iNK-bv-TnJ">
             <objects>
                 <viewController id="RP3-sm-2Aa" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e24-br-l46">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-m7-Pee">
-                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="HV9-zf-TSO"/>
-                                    <tabBarItem systemItem="more" id="6rr-tf-YK1"/>
-                                    <tabBarItem title="Item" id="aj7-mM-PYm"/>
-                                </items>
-                            </tabBar>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HH2-Uq-kzd">
-                                <rect key="frame" x="20" y="100" width="374" height="663"/>
+                                <rect key="frame" x="20" y="144" width="374" height="624"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rdn-fB-9n3">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="98.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="89.666666666666671"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xgg-S0-FaV">
-                                                <rect key="frame" x="0.0" y="0.0" width="118" height="98.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="89.666666666666671"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="565-7G-As7">
-                                                <rect key="frame" x="128" y="0.0" width="118" height="98.333333333333329"/>
+                                                <rect key="frame" x="128" y="0.0" width="118" height="89.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOg-aD-Mqn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="49"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
                                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x1-E1-P0q">
-                                                        <rect key="frame" x="0.0" y="49" width="118" height="49.333333333333343"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x1-E1-P0q">
+                                                        <rect key="frame" x="0.0" y="45" width="118" height="44.666666666666657"/>
                                                         <state key="normal" title="Edit image">
-                                                            <color key="titleColor" systemColor="linkColor"/>
+                                                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-6n-iTv">
-                                                <rect key="frame" x="256" y="0.0" width="118" height="98.333333333333329"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <rect key="frame" x="256" y="0.0" width="118" height="89.666666666666671"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="huE-9h-xW1">
-                                        <rect key="frame" x="0.0" y="113.33333333333334" width="374" height="98.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="104.66666666666666" width="374" height="90"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3M-Xz-35v">
-                                                <rect key="frame" x="0.0" y="0.0" width="118" height="98.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="90"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ghu-Cc-YXQ">
-                                                <rect key="frame" x="128" y="0.0" width="118" height="98.333333333333329"/>
+                                                <rect key="frame" x="128" y="0.0" width="118" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LF3-mk-niV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="49"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
                                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSt-9p-gD7">
-                                                        <rect key="frame" x="0.0" y="48.999999999999972" width="118" height="49.333333333333343"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSt-9p-gD7">
+                                                        <rect key="frame" x="0.0" y="45.000000000000028" width="118" height="45"/>
                                                         <state key="normal" title="Learn more"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gip-bi-c4F">
-                                                <rect key="frame" x="256" y="0.0" width="118" height="98.333333333333329"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <rect key="frame" x="256" y="0.0" width="118" height="90"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii7-PO-Zho">
-                                        <rect key="frame" x="0.0" y="226.66666666666669" width="374" height="25"/>
+                                        <rect key="frame" x="0.0" y="209.66666666666669" width="374" height="24"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pepe1234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eX0-z0-HMd">
-                                        <rect key="frame" x="0.0" y="266.66666666666669" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="248.66666666666671" width="374" height="32.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMD-NQ-CMV">
-                                        <rect key="frame" x="0.0" y="315.66666666666669" width="374" height="25.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="296" width="374" height="24"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pepe@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ci-R4-eqe">
-                                        <rect key="frame" x="0.0" y="356" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="335" width="374" height="32.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arW-dk-YYJ">
-                                        <rect key="frame" x="0.0" y="405" width="374" height="25"/>
+                                        <rect key="frame" x="0.0" y="382.33333333333337" width="374" height="24"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pepe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cic-Dk-uR5">
-                                        <rect key="frame" x="0.0" y="445" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="421.33333333333337" width="374" height="32.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-g3-CjP">
-                                        <rect key="frame" x="0.0" y="494" width="374" height="25.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="468.66666666666663" width="374" height="24"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjv-zl-EGi">
-                                        <rect key="frame" x="0.0" y="534.33333333333337" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="507.66666666666669" width="374" height="32.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1D-5f-pOE">
-                                        <rect key="frame" x="0.0" y="583.33333333333337" width="374" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1D-5f-pOE">
+                                        <rect key="frame" x="0.0" y="555.33333333333337" width="374" height="28.666666666666629"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Log out">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="8ng-OU-vaF" kind="show" id="h4l-5f-dA9"/>
-                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-FU-XeZ">
-                                        <rect key="frame" x="0.0" y="628.33333333333337" width="374" height="34.666666666666629"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-FU-XeZ">
+                                        <rect key="frame" x="0.0" y="599" width="374" height="25"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <state key="normal" title="Save changes">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -450,34 +439,51 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="pJM-4J-1Mo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hOk-m7-Pee" firstAttribute="trailing" secondItem="pJM-4J-1Mo" secondAttribute="trailing" id="5o7-Cn-bMB"/>
-                            <constraint firstItem="pJM-4J-1Mo" firstAttribute="bottom" secondItem="hOk-m7-Pee" secondAttribute="bottom" id="5xD-lA-ImB"/>
                             <constraint firstItem="HH2-Uq-kzd" firstAttribute="top" secondItem="pJM-4J-1Mo" secondAttribute="top" constant="100" id="Fmc-rB-DxE"/>
                             <constraint firstItem="HH2-Uq-kzd" firstAttribute="leading" secondItem="pJM-4J-1Mo" secondAttribute="leading" constant="20" id="LWE-f6-saJ"/>
                             <constraint firstItem="pJM-4J-1Mo" firstAttribute="bottom" secondItem="HH2-Uq-kzd" secondAttribute="bottom" constant="45" id="jUH-iC-ohs"/>
                             <constraint firstItem="pJM-4J-1Mo" firstAttribute="trailing" secondItem="HH2-Uq-kzd" secondAttribute="trailing" constant="20" id="jk7-L4-R6x"/>
-                            <constraint firstItem="hOk-m7-Pee" firstAttribute="leading" secondItem="pJM-4J-1Mo" secondAttribute="leading" id="y9Y-4L-ubY"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="pJM-4J-1Mo"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Y8x-nu-C4y"/>
                     <navigationItem key="navigationItem" id="Nut-hr-On5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcZ-Gc-diA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2613" y="50"/>
+            <point key="canvasLocation" x="2448" y="1201"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="rau-5l-Day">
+            <objects>
+                <tabBarController id="24U-3H-DcJ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lHI-nv-TDF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pDW-gl-GXm" kind="relationship" relationship="viewControllers" id="gI3-cg-eip"/>
+                        <segue destination="RP3-sm-2Aa" kind="relationship" relationship="viewControllers" id="hUq-G9-r3L"/>
+                        <segue destination="8ng-OU-vaF" kind="relationship" relationship="viewControllers" id="dFc-R9-1uh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QlO-Zm-4un" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="1261"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="wOb-OQ-RXY">
             <objects>
                 <viewController id="8ng-OU-vaF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QAc-no-IIc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BXD-vS-uCh">
-                                <rect key="frame" x="20" y="40" width="374" height="669"/>
+                                <rect key="frame" x="20" y="84" width="374" height="671.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mo7-kq-k7U">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
@@ -503,30 +509,30 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lYW-4i-Eoq">
-                                        <rect key="frame" x="0.0" y="108" width="374" height="176"/>
+                                        <rect key="frame" x="0.0" y="108.00000000000001" width="374" height="175.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets see your week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1O-Ea-CWe">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="31.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b8x-MA-Bmh">
-                                                <rect key="frame" x="0.0" y="41" width="374" height="135"/>
+                                                <rect key="frame" x="0.0" y="41.333333333333343" width="374" height="134"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2OK-l6-nwW">
-                                        <rect key="frame" x="0.0" y="292" width="374" height="135.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="291.33333333333331" width="374" height="136.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="According to your credits.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWO-Gp-pVQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="31.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-LI-qTz">
-                                                <rect key="frame" x="0.0" y="35.333333333333314" width="374" height="100"/>
+                                                <rect key="frame" x="0.0" y="36.333333333333371" width="374" height="100"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hui-sU-435">
                                                         <rect key="frame" x="0.0" y="0.0" width="118" height="100"/>
@@ -545,75 +551,43 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NnK-XH-UN0">
-                                        <rect key="frame" x="0.0" y="435.33333333333331" width="374" height="233.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="435.66666666666669" width="374" height="235.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn increase your profits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF9-it-LDE">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="29.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="31.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-f5-Ao3">
-                                                <rect key="frame" x="0.0" y="39.333333333333329" width="374" height="194.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="41.333333333333385" width="374" height="194.33333333333337"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlc-tF-SBR">
-                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="Net-KY-3k6"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="Cupones" id="bCs-fk-k7D"/>
-                                    <tabBarItem title="Mapa" id="mJd-6C-6bN"/>
-                                    <tabBarItem title="Perfil" id="M5a-sL-pD8"/>
-                                </items>
-                            </tabBar>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="pBQ-hF-RrD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pBQ-hF-RrD" firstAttribute="trailing" secondItem="BXD-vS-uCh" secondAttribute="trailing" constant="20" id="Ggm-hk-1gM"/>
                             <constraint firstItem="BXD-vS-uCh" firstAttribute="leading" secondItem="pBQ-hF-RrD" secondAttribute="leading" constant="20" id="TIi-r0-gMe"/>
-                            <constraint firstItem="Zlc-tF-SBR" firstAttribute="centerX" secondItem="BXD-vS-uCh" secondAttribute="centerX" id="eaT-ok-eyL"/>
-                            <constraint firstItem="Zlc-tF-SBR" firstAttribute="bottom" secondItem="pBQ-hF-RrD" secondAttribute="bottom" id="egP-3O-oIj"/>
-                            <constraint firstItem="Zlc-tF-SBR" firstAttribute="top" secondItem="BXD-vS-uCh" secondAttribute="bottom" constant="50" id="rbo-w7-m4b"/>
-                            <constraint firstItem="Zlc-tF-SBR" firstAttribute="leading" secondItem="pBQ-hF-RrD" secondAttribute="leading" id="z1d-dJ-27p"/>
                             <constraint firstItem="BXD-vS-uCh" firstAttribute="top" secondItem="pBQ-hF-RrD" secondAttribute="top" constant="40" id="zSA-Jz-cz2"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="pBQ-hF-RrD"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="TG2-AM-KpM"/>
                     <navigationItem key="navigationItem" id="cmU-V8-faa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIA-tT-f0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2655" y="1170"/>
+            <point key="canvasLocation" x="1819" y="1709"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gRY-bg-q51"/>
+        <segue reference="gI3-cg-eip"/>
+        <segue reference="nzw-Vy-Ksf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="images" width="134" height="94"/>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemGroupedBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

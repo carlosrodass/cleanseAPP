@@ -1,10 +1,3 @@
-//
-//  RegistroViewController.swift
-//  CleanseProject
-//
-//  Created by user176688 on 2/2/21.
-//  Copyright © 2021 user176688. All rights reserved.
-//
 
 import UIKit
 
@@ -21,7 +14,6 @@ class RegistroViewController: UIViewController {
         registerRequest()
     }
     
-
     public func registerRequest (){
         
         //Variables

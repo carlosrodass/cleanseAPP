@@ -10,6 +10,8 @@
 		177E300FD398555C21E62FDB /* Pods_CleanseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5997B8C3467D23FF196C9BFE /* Pods_CleanseProject.framework */; };
 		1F766DC625D59F0F00674387 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC525D59F0F00674387 /* people.json */; };
 		1F766DC825D59F1B00674387 /* forest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC725D59F1B00674387 /* forest.json */; };
+		7F06C1AE25D6B0B700AC5417 /* Userr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AD25D6B0B700AC5417 /* Userr.swift */; };
+		7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */; };
 		E74F1DED25C9718A00527677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74F1DEC25C9718A00527677 /* Main.storyboard */; };
 		E7767F0425D3560000C1831A /* invitadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7767F0325D3560000C1831A /* invitadoViewController.swift */; };
 		E791A73A25C87EB700108B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A73925C87EB700108B89 /* AppDelegate.swift */; };
@@ -26,7 +28,6 @@
 		E7EDF1A225D40AFF00CCC61A /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDF1A125D40AFF00CCC61A /* Requests.swift */; };
 		E7EDF1A425D413E500CCC61A /* Tutoria.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EDF1A325D413E500CCC61A /* Tutoria.storyboard */; };
 		E7EDF1AE25D42EBC00CCC61A /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDF1AD25D42EBC00CCC61A /* EndPoints.swift */; };
-		E7EDF1B225D43AF300CCC61A /* Userr.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDF1B125D43AF300CCC61A /* Userr.swift */; };
 		E7EDF1B625D4474900CCC61A /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDF1B525D4474900CCC61A /* LoginUser.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		1F766DC525D59F0F00674387 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		1F766DC725D59F1B00674387 /* forest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forest.json; sourceTree = "<group>"; };
 		5997B8C3467D23FF196C9BFE /* Pods_CleanseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F06C1AD25D6B0B700AC5417 /* Userr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Userr.swift; path = ../controllers/Userr.swift; sourceTree = "<group>"; };
+		7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		82AE062F44ED4FE611C7E29D /* Pods-CleanseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanseProject.release.xcconfig"; path = "Target Support Files/Pods-CleanseProject/Pods-CleanseProject.release.xcconfig"; sourceTree = "<group>"; };
 		E74F1DEC25C9718A00527677 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E7767F0325D3560000C1831A /* invitadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invitadoViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		E7EDF1A125D40AFF00CCC61A /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		E7EDF1A325D413E500CCC61A /* Tutoria.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutoria.storyboard; sourceTree = "<group>"; };
 		E7EDF1AD25D42EBC00CCC61A /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
-		E7EDF1B125D43AF300CCC61A /* Userr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userr.swift; sourceTree = "<group>"; };
 		E7EDF1B525D4474900CCC61A /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				E7767F0325D3560000C1831A /* invitadoViewController.swift */,
 				E791A79125C8CF9500108B89 /* RegistroViewController.swift */,
 				E7EDF1B525D4474900CCC61A /* LoginUser.swift */,
+				7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -176,7 +179,7 @@
 		E7EDF19F25D40A7C00CCC61A /* models */ = {
 			isa = PBXGroup;
 			children = (
-				E7EDF1B125D43AF300CCC61A /* Userr.swift */,
+				7F06C1AD25D6B0B700AC5417 /* Userr.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -309,14 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7EDF1B225D43AF300CCC61A /* Userr.swift in Sources */,
 				E791A77F25C8A9F500108B89 /* TutorialViewController.swift in Sources */,
+				7F06C1AE25D6B0B700AC5417 /* Userr.swift in Sources */,
 				E7EDF1A225D40AFF00CCC61A /* Requests.swift in Sources */,
 				E7767F0425D3560000C1831A /* invitadoViewController.swift in Sources */,
 				E791A73A25C87EB700108B89 /* AppDelegate.swift in Sources */,
 				E791A76225C8869900108B89 /* MapainvitadoBusqueda.swift in Sources */,
 				E791A75B25C8832E00108B89 /* MapaInvitadoViewController.swift in Sources */,
 				E791A77625C888E900108B89 /* BienvenidoCleanse.swift in Sources */,
+				7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */,
 				E7EDF1B625D4474900CCC61A /* LoginUser.swift in Sources */,
 				E791A79225C8CF9500108B89 /* RegistroViewController.swift in Sources */,
 				E7EDF1AE25D42EBC00CCC61A /* EndPoints.swift in Sources */,

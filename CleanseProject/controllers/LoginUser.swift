@@ -1,10 +1,3 @@
-//
-//  LoginUser.swift
-//  CleanseProject
-//
-//  Created by user176688 on 2/10/21.
-//  Copyright © 2021 user176688. All rights reserved.
-//
 
 import UIKit
 
@@ -19,6 +12,12 @@ class LoginUser: UIViewController {
     
     @IBAction func EnviarLogin(_ sender: Any) {
         
+        
+        //Comprobacion de campos
+            sif(username!.isEmpty || email!.isEmpty || pass!.isEmpty || confirmpassword!.isEmpty){
+                         return
+                     }
+        
         let parametros : [String: String] = [
             
             "email": email.text!,
@@ -27,9 +26,8 @@ class LoginUser: UIViewController {
         ]
         print(parametros)
         Request.shared.login(parameters: parametros).responseJSON{ response in
-        
             
-            debugPrint(response)
+        debugPrint(response)
     }
     
 

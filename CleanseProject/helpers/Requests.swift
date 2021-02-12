@@ -10,7 +10,7 @@ class Request{
     
 static let shared = Request()
     
-    private init() {}
+    public init() {}
     
     func login(parameters:[String:String])  -> DataRequest{
 
@@ -18,6 +18,14 @@ static let shared = Request()
             debugPrint(response)
         }
     }
+    
+    func register(parameters:[String:String])-> DataRequest {
+           
+           
+           AF.request(Endpoints.shared.baseURL+Endpoints.shared.register, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: nil, interceptor:nil).response { response in
+               debugPrint(response)
+           }
+       }
   
  
 
