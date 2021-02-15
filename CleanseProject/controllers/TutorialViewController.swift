@@ -13,7 +13,7 @@ struct Slide {
         
         .init(title: "Dejemos un legado bonito y sintamonoss orgullosos de ello, es el momento", animationName: "forest", buttonColor: .systemGreen, buttonTitle: "Siguiente"),
         
-        .init(title: "Estas a punto de dar un paso muy importante en tu vida, ¿Te atreves? ", animationName: "people", buttonColor: .systemYellow, buttonTitle: "Comenzar")
+        .init(title: "Estas a punto de dar un paso muy importante en tu vida, ¿Te atreves? ", animationName: "ecology", buttonColor: .systemYellow, buttonTitle: "Comenzar")
     ]
 }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		177E300FD398555C21E62FDB /* Pods_CleanseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5997B8C3467D23FF196C9BFE /* Pods_CleanseProject.framework */; };
+		1F21992925D888A80036EA1F /* ecology.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F21992825D888A80036EA1F /* ecology.json */; };
+		1F21992B25D8A5900036EA1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21992A25D8A5900036EA1F /* ProfileViewController.swift */; };
 		1F766DC625D59F0F00674387 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC525D59F0F00674387 /* people.json */; };
 		1F766DC825D59F1B00674387 /* forest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC725D59F1B00674387 /* forest.json */; };
 		7F06C1AE25D6B0B700AC5417 /* Userr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AD25D6B0B700AC5417 /* Userr.swift */; };
@@ -24,7 +26,6 @@
 		E791A76225C8869900108B89 /* MapainvitadoBusqueda.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A76125C8869900108B89 /* MapainvitadoBusqueda.swift */; };
 		E791A77625C888E900108B89 /* BienvenidoCleanse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A77525C888E900108B89 /* BienvenidoCleanse.swift */; };
 		E791A77F25C8A9F500108B89 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A77E25C8A9F500108B89 /* TutorialViewController.swift */; };
-		E791A79225C8CF9500108B89 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A79125C8CF9500108B89 /* RegistroViewController.swift */; };
 		E7EDF1A225D40AFF00CCC61A /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDF1A125D40AFF00CCC61A /* Requests.swift */; };
 		E7EDF1A425D413E500CCC61A /* Tutoria.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EDF1A325D413E500CCC61A /* Tutoria.storyboard */; };
 		E7EDF1AE25D42EBC00CCC61A /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDF1AD25D42EBC00CCC61A /* EndPoints.swift */; };
@@ -46,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		16D01B086D8CA8A2A120CA15 /* Pods-CleanseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanseProject.debug.xcconfig"; path = "Target Support Files/Pods-CleanseProject/Pods-CleanseProject.debug.xcconfig"; sourceTree = "<group>"; };
+		1F21992825D888A80036EA1F /* ecology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ecology.json; sourceTree = "<group>"; };
+		1F21992A25D8A5900036EA1F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F766DC525D59F0F00674387 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		1F766DC725D59F1B00674387 /* forest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forest.json; sourceTree = "<group>"; };
 		5997B8C3467D23FF196C9BFE /* Pods_CleanseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +70,6 @@
 		E791A77525C888E900108B89 /* BienvenidoCleanse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BienvenidoCleanse.swift; sourceTree = "<group>"; };
 		E791A77E25C8A9F500108B89 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		E791A78C25C8B2B900108B89 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E791A79125C8CF9500108B89 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		E7EDF1A125D40AFF00CCC61A /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		E7EDF1A325D413E500CCC61A /* Tutoria.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutoria.storyboard; sourceTree = "<group>"; };
 		E7EDF1AD25D42EBC00CCC61A /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		E791A74D25C87EE300108B89 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1F21992825D888A80036EA1F /* ecology.json */,
 				1F766DC525D59F0F00674387 /* people.json */,
 				1F766DC725D59F1B00674387 /* forest.json */,
 				E791A74225C87EB800108B89 /* Assets.xcassets */,
@@ -160,9 +163,9 @@
 				E791A76125C8869900108B89 /* MapainvitadoBusqueda.swift */,
 				E791A77525C888E900108B89 /* BienvenidoCleanse.swift */,
 				E7767F0325D3560000C1831A /* invitadoViewController.swift */,
-				E791A79125C8CF9500108B89 /* RegistroViewController.swift */,
 				E7EDF1B525D4474900CCC61A /* LoginUser.swift */,
 				7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */,
+				1F21992A25D8A5900036EA1F /* ProfileViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				E791A74625C87EB800108B89 /* LaunchScreen.storyboard in Resources */,
 				E791A74325C87EB800108B89 /* Assets.xcassets in Resources */,
 				1F766DC825D59F1B00674387 /* forest.json in Resources */,
+				1F21992925D888A80036EA1F /* ecology.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +326,7 @@
 				E791A77625C888E900108B89 /* BienvenidoCleanse.swift in Sources */,
 				7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */,
 				E7EDF1B625D4474900CCC61A /* LoginUser.swift in Sources */,
-				E791A79225C8CF9500108B89 /* RegistroViewController.swift in Sources */,
+				1F21992B25D8A5900036EA1F /* ProfileViewController.swift in Sources */,
 				E7EDF1AE25D42EBC00CCC61A /* EndPoints.swift in Sources */,
 				E791A73C25C87EB700108B89 /* SceneDelegate.swift in Sources */,
 			);

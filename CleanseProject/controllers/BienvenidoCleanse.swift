@@ -10,20 +10,29 @@ import UIKit
 import Lottie
 
 class BienvenidoCleanse: UIViewController {
-
-    @IBOutlet weak var imagenanimacion: AnimationView!
+    @IBOutlet weak var signIn: UIButton!
+    @IBOutlet weak var signUp: UIButton!
+    
      override func viewDidLoad() {
-        var animationView : AnimationView?
+       
          super.viewDidLoad()
-         
-       animationView = .init(name: "people")
-         animationView?.frame = imagenanimacion.bounds
-          animationView?.loopMode = .loop
-        animationView? .animationSpeed = 0.5
-           imagenanimacion.addSubview(animationView!)
-    animationView?.play()
-          imagenanimacion.sendSubviewToBack(animationView!)
+        
+         roundButton()
+      
      }
+    
+    private func roundButton(){
+        
+        //signIn button style
+        signIn.layer.cornerRadius = 10
+        signIn.clipsToBounds = true
+        
+        //signUp button style
+        signUp.layer.cornerRadius = 10
+        signUp.clipsToBounds = true
+        
+        
+    }
      
     
 
