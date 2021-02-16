@@ -12,10 +12,12 @@
 		1F21992B25D8A5900036EA1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21992A25D8A5900036EA1F /* ProfileViewController.swift */; };
 		1F766DC625D59F0F00674387 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC525D59F0F00674387 /* people.json */; };
 		1F766DC825D59F1B00674387 /* forest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC725D59F1B00674387 /* forest.json */; };
+		1FE2AACD25DC2ECD00657D0B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */; };
+		1FE2AACF25DC314A00657D0B /* BuyOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2AACE25DC314A00657D0B /* BuyOfferViewController.swift */; };
+		1FE2AAD125DC36EB00657D0B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */; };
 		7F06C1AE25D6B0B700AC5417 /* Userr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AD25D6B0B700AC5417 /* Userr.swift */; };
 		7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */; };
 		E74F1DED25C9718A00527677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74F1DEC25C9718A00527677 /* Main.storyboard */; };
-		E7767F0425D3560000C1831A /* invitadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7767F0325D3560000C1831A /* invitadoViewController.swift */; };
 		E791A73A25C87EB700108B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A73925C87EB700108B89 /* AppDelegate.swift */; };
 		E791A73C25C87EB700108B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A73B25C87EB700108B89 /* SceneDelegate.swift */; };
 		E791A74325C87EB800108B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E791A74225C87EB800108B89 /* Assets.xcassets */; };
@@ -51,12 +53,14 @@
 		1F21992A25D8A5900036EA1F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F766DC525D59F0F00674387 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		1F766DC725D59F1B00674387 /* forest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forest.json; sourceTree = "<group>"; };
+		1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		1FE2AACE25DC314A00657D0B /* BuyOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyOfferViewController.swift; sourceTree = "<group>"; };
+		1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		5997B8C3467D23FF196C9BFE /* Pods_CleanseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F06C1AD25D6B0B700AC5417 /* Userr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Userr.swift; path = ../controllers/Userr.swift; sourceTree = "<group>"; };
 		7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		82AE062F44ED4FE611C7E29D /* Pods-CleanseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanseProject.release.xcconfig"; path = "Target Support Files/Pods-CleanseProject/Pods-CleanseProject.release.xcconfig"; sourceTree = "<group>"; };
 		E74F1DEC25C9718A00527677 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		E7767F0325D3560000C1831A /* invitadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invitadoViewController.swift; sourceTree = "<group>"; };
 		E791A73625C87EB700108B89 /* CleanseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E791A73925C87EB700108B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E791A73B25C87EB700108B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,10 +166,12 @@
 				E791A75A25C8832E00108B89 /* MapaInvitadoViewController.swift */,
 				E791A76125C8869900108B89 /* MapainvitadoBusqueda.swift */,
 				E791A77525C888E900108B89 /* BienvenidoCleanse.swift */,
-				E7767F0325D3560000C1831A /* invitadoViewController.swift */,
 				E7EDF1B525D4474900CCC61A /* LoginUser.swift */,
 				7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */,
 				1F21992A25D8A5900036EA1F /* ProfileViewController.swift */,
+				1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */,
+				1FE2AACE25DC314A00657D0B /* BuyOfferViewController.swift */,
+				1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -319,10 +325,12 @@
 				E791A77F25C8A9F500108B89 /* TutorialViewController.swift in Sources */,
 				7F06C1AE25D6B0B700AC5417 /* Userr.swift in Sources */,
 				E7EDF1A225D40AFF00CCC61A /* Requests.swift in Sources */,
-				E7767F0425D3560000C1831A /* invitadoViewController.swift in Sources */,
 				E791A73A25C87EB700108B89 /* AppDelegate.swift in Sources */,
+				1FE2AACF25DC314A00657D0B /* BuyOfferViewController.swift in Sources */,
 				E791A76225C8869900108B89 /* MapainvitadoBusqueda.swift in Sources */,
+				1FE2AACD25DC2ECD00657D0B /* EditProfileViewController.swift in Sources */,
 				E791A75B25C8832E00108B89 /* MapaInvitadoViewController.swift in Sources */,
+				1FE2AAD125DC36EB00657D0B /* OffersViewController.swift in Sources */,
 				E791A77625C888E900108B89 /* BienvenidoCleanse.swift in Sources */,
 				7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */,
 				E7EDF1B625D4474900CCC61A /* LoginUser.swift in Sources */,

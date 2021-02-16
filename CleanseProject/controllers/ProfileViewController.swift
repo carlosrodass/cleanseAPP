@@ -9,10 +9,19 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    //Oulets
     @IBOutlet weak var roundProfileImage: UIImageView!
     @IBOutlet weak var logOutOulet: UIButton!
     @IBOutlet weak var saveOulet: UIButton!
+    
+    
+    @IBAction func logOutButton(_ sender: Any) {
+    }
+    
+    @IBAction func saveChangesButton(_ sender: Any) {
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
