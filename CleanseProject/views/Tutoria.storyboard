@@ -538,8 +538,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="logOutOulet" destination="V1D-5f-pOE" id="2Ex-0g-dth"/>
+                        <outlet property="pointsProfile" destination="arW-dk-YYJ" id="R9v-yL-Hn3"/>
                         <outlet property="roundProfileImage" destination="7GL-Yz-T4t" id="kWT-p6-29T"/>
                         <outlet property="saveOulet" destination="uhq-FU-XeZ" id="Jnw-4E-8Qz"/>
+                        <outlet property="userNameProfile" destination="ii7-PO-Zho" id="sOh-uJ-SrQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcZ-Gc-diA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

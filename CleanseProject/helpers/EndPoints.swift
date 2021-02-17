@@ -15,6 +15,7 @@ class Endpoints {
     let baseURL = "http://localhost:8888/API-cleanse/public/api/"
     let login:String = "login"
     let register:String = "register"
+    let getProfile:String = "user"
     
     
     

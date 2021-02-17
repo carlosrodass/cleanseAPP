@@ -9,11 +9,14 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    var dataUser:Userr?
     
     //Oulets
     @IBOutlet weak var roundProfileImage: UIImageView!
     @IBOutlet weak var logOutOulet: UIButton!
     @IBOutlet weak var saveOulet: UIButton!
+    @IBOutlet weak var userNameProfile: UILabel!
+    @IBOutlet weak var pointsProfile: UILabel!
     
     
     @IBAction func logOutButton(_ sender: Any) {
@@ -28,6 +31,32 @@ class ProfileViewController: UIViewController {
 
         roundImage()
         roundButtons()
+        
+        let userToken:String = UserDefaults.standard.string(forKey: "token")!
+        print(userToken)
+        
+        let parameters : [String:String] = [
+        
+            "token" : userToken
+        ]
+        
+        
+        let request = Request.shared.InfoUser(parameters: parameters)
+        print(userToken)
+        request.response(completionHandler: { (response) in
+            
+            guard let data = response.data else {return}
+            do{
+                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
+                print(self.dataUser?.username)
+                self.userNameProfile.text = self.dataUser?.username
+                self.pointsProfile.text = self.dataUser?.puntos
+                debugPrint(response)
+            }catch{
+                print(error)
+            }
+        })
+        
     }
     
     

@@ -36,6 +36,23 @@ class Userr: Encodable, Decodable {
     return ["username":_username,"email":_email,"password":_password,"password_confirmation":_confirmpasswor, "points":_puntos]
      
      }
+    
+    public func getInfoUser()->[String:Any]{
+        return["username":_username, "points":_puntos!]
+    }
+    
+    
+    public var username: String{
+        get{
+            return self._username
+        }
+    }
+    
+    public var puntos: String{
+        get{
+            return self._puntos ?? "0"
+        }
+    }
      
     
     
