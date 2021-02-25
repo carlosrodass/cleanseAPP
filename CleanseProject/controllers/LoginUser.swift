@@ -35,9 +35,13 @@ class LoginUser: UIViewController {
                 
         ]
         print(parametros)
+        
         Request.shared.login(parameters: parametros).responseJSON{ response in
             
-        debugPrint(response)
+            let token = response.result.value["token"] as? String
+            
+//            UserDefaults.standard.set(token, forKey: "token") //setting token to user defaults
+            debugPrint(response.result)
     }
 
    }

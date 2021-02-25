@@ -5,7 +5,7 @@
 //  Created by user177278 on 2/14/21.
 //  Copyright © 2021 user176688. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class ProfileViewController: UIViewController {
@@ -34,17 +34,17 @@ class ProfileViewController: UIViewController {
         
         let userToken:String = UserDefaults.standard.string(forKey: "token")!
         print(userToken)
-        
+
         let parameters : [String:String] = [
-        
+
             "token" : userToken
         ]
-        
-        
+
+
         let request = Request.shared.InfoUser(parameters: parameters)
         print(userToken)
         request.response(completionHandler: { (response) in
-            
+
             guard let data = response.data else {return}
             do{
                 self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
                 self.pointsProfile.text = self.dataUser?.puntos
                 debugPrint(response)
             }catch{
-                print(error)
+                print("estoy aqui")
             }
         })
         

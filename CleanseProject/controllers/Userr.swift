@@ -33,7 +33,7 @@ class Userr: Encodable, Decodable {
       
    public func upUserserver()->[String:Any]{
      
-    return ["username":_username,"email":_email,"password":_password,"password_confirmation":_confirmpasswor, "points":_puntos]
+    return ["username":_username,"email":_email,"password":_password!,"password_confirmation":_confirmpasswor!, "points":_puntos!]
      
      }
     

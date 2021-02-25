@@ -13,9 +13,10 @@ static let shared = Request()
     public init() {}
     
     func login(parameters:[String:String])  -> DataRequest{
-
+        
+//        let headers:HTTPHeader = []
         return AF.request(Endpoints.shared.baseURL+Endpoints.shared.login, method: .post, parameters:parameters , encoder: JSONParameterEncoder.default).response{ response in
-            debugPrint(response)
+//            debugPrint(response, "respuesta")
         }
     }
     
@@ -31,7 +32,7 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-            "Authorization":UserDefaults.standard.string(forKey: "token")!
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
         ]
         
         return AF.request(Endpoints.shared.baseURL + Endpoints.shared.getProfile, method: .post,
