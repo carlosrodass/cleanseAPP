@@ -14,16 +14,37 @@ class ItemCell: UICollectionViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var cellOfferLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    
-    func setData(textMarket: String,textOffer: String , image : UIImage){
-        self.cellLabel.text = textMarket
-        self.cellOfferLabel.text = textOffer
-        cellImage.image = image
-    }
 
-}
+    func setData(with offer : Offer){
+        cellImage.image = offer._image
+        cellLabel.text = offer._market
+        cellOfferLabel.text = offer._offer
+    }
+    
+        // MARK: Setup Cell
+    public func setupCell() {
+            
+            roundCorner()
+            setCellShadow()
+        }
+        
+        // MARK: Methods
+        func setCellShadow() {
+            self.layer.shadowColor = UIColor.gray.cgColor
+            self.layer.shadowOffset = CGSize(width: 0, height: 1)
+            self.layer.shadowOpacity = 1.0
+            self.layer.shadowRadius = 1.0
+            self.layer.masksToBounds = false
+            self.layer.cornerRadius = 3
+            self.clipsToBounds = false
+            self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+        }
+
+        func roundCorner() {
+            self.contentView.layer.cornerRadius = 12.0
+            self.contentView.layer.masksToBounds = true
+            self.contentView.layer.borderWidth = 1.0
+            self.contentView.layer.borderColor = UIColor.clear.cgColor
+        }
+        
+    }

@@ -794,7 +794,7 @@
             </objects>
             <point key="canvasLocation" x="925" y="309"/>
         </scene>
-        <!--Item-->
+        <!--Offers-->
         <scene sceneID="wOb-OQ-RXY">
             <objects>
                 <viewController id="8ng-OU-vaF" customClass="OffersViewController" customModule="CleanseProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -803,7 +803,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w82-Pz-Jqh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="10" y="54" width="394" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Y9B-su-J8o">
                                     <size key="itemSize" width="192" height="246"/>
@@ -813,24 +813,24 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="EuP-Nd-W5N" customClass="ItemCell" customModule="CleanseProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="246"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YKc-rr-EuS">
-                                            <rect key="frame" x="0.0" y="0.0" width="192" height="246"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-rt-yw0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="205.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-rt-yw0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="143"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-Vq-o4W">
-                                                    <rect key="frame" x="0.0" y="227" width="192" height="19"/>
-                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-cb-f4h">
+                                                    <rect key="frame" x="0.0" y="151" width="150" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-cb-f4h">
-                                                    <rect key="frame" x="0.0" y="205.5" width="192" height="21.5"/>
-                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-Vq-o4W">
+                                                    <rect key="frame" x="0.0" y="173" width="150" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -840,15 +840,16 @@
                                                 <constraint firstItem="DK3-Vq-o4W" firstAttribute="leading" secondItem="YKc-rr-EuS" secondAttribute="leading" id="77c-bH-UaF"/>
                                                 <constraint firstItem="7Oa-rt-yw0" firstAttribute="top" secondItem="YKc-rr-EuS" secondAttribute="top" id="JHE-Q6-v3K"/>
                                                 <constraint firstAttribute="trailing" secondItem="fNZ-cb-f4h" secondAttribute="trailing" id="LDe-3B-nVC"/>
-                                                <constraint firstItem="DK3-Vq-o4W" firstAttribute="top" secondItem="fNZ-cb-f4h" secondAttribute="bottom" id="ONE-XM-Bwp"/>
+                                                <constraint firstItem="DK3-Vq-o4W" firstAttribute="top" secondItem="fNZ-cb-f4h" secondAttribute="bottom" constant="0.5" id="ONE-XM-Bwp"/>
                                                 <constraint firstItem="7Oa-rt-yw0" firstAttribute="leading" secondItem="YKc-rr-EuS" secondAttribute="leading" id="Yeh-yO-qwB"/>
-                                                <constraint firstItem="fNZ-cb-f4h" firstAttribute="top" secondItem="7Oa-rt-yw0" secondAttribute="bottom" id="cR7-qZ-5Nj"/>
-                                                <constraint firstAttribute="bottom" secondItem="DK3-Vq-o4W" secondAttribute="bottom" id="mzU-hu-EnH"/>
+                                                <constraint firstItem="fNZ-cb-f4h" firstAttribute="top" secondItem="7Oa-rt-yw0" secondAttribute="bottom" constant="8" id="cR7-qZ-5Nj"/>
+                                                <constraint firstAttribute="bottom" secondItem="DK3-Vq-o4W" secondAttribute="bottom" constant="8" id="mzU-hu-EnH"/>
                                                 <constraint firstItem="fNZ-cb-f4h" firstAttribute="leading" secondItem="YKc-rr-EuS" secondAttribute="leading" id="s5n-xI-ten"/>
                                                 <constraint firstAttribute="trailing" secondItem="7Oa-rt-yw0" secondAttribute="trailing" id="s7T-Ns-T25"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="192" height="246"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <size key="customSize" width="150" height="200"/>
                                         <connections>
                                             <outlet property="cellImage" destination="7Oa-rt-yw0" id="pSV-ef-Opk"/>
                                             <outlet property="cellLabel" destination="DK3-Vq-o4W" id="Sor-lT-0t1"/>
@@ -861,16 +862,16 @@
                         <viewLayoutGuide key="safeArea" id="pBQ-hF-RrD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="w82-Pz-Jqh" firstAttribute="leading" secondItem="pBQ-hF-RrD" secondAttribute="leading" id="JG7-Fd-N15"/>
-                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="bottom" secondItem="w82-Pz-Jqh" secondAttribute="bottom" id="Vlq-f5-PdC"/>
-                            <constraint firstItem="w82-Pz-Jqh" firstAttribute="top" secondItem="pBQ-hF-RrD" secondAttribute="top" id="kbC-rZ-SqV"/>
-                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="trailing" secondItem="w82-Pz-Jqh" secondAttribute="trailing" id="qsM-bm-ft8"/>
+                            <constraint firstItem="w82-Pz-Jqh" firstAttribute="leading" secondItem="pBQ-hF-RrD" secondAttribute="leading" constant="10" id="JG7-Fd-N15"/>
+                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="bottom" secondItem="w82-Pz-Jqh" secondAttribute="bottom" constant="10" id="Vlq-f5-PdC"/>
+                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="trailing" secondItem="w82-Pz-Jqh" secondAttribute="trailing" constant="10" id="qsM-bm-ft8"/>
+                            <constraint firstItem="w82-Pz-Jqh" firstAttribute="top" secondItem="pBQ-hF-RrD" secondAttribute="top" constant="10" id="re5-i2-6bs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="square.grid.2x2.fill" catalog="system" id="TG2-AM-KpM">
+                    <tabBarItem key="tabBarItem" title="Item" image="circles.hexagonpath.fill" catalog="system" id="TG2-AM-KpM">
                         <color key="badgeColor" systemColor="systemBackgroundColor"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="cmU-V8-faa"/>
+                    <navigationItem key="navigationItem" title="Offers" largeTitleDisplayMode="always" id="cmU-V8-faa"/>
                     <connections>
                         <outlet property="MyCollectionView" destination="w82-Pz-Jqh" id="0eC-Fl-3vb"/>
                     </connections>
@@ -886,6 +887,7 @@
     <resources>
         <image name="banner" width="1280" height="427"/>
         <image name="cancel" width="512" height="512"/>
+        <image name="circles.hexagonpath.fill" catalog="system" width="128" height="112"/>
         <image name="contenedor-de-basura" width="512" height="512"/>
         <image name="graph" width="118.5" height="106"/>
         <image name="location" catalog="system" width="128" height="121"/>
@@ -895,7 +897,6 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="profileface" width="1640" height="1250"/>
         <image name="rosette" catalog="system" width="106" height="128"/>
-        <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
         <image name="supermercado" width="512" height="512"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

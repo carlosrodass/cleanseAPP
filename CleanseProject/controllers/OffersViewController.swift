@@ -2,16 +2,17 @@
 import UIKit
 
 class OffersViewController: UIViewController {
-
+    
+    var oferta:Offer?
+    
     @IBOutlet weak var MyCollectionView: UICollectionView!
-    
-    let dataMarketArray = ["Ldl", "Corte ingles", "Mercadona","Ldl", "Corte ingles", "Mercadona","Ldl", "Corte ingles", "Mercadona"]
-    let dataOfferArray = [ "Manzanas", "Peras", "Lubina", "Algodon", "Miel", "Manzanas", "Peras", "Lubina", "Algodon"]
-    let dataImageArray: Array<UIImage> = [#imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo")]
-    
-//    var Width = 160.0
-//    var cellMarginSize = 5
-    
+        
+    let offers : [Offer] = [Offer.init(image: #imageLiteral(resourceName: "images"), market: "Lidl", offer: "Miel"),
+                            Offer.init(image: #imageLiteral(resourceName: "images"), market: "Mercadona", offer: "Patatas"),
+                            Offer.init(image: #imageLiteral(resourceName: "images"), market: "Carrefour", offer: "Peras"),
+                            Offer.init(image: #imageLiteral(resourceName: "images"), market: "Eroski", offer: "Fresas")]
+                            
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,31 +21,30 @@ class OffersViewController: UIViewController {
         self.MyCollectionView.dataSource = self
         self.MyCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
-        //Register cells
-//        self.MyCollectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
-        
-        //setUpGrid view
-//        self.setUpGridView()
-        
+        //register
+        self.MyCollectionView?.register(HeaderCollectionReusableView.self,
+                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.indentifier)
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-//        self.setUpGridView()
-//        DispatchQueue.main.async {
-//            self.MyCollectionView.reloadData()
-//        }
+
     }
-//
-//    func setUpGridView(){
-//        let flow = MyCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-//        flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
-//        flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
-//
-//
-//    }
+    
+    //Header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = MyCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.indentifier, for: indexPath) as! HeaderCollectionReusableView
+        
+        header.configure()
+        
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 200)
+    }
+
 }
 
 //Rellenando las celdas de datos
@@ -52,15 +52,16 @@ extension OffersViewController: UICollectionViewDataSource{
     
     //Numero de celdas a mostrar
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataMarketArray.count
+
+        return offers.count
     }
     
     //Añadiendo datos en cada una de las celdas
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = MyCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
-        //Aqui en setData cambiar por el objeto oferta para recibir los datos de la API
-        cell.setData(textMarket: self.dataMarketArray[indexPath.row], textOffer: self.dataOfferArray[indexPath.row], image: self.dataImageArray[indexPath.row])
+        cell.setData(with: offers[indexPath.row])
+        cell.setupCell()
         
         return cell
     }
@@ -69,27 +70,22 @@ extension OffersViewController: UICollectionViewDataSource{
 //Forma visual de las celdas, alto, ancho, padding
 extension OffersViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let Width = self.calculateWith()
-        return CGSize(width: 200, height: 300)
-    }
-//
-//    func calculateWith() -> CGFloat{
-//        let estimateWidth = CGFloat(Width)
-//        let cellCout = floor(CGFloat(self.view.frame.size.width / estimateWidth))
-//
-//        let margin = CGFloat(cellMarginSize * 2)
-//        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCout - 1) - margin) / cellCout
-//
-//        return width
-//     }
-}
 
+        return CGSize(width: (view.frame.width / 2) - 20, height: 180)
+    }
+}
 
 //Accion de cada elemento de la lista
 extension OffersViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        let vc = BuyOfferViewController()
+        
         print(indexPath.row)
     }
 }
+
+
+
 
 
