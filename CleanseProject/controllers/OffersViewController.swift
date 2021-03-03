@@ -5,12 +5,12 @@ class OffersViewController: UIViewController {
 
     @IBOutlet weak var MyCollectionView: UICollectionView!
     
-    let dataMarketArray = ["Ldl", "Corte ingles", "Mercadona"]
-    let dataOfferArray = ["Avena", "Miel", "Manzanas"]
-    let dataImageArray: Array<UIImage> = [#imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo")]
+    let dataMarketArray = ["Ldl", "Corte ingles", "Mercadona","Ldl", "Corte ingles", "Mercadona","Ldl", "Corte ingles", "Mercadona"]
+    let dataOfferArray = [ "Manzanas", "Peras", "Lubina", "Algodon", "Miel", "Manzanas", "Peras", "Lubina", "Algodon"]
+    let dataImageArray: Array<UIImage> = [#imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo"), #imageLiteral(resourceName: "lidl-logo")]
     
-    var Width = 160.0
-    var cellMarginSize = 16.0
+//    var Width = 160.0
+//    var cellMarginSize = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +18,13 @@ class OffersViewController: UIViewController {
         //set delegates
         self.MyCollectionView.delegate = self
         self.MyCollectionView.dataSource = self
-//        self.MyCollectionView.collectionViewLayout = UICollectionViewLayout()
+        self.MyCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
         //Register cells
-        self.MyCollectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
+//        self.MyCollectionView.register(UINib(nibName: "ItemCell", bundle: nil), forCellWithReuseIdentifier: "ItemCell")
         
         //setUpGrid view
-        self.setUpGridView()
+//        self.setUpGridView()
         
         
     }
@@ -32,19 +32,19 @@ class OffersViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.setUpGridView()
-        DispatchQueue.main.async {
-            self.MyCollectionView.reloadData()
-        }
+//        self.setUpGridView()
+//        DispatchQueue.main.async {
+//            self.MyCollectionView.reloadData()
+//        }
     }
-    
-    func setUpGridView(){
-        let flow = MyCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
-        flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
-
-
-    }
+//
+//    func setUpGridView(){
+//        let flow = MyCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+//        flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
+//        flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
+//
+//
+//    }
 }
 
 //Rellenando las celdas de datos
@@ -69,19 +69,19 @@ extension OffersViewController: UICollectionViewDataSource{
 //Forma visual de las celdas, alto, ancho, padding
 extension OffersViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let Width = self.calculateWith()
-        return CGSize(width: Width, height: Width)
+//        let Width = self.calculateWith()
+        return CGSize(width: 200, height: 300)
     }
-    
-    func calculateWith() -> CGFloat{
-        let estimateWidth = CGFloat(Width)
-        let cellCout = floor(CGFloat(self.view.frame.size.width / estimateWidth))
-        
-        let margin = CGFloat(cellMarginSize * 2)
-        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCout - 1) - margin) / cellCout
-        
-        return width
-     }
+//
+//    func calculateWith() -> CGFloat{
+//        let estimateWidth = CGFloat(Width)
+//        let cellCout = floor(CGFloat(self.view.frame.size.width / estimateWidth))
+//
+//        let margin = CGFloat(cellMarginSize * 2)
+//        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCout - 1) - margin) / cellCout
+//
+//        return width
+//     }
 }
 
 

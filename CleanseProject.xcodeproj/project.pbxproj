@@ -15,7 +15,6 @@
 		1FE2AACD25DC2ECD00657D0B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */; };
 		1FE2AAD125DC36EB00657D0B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */; };
 		1FEB029425EFE02400C0DA9B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB029225EFE02400C0DA9B /* ItemCell.swift */; };
-		1FEB029525EFE02400C0DA9B /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FEB029325EFE02400C0DA9B /* ItemCell.xib */; };
 		7F06C1AE25D6B0B700AC5417 /* Userr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AD25D6B0B700AC5417 /* Userr.swift */; };
 		7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */; };
 		E73487D525E9DF1D002C2B8B /* MapKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73487D425E9DF1D002C2B8B /* MapKitController.swift */; };
@@ -62,7 +61,6 @@
 		1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		1FEB029225EFE02400C0DA9B /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		1FEB029325EFE02400C0DA9B /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		5997B8C3467D23FF196C9BFE /* Pods_CleanseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F06C1AD25D6B0B700AC5417 /* Userr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Userr.swift; path = ../controllers/Userr.swift; sourceTree = "<group>"; };
 		7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				E73487D425E9DF1D002C2B8B /* MapKitController.swift */,
 				1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */,
 				1FEB029225EFE02400C0DA9B /* ItemCell.swift */,
-				1FEB029325EFE02400C0DA9B /* ItemCell.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -333,7 +330,6 @@
 				E7EDF1A425D413E500CCC61A /* Tutoria.storyboard in Resources */,
 				1F766DC625D59F0F00674387 /* people.json in Resources */,
 				E791A74625C87EB800108B89 /* LaunchScreen.storyboard in Resources */,
-				1FEB029525EFE02400C0DA9B /* ItemCell.xib in Resources */,
 				E791A74325C87EB800108B89 /* Assets.xcassets in Resources */,
 				1F766DC825D59F1B00674387 /* forest.json in Resources */,
 				1F21992925D888A80036EA1F /* ecology.json in Resources */,

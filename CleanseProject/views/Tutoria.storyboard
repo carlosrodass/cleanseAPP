@@ -806,19 +806,54 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Y9B-su-J8o">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="192" height="246"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EuP-Nd-W5N">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="EuP-Nd-W5N" customClass="ItemCell" customModule="CleanseProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="246"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YKc-rr-EuS">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="246"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-rt-yw0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="205.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-Vq-o4W">
+                                                    <rect key="frame" x="0.0" y="227" width="192" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-cb-f4h">
+                                                    <rect key="frame" x="0.0" y="205.5" width="192" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="DK3-Vq-o4W" secondAttribute="trailing" id="1q5-jd-wbF"/>
+                                                <constraint firstItem="DK3-Vq-o4W" firstAttribute="leading" secondItem="YKc-rr-EuS" secondAttribute="leading" id="77c-bH-UaF"/>
+                                                <constraint firstItem="7Oa-rt-yw0" firstAttribute="top" secondItem="YKc-rr-EuS" secondAttribute="top" id="JHE-Q6-v3K"/>
+                                                <constraint firstAttribute="trailing" secondItem="fNZ-cb-f4h" secondAttribute="trailing" id="LDe-3B-nVC"/>
+                                                <constraint firstItem="DK3-Vq-o4W" firstAttribute="top" secondItem="fNZ-cb-f4h" secondAttribute="bottom" id="ONE-XM-Bwp"/>
+                                                <constraint firstItem="7Oa-rt-yw0" firstAttribute="leading" secondItem="YKc-rr-EuS" secondAttribute="leading" id="Yeh-yO-qwB"/>
+                                                <constraint firstItem="fNZ-cb-f4h" firstAttribute="top" secondItem="7Oa-rt-yw0" secondAttribute="bottom" id="cR7-qZ-5Nj"/>
+                                                <constraint firstAttribute="bottom" secondItem="DK3-Vq-o4W" secondAttribute="bottom" id="mzU-hu-EnH"/>
+                                                <constraint firstItem="fNZ-cb-f4h" firstAttribute="leading" secondItem="YKc-rr-EuS" secondAttribute="leading" id="s5n-xI-ten"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Oa-rt-yw0" secondAttribute="trailing" id="s7T-Ns-T25"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="192" height="246"/>
+                                        <connections>
+                                            <outlet property="cellImage" destination="7Oa-rt-yw0" id="pSV-ef-Opk"/>
+                                            <outlet property="cellLabel" destination="DK3-Vq-o4W" id="Sor-lT-0t1"/>
+                                            <outlet property="cellOfferLabel" destination="DK3-Vq-o4W" id="vUM-dV-tqD"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -842,7 +877,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIA-tT-f0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="1179"/>
+            <point key="canvasLocation" x="924.63768115942037" y="1177.2321428571429"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
