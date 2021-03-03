@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -165,6 +165,7 @@
 		E663A44D97FFE0F736EA3B73E47A0690 /* CompatibleAnimationKeypath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C40059C8DDE224B1E56D489E8AC463 /* CompatibleAnimationKeypath.swift */; };
 		E6A69EB7C716F3284634E00892C40806 /* GroupInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C141971271F62EA2C15F4E765E4E3D20 /* GroupInterpolator.swift */; };
 		E718AB84042ECA239584381DB5970552 /* ShapeRenderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BBD485C812A9ABF2DFE3607342798 /* ShapeRenderLayer.swift */; };
+		E7B0D01725E9F0C600E85D18 /* FABButton in Frameworks */ = {isa = PBXBuildFile; productRef = E7B0D01625E9F0C600E85D18 /* FABButton */; };
 		E89DDD10D39B7447CEE9B8CE5255FCED /* PathOutputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68258AFA61C433FF8006F803BEF75E1F /* PathOutputNode.swift */; };
 		EBF2506DBF64C42BB02F207763BFC350 /* ItemsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877063EF6926279DA9BCE0497F4B8421 /* ItemsExtension.swift */; };
 		EC018DD5D1BE025DDF186DBA64B9420A /* LayerImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7772E1996093A0D43006F646F03E041E /* LayerImageProvider.swift */; };
@@ -422,6 +423,7 @@
 			files = (
 				A738C2A39C0150BBA7EA5EC19B95F03E /* CFNetwork.framework in Frameworks */,
 				F6B16DC8CADA07287C6A372AC8AD787C /* Foundation.framework in Frameworks */,
+				E7B0D01725E9F0C600E85D18 /* FABButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +806,9 @@
 			dependencies = (
 			);
 			name = Alamofire;
+			packageProductDependencies = (
+				E7B0D01625E9F0C600E85D18 /* FABButton */,
+			);
 			productName = Alamofire;
 			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
@@ -826,6 +831,9 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+				E7B0D01525E9F0C600E85D18 /* XCRemoteSwiftPackageReference "FABButton" */,
+			);
 			productRefGroup = 3E6599E9C20C47C6AF361D5D48665FA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1454,6 +1462,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E7B0D01525E9F0C600E85D18 /* XCRemoteSwiftPackageReference "FABButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulferrerdev/FABButton.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E7B0D01625E9F0C600E85D18 /* FABButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7B0D01525E9F0C600E85D18 /* XCRemoteSwiftPackageReference "FABButton" */;
+			productName = FABButton;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

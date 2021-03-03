@@ -6,4 +6,29 @@
 //  Copyright © 2021 user176688. All rights reserved.
 //
 
-import Foundation
+import MapKit
+
+extension MKPlacemark{
+    var formattedAddress: String?{
+        guard
+            let numeroCalle = subThoroughfare,
+            let nombreCalle = thoroughfare,
+            let ciudad = locality,
+            let estacion = administrativeArea,
+            let codigopostal = postalCode
+        else{
+            if let titulo = title{
+                return "\(title)"
+            }
+            else{
+                return nil
+            }
+            
+        }
+        
+        let direccion = "\(numeroCalle) \(nombreCalle), \(ciudad),\(estacion)\(codigopostal)"
+        
+        return direccion
+        
+    }
+}
