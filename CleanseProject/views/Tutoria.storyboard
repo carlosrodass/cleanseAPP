@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -801,135 +802,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BXD-vS-uCh">
-                                <rect key="frame" x="20" y="84" width="374" height="679"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="lYW-4i-Eoq">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="213"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets see your week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1O-Ea-CWe">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="93"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="b8x-MA-Bmh">
-                                                <rect key="frame" x="0.0" y="93" width="374" height="120"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="HA2-1t-EHK"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2OK-l6-nwW">
-                                        <rect key="frame" x="0.0" y="233" width="374" height="213"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="According to your credits.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWO-Gp-pVQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-LI-qTz">
-                                                <rect key="frame" x="0.0" y="30.5" width="374" height="182.5"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-80-dQC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="182.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6K-am-iEy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="167.5"/>
-                                                                <state key="normal" title="Button" image="lidl-logo"/>
-                                                                <connections>
-                                                                    <action selector="OfferOneButton:" destination="8ng-OU-vaF" eventType="touchUpInside" id="uTn-hN-sC4"/>
-                                                                    <segue destination="Ihg-fv-SKc" kind="show" id="nhy-YH-FST"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potatoes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhr-JT-xp3">
-                                                                <rect key="frame" x="0.0" y="167.5" width="118" height="15"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="15" id="AeW-Nz-DPo"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-2D-zg6">
-                                                        <rect key="frame" x="128" y="0.0" width="118" height="182.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBO-lt-rFI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="167.5"/>
-                                                                <state key="normal" title="Button" image="eci-triangulo-logo"/>
-                                                                <connections>
-                                                                    <action selector="OfferTwoButton:" destination="8ng-OU-vaF" eventType="touchUpInside" id="eHL-Eo-fZH"/>
-                                                                    <segue destination="Ihg-fv-SKc" kind="show" id="LMk-8h-Hey"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Macedonia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCn-Ck-8CT">
-                                                                <rect key="frame" x="0.0" y="167.5" width="118" height="15"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="15" id="4xq-k0-0mp"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="baH-AD-R1O">
-                                                        <rect key="frame" x="256" y="0.0" width="118" height="182.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oox-9S-UUf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="167.5"/>
-                                                                <state key="normal" title="Button" image="carrefour"/>
-                                                                <connections>
-                                                                    <action selector="OfferThreeButton:" destination="8ng-OU-vaF" eventType="touchUpInside" id="uw8-VA-izM"/>
-                                                                    <segue destination="Ihg-fv-SKc" kind="show" id="z1d-ut-OCI"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiritas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDE-0C-Gq9">
-                                                                <rect key="frame" x="0.0" y="167.5" width="118" height="15"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="15" id="yts-Y9-ZM9"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NnK-XH-UN0">
-                                        <rect key="frame" x="0.0" y="466" width="374" height="213"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn increase your profits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF9-it-LDE">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="53"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findway" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-f5-Ao3">
-                                                <rect key="frame" x="0.0" y="63" width="374" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="pZR-X1-w87"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w82-Pz-Jqh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Y9B-su-J8o">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EuP-Nd-W5N">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YKc-rr-EuS">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pBQ-hF-RrD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="bottom" secondItem="BXD-vS-uCh" secondAttribute="bottom" constant="50" id="6ir-yO-xnP"/>
-                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="trailing" secondItem="BXD-vS-uCh" secondAttribute="trailing" constant="20" id="Ggm-hk-1gM"/>
-                            <constraint firstItem="BXD-vS-uCh" firstAttribute="leading" secondItem="pBQ-hF-RrD" secondAttribute="leading" constant="20" id="TIi-r0-gMe"/>
-                            <constraint firstItem="BXD-vS-uCh" firstAttribute="top" secondItem="pBQ-hF-RrD" secondAttribute="top" constant="40" id="zSA-Jz-cz2"/>
+                            <constraint firstItem="w82-Pz-Jqh" firstAttribute="leading" secondItem="pBQ-hF-RrD" secondAttribute="leading" id="JG7-Fd-N15"/>
+                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="bottom" secondItem="w82-Pz-Jqh" secondAttribute="bottom" id="Vlq-f5-PdC"/>
+                            <constraint firstItem="w82-Pz-Jqh" firstAttribute="top" secondItem="pBQ-hF-RrD" secondAttribute="top" id="kbC-rZ-SqV"/>
+                            <constraint firstItem="pBQ-hF-RrD" firstAttribute="trailing" secondItem="w82-Pz-Jqh" secondAttribute="trailing" id="qsM-bm-ft8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="square.grid.2x2.fill" catalog="system" id="TG2-AM-KpM">
@@ -937,81 +837,22 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="cmU-V8-faa"/>
                     <connections>
-                        <outlet property="offerOneNameLabel" destination="dhr-JT-xp3" id="vVX-Le-b9f"/>
-                        <outlet property="offerThreeNameLabel" destination="VDE-0C-Gq9" id="nQK-kI-VAf"/>
-                        <outlet property="offerTwoNameLabel" destination="qCn-Ck-8CT" id="Kdv-2W-Y6k"/>
+                        <outlet property="MyCollectionView" destination="w82-Pz-Jqh" id="0eC-Fl-3vb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIA-tT-f0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925" y="1179"/>
         </scene>
-        <!--Buy Offer View Controller-->
-        <scene sceneID="1We-B7-NU1">
-            <objects>
-                <viewController id="Ihg-fv-SKc" customClass="BuyOfferViewController" customModule="CleanseProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="B8s-if-ueT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ani-jy-Waz">
-                                <rect key="frame" x="50" y="200" width="314" height="308"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="eci-triangulo-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZwE-ND-YjT">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="236.5"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Points needed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plr-Ca-vhh">
-                                        <rect key="frame" x="0.0" y="246.5" width="314" height="21.5"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZi-qk-hxs">
-                                        <rect key="frame" x="0.0" y="278" width="314" height="30"/>
-                                        <color key="backgroundColor" red="0.39785812069999998" green="0.77461139899999998" blue="0.058562660060000001" alpha="0.47887323939999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Buy">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buyButtonAction:" destination="Ihg-fv-SKc" eventType="touchUpInside" id="zNa-di-kUZ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MIg-Xd-Qr7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ani-jy-Waz" firstAttribute="leading" secondItem="MIg-Xd-Qr7" secondAttribute="leading" constant="50" id="9Dg-0a-t99"/>
-                            <constraint firstItem="MIg-Xd-Qr7" firstAttribute="bottom" secondItem="ani-jy-Waz" secondAttribute="bottom" constant="300" id="LFF-vi-jwi"/>
-                            <constraint firstItem="MIg-Xd-Qr7" firstAttribute="trailing" secondItem="ani-jy-Waz" secondAttribute="trailing" constant="50" id="N8K-3m-ftF"/>
-                            <constraint firstItem="ani-jy-Waz" firstAttribute="top" secondItem="MIg-Xd-Qr7" secondAttribute="top" constant="200" id="kjv-wX-y4f"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="3Fn-NZ-GET"/>
-                    <connections>
-                        <outlet property="buyButton" destination="xZi-qk-hxs" id="ZtD-ml-ENY"/>
-                        <outlet property="pointsNeedLabel" destination="plr-Ca-vhh" id="qIJ-Kk-kGE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SXD-Yi-Hcj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1833" y="1179"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nhy-YH-FST"/>
         <segue reference="BPh-M4-1eY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="banner" width="1280" height="427"/>
         <image name="cancel" width="512" height="512"/>
-        <image name="carrefour" width="410" height="289.5"/>
         <image name="contenedor-de-basura" width="512" height="512"/>
-        <image name="eci-triangulo-logo" width="590" height="332.5"/>
-        <image name="findway" width="400" height="133.5"/>
         <image name="graph" width="118.5" height="106"/>
-        <image name="lidl-logo" width="256" height="256"/>
         <image name="location" catalog="system" width="128" height="121"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
@@ -1023,9 +864,6 @@
         <image name="supermercado" width="512" height="512"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
