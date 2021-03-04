@@ -15,8 +15,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "findway")
-        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "startbanner")
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 //    let labelName: UILabel = {

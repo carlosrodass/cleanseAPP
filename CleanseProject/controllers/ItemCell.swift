@@ -30,12 +30,12 @@ class ItemCell: UICollectionViewCell {
         
         // MARK: Methods
         func setCellShadow() {
-            self.layer.shadowColor = UIColor.gray.cgColor
+            self.layer.shadowColor = UIColor.black.cgColor
             self.layer.shadowOffset = CGSize(width: 0, height: 1)
             self.layer.shadowOpacity = 1.0
             self.layer.shadowRadius = 1.0
             self.layer.masksToBounds = false
-            self.layer.cornerRadius = 3
+            self.layer.cornerRadius = 12.0
             self.clipsToBounds = false
             self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         }
@@ -44,7 +44,9 @@ class ItemCell: UICollectionViewCell {
             self.contentView.layer.cornerRadius = 12.0
             self.contentView.layer.masksToBounds = true
             self.contentView.layer.borderWidth = 1.0
-            self.contentView.layer.borderColor = UIColor.clear.cgColor
+            self.contentView.layer.borderColor = UIColor.white.cgColor
+            
+            
         }
         
     }

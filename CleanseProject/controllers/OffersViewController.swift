@@ -7,10 +7,10 @@ class OffersViewController: UIViewController {
     
     @IBOutlet weak var MyCollectionView: UICollectionView!
         
-    let offers : [Offer] = [Offer.init(image: #imageLiteral(resourceName: "images"), market: "Lidl", offer: "Miel"),
-                            Offer.init(image: #imageLiteral(resourceName: "images"), market: "Mercadona", offer: "Patatas"),
-                            Offer.init(image: #imageLiteral(resourceName: "images"), market: "Carrefour", offer: "Peras"),
-                            Offer.init(image: #imageLiteral(resourceName: "images"), market: "Eroski", offer: "Fresas")]
+    let offers : [Offer] = [Offer.init(image: #imageLiteral(resourceName: "fresa"), market: "Lidl", offer: "Fresas"),
+                            Offer.init(image: #imageLiteral(resourceName: "sal"), market: "Mercadona", offer: "Sal"),
+                            Offer.init(image: #imageLiteral(resourceName: "alba"), market: "Carrefour", offer: "Albaricoque"),
+                            Offer.init(image: #imageLiteral(resourceName: "tomate"), market: "Eroski", offer: "Tomate")]
                             
 
     override func viewDidLoad() {
@@ -19,7 +19,11 @@ class OffersViewController: UIViewController {
         //set delegates
         self.MyCollectionView.delegate = self
         self.MyCollectionView.dataSource = self
-        self.MyCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+        
+        //Margins
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        MyCollectionView!.collectionViewLayout = layout
         
         //register
         self.MyCollectionView?.register(HeaderCollectionReusableView.self,
@@ -61,6 +65,7 @@ extension OffersViewController: UICollectionViewDataSource{
         let cell = MyCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         cell.setData(with: offers[indexPath.row])
+        
         cell.setupCell()
         
         return cell
@@ -71,7 +76,7 @@ extension OffersViewController: UICollectionViewDataSource{
 extension OffersViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: (view.frame.width / 2) - 20, height: 180)
+        return CGSize(width: (view.frame.width / 2) - 20, height: 95)
     }
 }
 
