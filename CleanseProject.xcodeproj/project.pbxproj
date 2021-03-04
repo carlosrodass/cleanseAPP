@@ -110,6 +110,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F01607625F114E500DDC1DB /* verificacion */ = {
+			isa = PBXGroup;
+			children = (
+				E791A77525C888E900108B89 /* BienvenidoCleanse.swift */,
+				E791A77E25C8A9F500108B89 /* TutorialViewController.swift */,
+				E7EDF1B525D4474900CCC61A /* LoginUser.swift */,
+				7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */,
+			);
+			path = verificacion;
+			sourceTree = "<group>";
+		};
+		7F01607725F1152000DDC1DB /* perfil */ = {
+			isa = PBXGroup;
+			children = (
+				1F21992A25D8A5900036EA1F /* ProfileViewController.swift */,
+				1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */,
+			);
+			path = perfil;
+			sourceTree = "<group>";
+		};
+		7F01607825F1154E00DDC1DB /* ofertas */ = {
+			isa = PBXGroup;
+			children = (
+				1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */,
+				1FA72DB825F030C4008BBAC7 /* HeaderCollectionReusableView.swift */,
+				1FEB029225EFE02400C0DA9B /* ItemCell.swift */,
+				1FA72DB625F02BE7008BBAC7 /* BuyOfferViewController.swift */,
+			);
+			path = ofertas;
+			sourceTree = "<group>";
+		};
 		DB1CC3A993827C43A4D7EC41 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,17 +263,10 @@
 		E7EDF19D25D40A6400CCC61A /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E791A77E25C8A9F500108B89 /* TutorialViewController.swift */,
-				E791A77525C888E900108B89 /* BienvenidoCleanse.swift */,
-				E7EDF1B525D4474900CCC61A /* LoginUser.swift */,
-				7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */,
-				1F21992A25D8A5900036EA1F /* ProfileViewController.swift */,
-				1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */,
+				7F01607825F1154E00DDC1DB /* ofertas */,
+				7F01607725F1152000DDC1DB /* perfil */,
+				7F01607625F114E500DDC1DB /* verificacion */,
 				E73487D425E9DF1D002C2B8B /* MapKitController.swift */,
-				1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */,
-				1FEB029225EFE02400C0DA9B /* ItemCell.swift */,
-				1FA72DB625F02BE7008BBAC7 /* BuyOfferViewController.swift */,
-				1FA72DB825F030C4008BBAC7 /* HeaderCollectionReusableView.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
