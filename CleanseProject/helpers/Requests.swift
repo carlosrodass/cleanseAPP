@@ -38,6 +38,20 @@ static let shared = Request()
         return AF.request(Endpoints.shared.baseURL + Endpoints.shared.getProfile, method: .post,
                           parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers)
     }
+    
+    //Comprar oferta
+    func BuyOffer(parameters:[String:String])-> DataRequest {
+        
+        let headers:HTTPHeaders = [
+            "Accept":"application/json",
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+        ]
+        
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.buy, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers, interceptor:nil).response { response in
+            debugPrint(response)
+        }
+        
+    }
   
  
 
