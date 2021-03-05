@@ -41,7 +41,7 @@ class LoginUser: UIViewController {
             let token = response.value
             
             UserDefaults.standard.set(token, forKey: "token") //setting token to user defaults
-            debugPrint(response.value)
+            debugPrint("la respuesta es \(response)")
     }
 
    }

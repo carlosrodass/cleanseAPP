@@ -12,14 +12,22 @@ static let shared = Request()
     
     public init() {}
     
+    /**
+    * funcion de Login
+    * Params : [String]
+    */
     func login(parameters:[String:String])  -> DataRequest{
         
-//        let headers:HTTPHeader = []
+///        let headers:HTTPHeader = []
         return AF.request(Endpoints.shared.baseURL+Endpoints.shared.login, method: .post, parameters:parameters , encoder: JSONParameterEncoder.default).response{ response in
-//            debugPrint(response, "respuesta")
+///        debugPrint(response, "respuesta")
         }
     }
     
+    /**
+    * funcion de registro
+    * Params : [String]
+    */
     func register(parameters:[String:String])-> DataRequest {
            
            AF.request(Endpoints.shared.baseURL+Endpoints.shared.register, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: nil, interceptor:nil).response { response in
@@ -27,7 +35,10 @@ static let shared = Request()
            }
        }
     
-    
+    /**
+    * funcion de  ver perfil de usuario
+    * Params : [String]
+    */
     func InfoUser(parameters:[String:String])-> DataRequest{
         
         let headers:HTTPHeaders = [
@@ -35,11 +46,14 @@ static let shared = Request()
             "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
         ]
         
-        return AF.request(Endpoints.shared.baseURL + Endpoints.shared.getProfile, method: .post,
+        return AF.request(Endpoints.shared.baseURL + Endpoints.shared.getProfile, method: .get,
                           parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers)
     }
     
-    //Comprar oferta
+    /**
+    * funcion de tradeo ofertas
+    * Params : [String]
+    */
     func BuyOffer(parameters:[String:String])-> DataRequest {
         
         let headers:HTTPHeaders = [
