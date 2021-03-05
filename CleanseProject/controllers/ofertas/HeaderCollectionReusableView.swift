@@ -15,7 +15,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "ecoban")
+        imageView.image = UIImage(named: "incre")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
