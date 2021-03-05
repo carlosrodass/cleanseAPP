@@ -15,18 +15,20 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "startbanner")
+        imageView.image = UIImage(named: "ecoban")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 //    let labelName: UILabel = {
 //        let label = UILabel()
-//        label.text = "List"
+//        label.text = "Your points: 35 points"
 //        label.textColor = UIColor.white
 //        label.font = UIFont.boldSystemFont(ofSize: 19)
 //        label.textAlignment = .left
 //        return label
 //    }()
+    
+    
 
    
     public func configure(){
