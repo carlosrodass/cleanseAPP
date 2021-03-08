@@ -39,15 +39,15 @@ static let shared = Request()
     * funcion de  ver perfil de usuario
     * Params : [String]
     */
-    func InfoUser(parameters:[String:String])-> DataRequest{
+    func InfoUser()-> DataRequest{
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
             "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
         ]
         
-        return AF.request(Endpoints.shared.baseURL + Endpoints.shared.getProfile, method: .get,
-                          parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers)
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.getProfile, headers: headers).responseJSON { response in
+        }
     }
     
     func getOffers(parameters:[String:String])-> DataRequest{
