@@ -16,7 +16,9 @@ class Endpoints {
     let login:String = "login"
     let register:String = "register"
     let getProfile:String = "user"
-    let buy:String = "buy"
+    let buyOffer:String = "offers/trade"
+    let getOffers:String = "offers/all"
+    let getContainer:String = "/show/{street_name}"
     
     
     

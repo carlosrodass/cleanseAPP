@@ -19,28 +19,16 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-//    let labelName: UILabel = {
-//        let label = UILabel()
-//        label.text = "Your points: 35 points"
-//        label.textColor = UIColor.white
-//        label.font = UIFont.boldSystemFont(ofSize: 19)
-//        label.textAlignment = .left
-//        return label
-//    }()
-    
-    
 
-   
     public func configure(){
         addSubview(imageView)
-//        addSubview(labelName)
+
     }
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView.frame = bounds
-//        labelName.frame = bounds
+
     }
         
 }

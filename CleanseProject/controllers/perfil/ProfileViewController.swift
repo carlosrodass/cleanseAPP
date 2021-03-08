@@ -32,30 +32,30 @@ class ProfileViewController: UIViewController {
         roundImage()
         roundButtons()
         
-        let userToken:String = UserDefaults.standard.string(forKey: "token")!
-        print("token guardado \(userToken)")
-
-        let parameters : [String:String] = [
-
-            "token" : userToken
-        ]
-
-
-        let request = Request.shared.InfoUser(parameters: parameters)
-        print(userToken)
-        request.response(completionHandler: { (response) in
-
-            guard let data = response.data else {return}
-            do{
-                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
-                print(self.dataUser?.username)
-                self.userNameProfile.text = self.dataUser?.username
-                self.pointsProfile.text = self.dataUser?.puntos
-                debugPrint(response)
-            }catch{
-                print("estoy aqui")
-            }
-        })
+//        let userToken:String = UserDefaults.standard.string(forKey: "token")!
+//        print("token guardado \(userToken)")
+//
+//        let parameters : [String:String] = [
+//
+//            "token" : userToken
+//        ]
+//
+//
+//        let request = Request.shared.InfoUser(parameters: parameters)
+//        print(userToken)
+//        request.response(completionHandler: { (response) in
+//
+//            guard let data = response.data else {return}
+//            do{
+//                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
+//                print(self.dataUser?.username)
+//                self.userNameProfile.text = self.dataUser?.username
+//                self.pointsProfile.text = self.dataUser?.puntos
+//                debugPrint(response)
+//            }catch{
+//                print("estoy aqui")
+//            }
+//        })
         
     }
     

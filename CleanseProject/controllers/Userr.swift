@@ -5,9 +5,9 @@ import Foundation
 class Userr: Encodable, Decodable {
     
   
-     private var _email:String
-     private var _username:String
-     private var _password:String?
+    private var _email:String
+    private var _username:String
+    private var _password:String?
     private var _confirmpasswor:String?
     private var _puntos:String?
     
@@ -30,16 +30,17 @@ class Userr: Encodable, Decodable {
         
     }
  
-      
-   public func upUserserver()->[String:Any]{
+    ///Registro de usuario
+    public func upUserserver()->[String:Any]{
      
-    return ["username":_username,"email":_email,"password":_password!,"password_confirmation":_confirmpasswor!, "points":_puntos!]
+        return ["username":_username,"email":_email,"password":_password!,"password_confirmation":_confirmpasswor!, "points":_puntos!]
      
      }
-    
-    public func getInfoUser()->[String:Any]{
+    ///Perfil de usuario (datos)
+    public func getUser()->[String:Any]{
         return["username":_username, "points":_puntos!]
     }
+    
     
     
     public var username: String{

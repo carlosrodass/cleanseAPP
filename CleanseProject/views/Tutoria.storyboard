@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tRr-Jx-NIR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tRr-Jx-NIR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +21,16 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pGE-rs-c4O">
                                 <rect key="frame" x="20" y="288" width="374" height="254"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn how people an us are saving our world" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-3s-Wkv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-3s-Wkv">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="174"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Learn how people an us are saving our world">
+                                                <attributes>
+                                                    <font key="NSFont" size="30" name="SFProDisplay-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbt-Yu-ujh">
@@ -30,17 +38,23 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dg-l4-ALY">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2dg-l4-ALY" secondAttribute="height" multiplier="1:1" id="nS4-yQ-MPX"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epS-Sg-RG2">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epS-Sg-RG2">
                                                 <rect key="frame" x="30" y="0.0" width="314" height="30"/>
                                                 <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                                <state key="normal" title="Sign in">
-                                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Sign in">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                                                <font key="NSFont" size="20" name="SFPro-Semibold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </state>
                                                 <connections>
                                                     <segue destination="bMT-dW-K35" kind="presentation" modalPresentationStyle="fullScreen" id="BPh-M4-1eY"/>
@@ -48,7 +62,7 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJe-RW-d51">
                                                 <rect key="frame" x="344" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="UJe-RW-d51" secondAttribute="height" id="kM7-Ey-R8X"/>
                                                 </constraints>
@@ -63,17 +77,23 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7W-z0-ute">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="J7W-z0-ute" secondAttribute="height" id="gv8-SJ-wn1"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-aR-mS0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-aR-mS0">
                                                 <rect key="frame" x="30" y="0.0" width="314" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                                <state key="normal" title="Sign up">
-                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Sign up">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="20" name="SFPro-Semibold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </state>
                                                 <connections>
                                                     <segue destination="fJT-PG-I4n" kind="presentation" modalPresentationStyle="fullScreen" id="yhm-KR-AnJ"/>
@@ -81,7 +101,7 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kuf-1V-U5p">
                                                 <rect key="frame" x="344" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Kuf-1V-U5p" secondAttribute="height" id="Wgh-2w-7TN"/>
                                                 </constraints>
@@ -94,14 +114,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="E38-CA-sx5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="E38-CA-sx5" firstAttribute="bottom" secondItem="pGE-rs-c4O" secondAttribute="bottom" constant="320" id="4j0-wj-iJz"/>
                             <constraint firstAttribute="trailing" secondItem="pGE-rs-c4O" secondAttribute="trailing" constant="20" id="gJ8-u2-YYH"/>
                             <constraint firstItem="pGE-rs-c4O" firstAttribute="top" secondItem="E38-CA-sx5" secondAttribute="top" constant="200" id="ofp-UO-ZTk"/>
                             <constraint firstItem="pGE-rs-c4O" firstAttribute="leading" secondItem="Qgq-li-aHv" secondAttribute="leading" constant="20" id="vtn-vu-U6X"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="E38-CA-sx5"/>
                     </view>
                     <navigationItem key="navigationItem" id="adx-wb-uZX"/>
                     <connections>
@@ -126,17 +146,23 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good to see you again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1S-n9-DYx">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="308"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="64"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-54-J9C">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-54-J9C">
                                         <rect key="frame" x="0.0" y="318" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pmd-3A-8rf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Email">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="SFPro-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZo-bZ-NiP">
@@ -144,7 +170,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="t2t-eu-RqL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KC-Ho-lxz">
@@ -152,7 +179,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Vy7-x2-Gft"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -161,7 +188,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4bF-RE-sA2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ed-Zf-Ch4">
@@ -169,20 +196,26 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rf2-uR-ukm">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Rf2-uR-ukm" secondAttribute="height" id="6lL-Ba-Ft7"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-iH-Hto">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLO-iH-Hto">
                                                 <rect key="frame" x="40" y="0.0" width="294" height="40"/>
                                                 <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="J9n-OE-PzC"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                                <state key="normal" title="Enviar">
-                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Enviar">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="groupTableViewBackgroundColor"/>
+                                                                <font key="NSFont" size="17" name="SFProDisplay-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </state>
                                                 <connections>
                                                     <action selector="EnviarLogin:" destination="bMT-dW-K35" eventType="touchUpInside" id="RdK-Ln-hju"/>
@@ -191,7 +224,7 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eg7-3u-iQz">
                                                 <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Eg7-3u-iQz" secondAttribute="height" id="kOO-aB-XSB"/>
                                                 </constraints>
@@ -201,14 +234,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ffq-rt-oCz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gRq-23-ffe" firstAttribute="top" secondItem="ffq-rt-oCz" secondAttribute="top" constant="150" id="Cvp-mk-8pv"/>
                             <constraint firstAttribute="trailing" secondItem="gRq-23-ffe" secondAttribute="trailing" constant="20" id="QDK-N6-2yg"/>
                             <constraint firstItem="gRq-23-ffe" firstAttribute="leading" secondItem="ffq-rt-oCz" secondAttribute="leading" constant="20" id="lhR-vq-Fyg"/>
                             <constraint firstItem="ffq-rt-oCz" firstAttribute="bottom" secondItem="gRq-23-ffe" secondAttribute="bottom" constant="150" id="sqe-lO-b3J"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ffq-rt-oCz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="5Je-IX-nRM"/>
                     <connections>
@@ -248,60 +281,76 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="orm-yn-Fwn">
                                 <rect key="frame" x="20" y="84" width="374" height="628"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maE-cy-XHk">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maE-cy-XHk">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="g9Z-u2-xPY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="36"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Create your account">
+                                                <attributes>
+                                                    <font key="NSFont" size="36" name="SFPro-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t26-cz-BIs">
-                                        <rect key="frame" x="0.0" y="165" width="374" height="39"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t26-cz-BIs">
+                                        <rect key="frame" x="0.0" y="165" width="374" height="38"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Username">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="SFPro-Medium"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="userexample223" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Qf-DM-UT7" userLabel="Username">
-                                        <rect key="frame" x="0.0" y="219" width="374" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="userexample223" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Qf-DM-UT7" userLabel="Username">
+                                        <rect key="frame" x="0.0" y="218" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Yob-Vz-xxQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
+                                        <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqz-bZ-dIZ">
-                                        <rect key="frame" x="0.0" y="264" width="374" height="39"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqz-bZ-dIZ">
+                                        <rect key="frame" x="0.0" y="263" width="374" height="37.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Email">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="SFPro-Medium"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="eample@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ari-fD-99z" userLabel="Email">
-                                        <rect key="frame" x="0.0" y="318" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="315.5" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Hm6-yR-PNR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fco-SS-FSA">
-                                        <rect key="frame" x="0.0" y="363" width="374" height="39"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="360.5" width="374" height="38"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="******" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-gl-fHQ" userLabel="Password">
-                                        <rect key="frame" x="0.0" y="417" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="413.5" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6z6-HF-8Bc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHT-en-dca">
-                                        <rect key="frame" x="0.0" y="462" width="374" height="66"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="458.5" width="374" height="69.5"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -310,7 +359,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Hqq-g1-rtJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0DO-7L-8LS">
@@ -318,21 +367,26 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxe-wT-0o1">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wxe-wT-0o1" secondAttribute="height" id="DXH-ot-qfB"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I02-rc-ld3" userLabel="go button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I02-rc-ld3" userLabel="go button">
                                                 <rect key="frame" x="40" y="0.0" width="294" height="40"/>
                                                 <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Y6p-Kx-2Oz"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="15"/>
-                                                <state key="normal" title="Go">
-                                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Go">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tableCellGroupedBackgroundColor"/>
+                                                                <font key="NSFont" size="15" name="SFProDisplay-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </state>
                                                 <connections>
                                                     <action selector="enviarRegistro:" destination="fJT-PG-I4n" eventType="touchUpInside" id="wvF-mP-5oM"/>
@@ -341,7 +395,7 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajV-eZ-ygI">
                                                 <rect key="frame" x="334" y="0.0" width="40" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ajV-eZ-ygI" secondAttribute="height" id="YRR-Q1-OVb"/>
                                                 </constraints>
@@ -351,14 +405,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wdz-fB-6hH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="orm-yn-Fwn" firstAttribute="top" secondItem="wdz-fB-6hH" secondAttribute="top" constant="40" id="DLt-C9-aUt"/>
                             <constraint firstItem="orm-yn-Fwn" firstAttribute="leading" secondItem="wdz-fB-6hH" secondAttribute="leading" constant="20" id="fGx-Xo-TY1"/>
                             <constraint firstItem="wdz-fB-6hH" firstAttribute="bottom" secondItem="orm-yn-Fwn" secondAttribute="bottom" constant="150" id="mnk-SU-oZo"/>
                             <constraint firstAttribute="trailing" secondItem="orm-yn-Fwn" secondAttribute="trailing" constant="20" id="niW-ec-foD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wdz-fB-6hH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="Jbj-zE-Hxb"/>
                     <connections>
@@ -423,7 +477,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="2UF-t4-heX" firstAttribute="leading" secondItem="vTS-zO-p04" secondAttribute="leading" constant="5" id="Gd7-e9-BUV"/>
                                     <constraint firstAttribute="trailing" secondItem="2UF-t4-heX" secondAttribute="trailing" constant="5" id="L4V-K7-ViR"/>
@@ -478,7 +532,7 @@
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-UV-wH8">
                                         <rect key="frame" x="0.0" y="163" width="414" height="558"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellResult" textLabel="YID-J9-WVe" detailTextLabel="7bw-OE-pkb" style="IBUITableViewCellStyleSubtitle" id="N3z-Nk-bSt">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
@@ -488,7 +542,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YID-J9-WVe">
-                                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                            <rect key="frame" x="20" y="10" width="33" height="20.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -511,7 +565,7 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="hrj-9R-S1f" firstAttribute="leading" secondItem="VS4-R0-FGk" secondAttribute="leading" constant="26" id="4FW-zm-ogc"/>
                                     <constraint firstItem="Qh3-UV-wH8" firstAttribute="top" secondItem="HYR-i4-2lQ" secondAttribute="bottom" constant="30" id="8N1-d7-8lk"/>
@@ -527,7 +581,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="u6y-cL-Gh1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VS4-R0-FGk" firstAttribute="height" secondItem="oxT-QO-9Rg" secondAttribute="height" multiplier="0.8" id="8UW-UB-K8H"/>
                             <constraint firstItem="VS4-R0-FGk" firstAttribute="top" secondItem="oxT-QO-9Rg" secondAttribute="bottom" symbolic="YES" id="CgL-rj-y02"/>
@@ -540,10 +595,9 @@
                             <constraint firstItem="vTS-zO-p04" firstAttribute="trailing" secondItem="Qe4-a4-5kQ" secondAttribute="trailing" constant="-8" id="oNj-py-215"/>
                             <constraint firstItem="VS4-R0-FGk" firstAttribute="trailing" secondItem="u6y-cL-Gh1" secondAttribute="trailing" id="sXS-1W-5mj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="u6y-cL-Gh1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="rosette" catalog="system" selectedImage="mappin.and.ellipse" id="RAD-Ws-I4W">
-                        <color key="badgeColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemGreenColor"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="sEa-rQ-tza"/>
                     <connections>
@@ -567,67 +621,103 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HH2-Uq-kzd">
-                                <rect key="frame" x="20" y="244" width="374" height="469"/>
+                                <rect key="frame" x="20" y="274" width="374" height="439"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vP7-Tj-sGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="53"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="@dada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii7-PO-Zho">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="53"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii7-PO-Zho">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="48"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="@dada">
+                                                        <attributes>
+                                                            <font key="NSFont" size="20" name="SFPro-Thin"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1p-yN-SnK">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="53"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                                <state key="normal" title="Edit profile"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o1p-yN-SnK">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="48"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Edit profile">
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name="SFProDisplay-Thin"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
                                                 <connections>
                                                     <segue destination="7JD-FR-9kr" kind="show" id="GPg-zg-EzO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arW-dk-YYJ">
-                                        <rect key="frame" x="0.0" y="63" width="374" height="39"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arW-dk-YYJ">
+                                        <rect key="frame" x="0.0" y="58" width="374" height="35"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="35 points">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="SFProDisplay-Semibold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your recycling stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5J-N2-1fw">
-                                        <rect key="frame" x="0.0" y="112" width="374" height="47"/>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5J-N2-1fw">
+                                        <rect key="frame" x="0.0" y="103" width="374" height="26"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Your recycling stats">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="SFPro-Thin"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="fTp-SV-Ttu">
-                                        <rect key="frame" x="0.0" y="169" width="374" height="220"/>
+                                        <rect key="frame" x="0.0" y="139" width="374" height="220"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="220" id="9A8-EW-pmB"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1D-5f-pOE">
-                                        <rect key="frame" x="0.0" y="399" width="374" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1D-5f-pOE">
+                                        <rect key="frame" x="0.0" y="369" width="374" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="S1v-Hf-yPd"/>
                                         </constraints>
-                                        <state key="normal" title="Log out">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Log out">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="15" name="SFPro-Semibold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <action selector="logOutButton:" destination="RP3-sm-2Aa" eventType="touchUpInside" id="Y35-6c-pUt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-FU-XeZ">
-                                        <rect key="frame" x="0.0" y="439" width="374" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-FU-XeZ">
+                                        <rect key="frame" x="0.0" y="409" width="374" height="30"/>
                                         <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="60A-26-do7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                        <state key="normal" title="Save changes">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Save changes">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="17" name="SFPro-Semibold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <action selector="saveChangesButton:" destination="RP3-sm-2Aa" eventType="touchUpInside" id="cO3-Fo-QdY"/>
@@ -646,7 +736,8 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pJM-4J-1Mo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7GL-Yz-T4t" firstAttribute="top" secondItem="pJM-4J-1Mo" secondAttribute="top" constant="100" id="50j-a3-IQf"/>
                             <constraint firstItem="ZEs-6r-ij6" firstAttribute="leading" secondItem="pJM-4J-1Mo" secondAttribute="leading" id="FK0-3O-Tbx"/>
@@ -658,12 +749,11 @@
                             <constraint firstItem="ZEs-6r-ij6" firstAttribute="top" secondItem="pJM-4J-1Mo" secondAttribute="top" id="pSv-Sw-huf"/>
                             <constraint firstItem="pJM-4J-1Mo" firstAttribute="trailing" secondItem="ZEs-6r-ij6" secondAttribute="trailing" id="v4H-XL-eie"/>
                             <constraint firstItem="pJM-4J-1Mo" firstAttribute="bottom" secondItem="7GL-Yz-T4t" secondAttribute="bottom" constant="550" id="wma-hI-qK6"/>
-                            <constraint firstItem="HH2-Uq-kzd" firstAttribute="top" secondItem="ZEs-6r-ij6" secondAttribute="bottom" constant="50" id="yV4-zQ-hcJ"/>
+                            <constraint firstItem="HH2-Uq-kzd" firstAttribute="top" secondItem="ZEs-6r-ij6" secondAttribute="bottom" constant="80" id="yV4-zQ-hcJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pJM-4J-1Mo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" selectedImage="person.circle" id="Y8x-nu-C4y">
-                        <color key="badgeColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="badgeColor" systemColor="tertiarySystemBackgroundColor"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title=" " prompt=" " id="Nut-hr-On5">
                         <barButtonItem key="backBarButtonItem" title=" " id="bGL-cp-ca5"/>
@@ -730,11 +820,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-0c-0d1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-0c-0d1">
                                         <rect key="frame" x="0.0" y="264" width="394" height="34"/>
                                         <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Apply changes">
-                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <connections>
                                             <action selector="applyChangesButton:" destination="7JD-FR-9kr" eventType="touchUpInside" id="tIJ-67-i0x"/>
@@ -743,7 +833,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lBx-MC-QHt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VXE-p9-4j6" firstAttribute="leading" secondItem="lBx-MC-QHt" secondAttribute="leading" id="1aj-YW-rgH"/>
                             <constraint firstItem="lBx-MC-QHt" firstAttribute="bottom" secondItem="mhn-Va-LBf" secondAttribute="bottom" constant="570" id="6MX-5j-9B2"/>
@@ -758,7 +849,6 @@
                             <constraint firstItem="mhn-Va-LBf" firstAttribute="top" secondItem="lBx-MC-QHt" secondAttribute="top" constant="76" id="kxk-hW-bsD"/>
                             <constraint firstItem="mhn-Va-LBf" firstAttribute="leading" secondItem="lBx-MC-QHt" secondAttribute="leading" constant="120" id="pMy-rD-Dai"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lBx-MC-QHt"/>
                     </view>
                     <navigationItem key="navigationItem" id="hcZ-CS-q9b"/>
                     <connections>
@@ -780,7 +870,7 @@
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="lHI-nv-TDF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="pDW-gl-GXm" kind="relationship" relationship="viewControllers" id="gI3-cg-eip"/>
@@ -821,22 +911,34 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aa" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-rt-yw0">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="148.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-cb-f4h">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-cb-f4h">
                                                     <rect key="frame" x="0.0" y="156.5" width="150" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.5" id="B08-2i-Bz9"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Offer Name">
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name="SFProDisplay-Semibold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-Vq-o4W">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-Vq-o4W">
                                                     <rect key="frame" x="0.0" y="177.5" width="150" height="14.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14.5" id="Sab-Xx-sCK"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Market">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="SFProDisplay-Light"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -853,7 +955,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="7Oa-rt-yw0" secondAttribute="trailing" id="s7T-Ns-T25"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <size key="customSize" width="150" height="200"/>
                                         <connections>
                                             <outlet property="cellImage" destination="7Oa-rt-yw0" id="pSV-ef-Opk"/>
@@ -865,17 +967,17 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pBQ-hF-RrD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="w82-Pz-Jqh" firstAttribute="leading" secondItem="pBQ-hF-RrD" secondAttribute="leading" id="JG7-Fd-N15"/>
                             <constraint firstItem="pBQ-hF-RrD" firstAttribute="bottom" secondItem="w82-Pz-Jqh" secondAttribute="bottom" id="Vlq-f5-PdC"/>
                             <constraint firstItem="pBQ-hF-RrD" firstAttribute="trailing" secondItem="w82-Pz-Jqh" secondAttribute="trailing" id="qsM-bm-ft8"/>
                             <constraint firstItem="w82-Pz-Jqh" firstAttribute="top" secondItem="pBQ-hF-RrD" secondAttribute="top" id="re5-i2-6bs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pBQ-hF-RrD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Offer" image="circle.grid.hex" catalog="system" selectedImage="circle.grid.2x2" id="TG2-AM-KpM">
-                        <color key="badgeColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="badgeColor" systemColor="systemBackgroundColor"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Offers" largeTitleDisplayMode="always" id="cmU-V8-faa"/>
                     <connections>
@@ -895,32 +997,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dMq-64-eJ5">
-                                <rect key="frame" x="10" y="100" width="394" height="558"/>
+                                <rect key="frame" x="10" y="100" width="394" height="608"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="log" translatesAutoresizingMaskIntoConstraints="NO" id="i8T-dB-vuo">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="357"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="413.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tomates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-I5-ju4">
-                                        <rect key="frame" x="0.0" y="367" width="158.5" height="48"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <rect key="frame" x="0.0" y="423.5" width="151.5" height="47"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-hn-0Bh">
-                                        <rect key="frame" x="0.0" y="425" width="394" height="93"/>
-                                        <string key="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem </string>
-                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQk-hn-0Bh">
+                                        <rect key="frame" x="0.0" y="480.5" width="394" height="87.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem </string>
+                                                <attributes>
+                                                    <font key="NSFont" size="15" name="SFPro-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmB-gl-VTq">
-                                        <rect key="frame" x="0.0" y="528" width="144" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmB-gl-VTq">
+                                        <rect key="frame" x="0.0" y="578" width="144" height="30"/>
                                         <color key="backgroundColor" red="0.121143979" green="0.32929889899999998" blue="0.0" alpha="0.83546985039999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="wbh-ry-uBI"/>
                                         </constraints>
-                                        <state key="normal" title="Buy Offer">
-                                            <color key="titleColor" red="0.9375793147" green="0.9375793147" blue="0.9375793147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Buy Offer">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.9375793147" green="0.9375793147" blue="0.9375793147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="17" name="SFProDisplay-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <action selector="buyButton:" destination="m5B-0r-4N8" eventType="touchUpInside" id="fOX-ED-MSZ"/>
@@ -934,17 +1049,18 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mtr-U1-4tJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dMq-64-eJ5" firstAttribute="leading" secondItem="mtr-U1-4tJ" secondAttribute="leading" constant="10" id="9XO-UE-0c8"/>
                             <constraint firstItem="mtr-U1-4tJ" firstAttribute="trailing" secondItem="dMq-64-eJ5" secondAttribute="trailing" constant="10" id="AYI-fa-y2B"/>
-                            <constraint firstItem="mtr-U1-4tJ" firstAttribute="bottom" secondItem="dMq-64-eJ5" secondAttribute="bottom" constant="150" id="doq-Ej-jBN"/>
+                            <constraint firstItem="mtr-U1-4tJ" firstAttribute="bottom" secondItem="dMq-64-eJ5" secondAttribute="bottom" constant="100" id="doq-Ej-jBN"/>
                             <constraint firstItem="dMq-64-eJ5" firstAttribute="top" secondItem="mtr-U1-4tJ" secondAttribute="top" constant="100" id="rP0-il-6pU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mtr-U1-4tJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="hOg-Zi-mYs"/>
                     <connections>
+                        <outlet property="buyButtonStyle" destination="xmB-gl-VTq" id="5Af-VV-bCL"/>
                         <outlet property="imageOffer" destination="i8T-dB-vuo" id="kE6-xe-FWP"/>
                         <outlet property="labelOfferDes" destination="PQk-hn-0Bh" id="gyD-6c-VD3"/>
                         <outlet property="labelOfferName" destination="yr9-I5-ju4" id="J9W-YC-8Y3"/>
@@ -966,15 +1082,39 @@
         <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
         <image name="contenedor-de-basura" width="512" height="512"/>
         <image name="graph" width="118.5" height="106"/>
-        <image name="location" catalog="system" width="128" height="115"/>
+        <image name="location" catalog="system" width="128" height="121"/>
         <image name="log" width="800" height="600"/>
-        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="profileface" width="1640" height="1250"/>
-        <image name="rosette" catalog="system" width="100" height="128"/>
+        <image name="rosette" catalog="system" width="106" height="128"/>
         <image name="supermercado" width="512" height="512"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tableCellGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

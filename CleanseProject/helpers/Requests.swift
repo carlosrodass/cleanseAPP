@@ -50,6 +50,19 @@ static let shared = Request()
                           parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers)
     }
     
+    func getOffers(parameters:[String:String])-> DataRequest{
+        
+        let headers:HTTPHeaders = [
+            "Accept":"application/json",
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+        ]
+        
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.getOffers, method: .get, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers, interceptor:nil).response { response in
+            debugPrint(response)
+        }
+    }
+    
+    
     /**
     * funcion de tradeo ofertas
     * Params : [String]
@@ -61,7 +74,7 @@ static let shared = Request()
             "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
         ]
         
-        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.buy, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers, interceptor:nil).response { response in
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.buyOffer, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers, interceptor:nil).response { response in
             debugPrint(response)
         }
         
