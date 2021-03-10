@@ -9,7 +9,7 @@ class Userr: Encodable, Decodable {
     private var _username:String
     private var _password:String?
     private var _confirmpasswor:String?
-    private var _puntos:String?
+    private var _puntos:Int?
     
     enum CodingKeys:String, CodingKey {
  
@@ -20,7 +20,7 @@ class Userr: Encodable, Decodable {
         case _puntos = "points"
     }
     
-    init(username:String, email:String,  password:String , confirmpassword:String, puntos:String){
+    init(username:String, email:String,  password:String , confirmpassword:String, puntos:Int){
         
         self._username = username
         self._email = email
@@ -49,9 +49,9 @@ class Userr: Encodable, Decodable {
         }
     }
     
-    public var puntos: String{
+    public var puntos: Int{
         get{
-            return self._puntos ?? "0"
+            return self._puntos ?? 0
         }
     }
      

@@ -46,29 +46,27 @@ class OffersViewController: UIViewController {
     
     
     func fillOffer()->Array<Offer>{
-        ///Request y rellenar el array con los datos de la request
-        let userToken:String = UserDefaults.standard.string(forKey: "token")!
-        print("token guardado \(userToken)")
-
-        let parameters : [String:String] = [
-
-            "token" : userToken
-        ]
-
-
-        let request = Request.shared.getOffers(parameters: parameters)
-        print(userToken)
+ 
+        let request = Request.shared.getOffers()
         request.response(completionHandler: { (response) in
 
             guard let data = response.data else {return}
             do{
-//                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
-//                print(self.dataUser?.username)
-//                self.userNameProfile.text = self.dataUser?.username
-//                self.pointsProfile.text = self.dataUser?.puntos
+//                self.dataUser = try JSONDecoder().decode(Offer.self, from: data)
+                ///añadir datos al array
+//                let offers : [Offer] = [Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Mercadona", market: "Sal",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Carrefour", market: "Albaricoque",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Carrefour", market: "Manzanas",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Mercadona", market: "Cereza",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Lidl", market: "Platano",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
+//                                        Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5)]
+//                return offers
                 debugPrint(data)
             }catch{
-                print("estoy aqui")
+                print("estoy aqui == \(error)")
             }
         })
         

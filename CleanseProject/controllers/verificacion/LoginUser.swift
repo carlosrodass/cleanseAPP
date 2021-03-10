@@ -10,6 +10,7 @@ class LoginUser: UIViewController {
         super.viewDidLoad()
         roundButton()
 
+       
     }
     
     @IBAction func EnviarLogin(_ sender: Any) {
@@ -17,7 +18,7 @@ class LoginUser: UIViewController {
         let emailField = email.text
         let pass = password.text
         
-        //Comprobacion de campos
+        //Comprobacion de campo
         if(emailField!.isEmpty || pass!.isEmpty){
             
             let alert = UIAlertController(title: "fields empty ", message: "Some field is empty", preferredStyle: .alert)
@@ -38,12 +39,15 @@ class LoginUser: UIViewController {
         
         Request.shared.login(parameters: parametros).responseJSON{ response in
             
-            let token = response.value
-            let def = UserDefaults.standard
-            def.setValue(token, forKey: "token")
+            let token = response.value as! [String:String]//accediendo al valor token: "94290rsewqrw"
+            
+            UserDefaults.standard.set(token["token"], forKey: "token")
+            
+            debugPrint(UserDefaults.standard.set(token["token"], forKey: "token"))
             
            
-            debugPrint("la respuesta es \(def)")
+           
+            
     }
 
    }

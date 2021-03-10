@@ -13,12 +13,23 @@ class Endpoints {
     static let shared = Endpoints()
     
     let baseURL = "http://localhost:8888/API-cleanse/public/api/"
+    
+    ///verificacion
     let login:String = "login"
     let register:String = "register"
-    let getProfile:String = "user"
+    ///Perfil
+    let getProfile:String = "users/profile"
+    let updateProfile:String = "users/update/{id}"
+    ///Ofertas
     let buyOffer:String = "offers/trade"
     let getOffers:String = "offers/all"
-    let getContainer:String = "/show/{street_name}"
+    ///contenedores
+    let trade:String = "containers/show/{userId}/{containerId}"
+    let allContainers:String = "containers/all"
+    let oneContainer:String = "containers/show/{street_name}"
+   
+
+ 
     
     
     

@@ -43,21 +43,23 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+          "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+            
         ]
         
-        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.getProfile, headers: headers).responseJSON { response in
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.getProfile, method: .get,headers: headers).responseJSON { response in
+            
         }
     }
     
-    func getOffers(parameters:[String:String])-> DataRequest{
+    func getOffers()-> DataRequest{
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
             "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
         ]
         
-        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.getOffers, method: .get, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers, interceptor:nil).response { response in
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.getOffers, method: .get, headers: headers).response { response in
             debugPrint(response)
         }
     }

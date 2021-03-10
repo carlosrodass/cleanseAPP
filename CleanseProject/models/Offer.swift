@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-class Offer{
+class Offer:  Encodable, Decodable{
     
     public var _image:UIImage
     private var _offer:String
@@ -27,9 +27,9 @@ class Offer{
         self._stock = stock
     }
     
-//    required init(from decoder: Decoder) throws {
-//        <#code#>
-//    }
+    required init(from decoder: Decoder) throws {
+        <#code#>
+    }
   
     
     ///comprar ofertas
@@ -90,3 +90,4 @@ class Offer{
     
     
 }
+

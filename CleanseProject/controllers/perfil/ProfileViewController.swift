@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import Alamofire
 
 class ProfileViewController: UIViewController {
     var dataUser:Userr?
@@ -34,8 +35,21 @@ class ProfileViewController: UIViewController {
         
 
         let request = Request.shared.InfoUser()
-        print(request.data)
-        
+     
+        request.response(completionHandler: { (response) in
+            debugPrint(response)
+            
+            guard let data = response.data else{return}
+            
+            do{
+                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
+                self.userNameProfile.text = self.dataUser?.username
+                self.pointsProfile.text = String(self.dataUser!.puntos)
+              
+            }catch{
+                print("error == \(error)")
+            }
+        })
         
         
     }
