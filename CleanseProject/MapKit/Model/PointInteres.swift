@@ -8,23 +8,36 @@
 
 import MapKit
 
-enum POIntType : String {
-    case Contenedores, SuperMercado
-    
+enum POIType: String {
+    case puntolimpio, supermercado, pin
 }
 
-class PointInteres: NSObject,MKAnnotation {
+class POI: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     let title: String?
     let subtitle: String?
-    let poiType: POIntType
+    let poiType: POIType
     
-    init(title: String, direccion: String, coordinate: CLLocationCoordinate2D, poiType: POIntType) {
+    var tintColor: UIColor {
+        switch poiType {
+        case .puntolimpio:
+            return .orange
+            
+        case .supermercado:
+            return .init(red: 51/255, green: 131/255, blue: 51/255, alpha: 1.0)
+            
+        case .pin:
+            return .red
+        }
+    }
+    
+    init(title: String, address: String, coordinate: CLLocationCoordinate2D, poiType: POIType) {
         self.title = title
-        self.subtitle = direccion
+        self.subtitle = address
         self.coordinate = coordinate
         self.poiType = poiType
         
         super.init()
     }
 }
+

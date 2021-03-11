@@ -20,11 +20,15 @@
 		1FEB029725F0086600C0DA9B /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB029625F0086600C0DA9B /* Offer.swift */; };
 		7F06C1AE25D6B0B700AC5417 /* Userr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AD25D6B0B700AC5417 /* Userr.swift */; };
 		7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */; };
+		7F0E92AF25FA459D00FB545B /* POIAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E92AE25FA459D00FB545B /* POIAnnotationView.swift */; };
+		7F0E92B125FA45C400FB545B /* POIMarketAnnotationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E92B025FA45C400FB545B /* POIMarketAnnotationsView.swift */; };
+		7F0E92B325FA45F300FB545B /* POIClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E92B225FA45F300FB545B /* POIClusterAnnotationView.swift */; };
+		7F0E92B525FA461400FB545B /* RouteAdvisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E92B425FA461400FB545B /* RouteAdvisor.swift */; };
+		7F0E92B725FA46E700FB545B /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E92B625FA46E700FB545B /* SearchService.swift */; };
 		E73487D525E9DF1D002C2B8B /* MapKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73487D425E9DF1D002C2B8B /* MapKitController.swift */; };
 		E74F1DED25C9718A00527677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74F1DEC25C9718A00527677 /* Main.storyboard */; };
 		E758494425EE5D7D00F4921A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758494325EE5D7D00F4921A /* MapViewController.swift */; };
 		E759EDD325EE916A00FBA2D5 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759EDD225EE916A00FBA2D5 /* LocationService.swift */; };
-		E77A6E5025EF2E2F0077FB74 /* BuscarServicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A6E4F25EF2E2F0077FB74 /* BuscarServicio.swift */; };
 		E77A6E5325EF31B30077FB74 /* PointInteres.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A6E5225EF31B30077FB74 /* PointInteres.swift */; };
 		E77A6E5625EF45440077FB74 /* MKPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A6E5525EF45440077FB74 /* MKPlacemark.swift */; };
 		E791A73A25C87EB700108B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791A73925C87EB700108B89 /* AppDelegate.swift */; };
@@ -70,12 +74,16 @@
 		5997B8C3467D23FF196C9BFE /* Pods_CleanseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F06C1AD25D6B0B700AC5417 /* Userr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Userr.swift; path = ../controllers/Userr.swift; sourceTree = "<group>"; };
 		7F06C1AF25D6B0E500AC5417 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
+		7F0E92AE25FA459D00FB545B /* POIAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIAnnotationView.swift; sourceTree = "<group>"; };
+		7F0E92B025FA45C400FB545B /* POIMarketAnnotationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIMarketAnnotationsView.swift; sourceTree = "<group>"; };
+		7F0E92B225FA45F300FB545B /* POIClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIClusterAnnotationView.swift; sourceTree = "<group>"; };
+		7F0E92B425FA461400FB545B /* RouteAdvisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAdvisor.swift; sourceTree = "<group>"; };
+		7F0E92B625FA46E700FB545B /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		82AE062F44ED4FE611C7E29D /* Pods-CleanseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanseProject.release.xcconfig"; path = "Target Support Files/Pods-CleanseProject/Pods-CleanseProject.release.xcconfig"; sourceTree = "<group>"; };
 		E73487D425E9DF1D002C2B8B /* MapKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitController.swift; sourceTree = "<group>"; };
 		E74F1DEC25C9718A00527677 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E758494325EE5D7D00F4921A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E759EDD225EE916A00FBA2D5 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		E77A6E4F25EF2E2F0077FB74 /* BuscarServicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarServicio.swift; sourceTree = "<group>"; };
 		E77A6E5225EF31B30077FB74 /* PointInteres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInteres.swift; sourceTree = "<group>"; };
 		E77A6E5525EF45440077FB74 /* MKPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlacemark.swift; sourceTree = "<group>"; };
 		E791A73625C87EB700108B89 /* CleanseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				E759EDD225EE916A00FBA2D5 /* LocationService.swift */,
-				E77A6E4F25EF2E2F0077FB74 /* BuscarServicio.swift */,
+				7F0E92B625FA46E700FB545B /* SearchService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -183,6 +191,10 @@
 			isa = PBXGroup;
 			children = (
 				E77A6E5225EF31B30077FB74 /* PointInteres.swift */,
+				7F0E92AE25FA459D00FB545B /* POIAnnotationView.swift */,
+				7F0E92B025FA45C400FB545B /* POIMarketAnnotationsView.swift */,
+				7F0E92B225FA45F300FB545B /* POIClusterAnnotationView.swift */,
+				7F0E92B425FA461400FB545B /* RouteAdvisor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0E92AF25FA459D00FB545B /* POIAnnotationView.swift in Sources */,
 				1FEB029725F0086600C0DA9B /* Offer.swift in Sources */,
 				E77A6E5625EF45440077FB74 /* MKPlacemark.swift in Sources */,
 				E791A77F25C8A9F500108B89 /* TutorialViewController.swift in Sources */,
@@ -428,17 +441,20 @@
 				1FA72DB725F02BE7008BBAC7 /* BuyOfferViewController.swift in Sources */,
 				E7EDF1A225D40AFF00CCC61A /* Requests.swift in Sources */,
 				E791A73A25C87EB700108B89 /* AppDelegate.swift in Sources */,
+				7F0E92B325FA45F300FB545B /* POIClusterAnnotationView.swift in Sources */,
+				7F0E92B125FA45C400FB545B /* POIMarketAnnotationsView.swift in Sources */,
 				1FE2AACD25DC2ECD00657D0B /* EditProfileViewController.swift in Sources */,
 				1FE2AAD125DC36EB00657D0B /* OffersViewController.swift in Sources */,
 				E791A77625C888E900108B89 /* BienvenidoCleanse.swift in Sources */,
 				7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */,
-				E77A6E5025EF2E2F0077FB74 /* BuscarServicio.swift in Sources */,
+				7F0E92B525FA461400FB545B /* RouteAdvisor.swift in Sources */,
 				E73487D525E9DF1D002C2B8B /* MapKitController.swift in Sources */,
 				E7EDF1B625D4474900CCC61A /* LoginUser.swift in Sources */,
 				1F21992B25D8A5900036EA1F /* ProfileViewController.swift in Sources */,
 				E758494425EE5D7D00F4921A /* MapViewController.swift in Sources */,
 				E7EBF3A825EF00000064A691 /* MapView.swift in Sources */,
 				E7EDF1AE25D42EBC00CCC61A /* EndPoints.swift in Sources */,
+				7F0E92B725FA46E700FB545B /* SearchService.swift in Sources */,
 				E759EDD325EE916A00FBA2D5 /* LocationService.swift in Sources */,
 				E791A73C25C87EB700108B89 /* SceneDelegate.swift in Sources */,
 			);

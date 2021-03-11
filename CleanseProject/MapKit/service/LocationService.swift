@@ -9,15 +9,14 @@
 import CoreLocation
 
 protocol LocationServiceDelegate: class {
-    func authorizationDefined()
+    func authorizationDenied()
     func setMapRegion(center: CLLocation)
-    
 }
 
 class LocationService: NSObject {
     var locationManager = CLLocationManager()
-    
     weak var delegate: LocationServiceDelegate?
+    
     override init() {
         super.init()
         
@@ -25,40 +24,38 @@ class LocationService: NSObject {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-    private func checkAuthorizationStatus(){
+    private func checkAuthorizationStatus() {
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
             
         case .denied:
-            delegate?.authorizationDefined()
+            delegate?.authorizationDenied()
+            
         case .authorizedAlways, .authorizedWhenInUse:
-            startUpdateingLocation()
+            startUpdatingLocation()
+            
         default:
             break
         }
     }
     
-    private func startUpdateingLocation(){
+    private func startUpdatingLocation() {
         locationManager.startUpdatingLocation()
     }
 }
 
-extension LocationService : CLLocationManagerDelegate{
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status : CLAuthorizationStatus) {
+
+extension LocationService: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkAuthorizationStatus()
     }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
-        if let location = locations.last{
+        
+        if let location = locations.last {
             delegate?.setMapRegion(center: location)
         }
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    
 }

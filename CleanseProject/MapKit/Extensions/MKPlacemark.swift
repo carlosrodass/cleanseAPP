@@ -8,27 +8,24 @@
 
 import MapKit
 
-extension MKPlacemark{
-    var formattedAddress: String?{
+extension MKPlacemark {
+    var formattedAddress: String? {
         guard
-            let numeroCalle = subThoroughfare,
-            let nombreCalle = thoroughfare,
-            let ciudad = locality,
-            let estacion = administrativeArea,
-            let codigopostal = postalCode
-        else{
-            if let titulo = title{
+            let streetNumber = subThoroughfare,
+            let streetName = thoroughfare,
+            let city = locality,
+            let state = administrativeArea,
+            let zip = postalCode
+        else {
+            if let title = title {
                 return "\(title)"
             }
-            else{
+            else {
                 return nil
             }
-            
         }
         
-        let direccion = "\(numeroCalle) \(nombreCalle), \(ciudad),\(estacion)\(codigopostal)"
-        
-        return direccion
-        
+        let address = "\(streetNumber) \(streetName), \(city), \(state) \(zip)"
+        return address
     }
 }
