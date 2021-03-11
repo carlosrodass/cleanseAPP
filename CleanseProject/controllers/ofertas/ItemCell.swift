@@ -1,11 +1,3 @@
-//
-//  ItemCell.swift
-//  CleanseProject
-//
-//  Created by user177278 on 3/3/21.
-//  Copyright © 2021 user176688. All rights reserved.
-//
-
 import UIKit
 
 class ItemCell: UICollectionViewCell {
@@ -16,19 +8,11 @@ class ItemCell: UICollectionViewCell {
     
     //Object
     func setData(with offer : Offer){
-        cellImage.image = offer._image
+        cellImage.image = UIImage(named: offer.gsImage)
         cellLabel.text = offer.gsMarket
         cellOfferLabel.text = offer.gsOfferName
     }
-    
-      //Arrays
-//    func setArr(imagen : UIImage, market : String, offer : String){
-//        cellImage.image = imagen
-//        self.cellLabel.text = market
-//        self.cellOfferLabel.text = offer
-//
-//    }
-    
+
 
     public func setupCell() {
             

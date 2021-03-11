@@ -1,9 +1,9 @@
 import UIKit
 import Foundation
 
-class Offer:  Encodable, Decodable{
+class Offer: Encodable, Decodable{
     
-    public var _image:UIImage
+    private var _image:String
     private var _offer:String
     private var _market: String
     private var _points: Int
@@ -11,6 +11,7 @@ class Offer:  Encodable, Decodable{
     
     
     enum CodingKeys:String, CodingKey {
+        case _image = "image"
         case _offer = "offer"
         case _market = "market"
         case _points = "points"
@@ -18,20 +19,14 @@ class Offer:  Encodable, Decodable{
     }
     
 
-    init( image:UIImage,offer:String, market:String, points:Int, stock:Int){
-        
+    init(image:String,offer:String, market:String, points:Int, stock:Int){
         self._image = image
         self._offer = offer
         self._market = market
         self._points = points
         self._stock = stock
     }
-    
-    required init(from decoder: Decoder) throws {
-        <#code#>
-    }
-  
-    
+
     ///comprar ofertas
     public func buyOffer()->[String:Any]{
         return["offer":_offer, "market":_market, "points":_points]
@@ -39,6 +34,15 @@ class Offer:  Encodable, Decodable{
     ///Ver todas los datos de las ofertas
     public func getOffers()->[String:Any]{
         return["offer":_offer, "market":_market, "points":_points, "stock":_stock]
+    }
+    
+    var gsImage:String{
+        get{
+            return self._image
+        }
+        set(newImage){
+            self._image = newImage
+        }
     }
     
      var gsOfferName:String{

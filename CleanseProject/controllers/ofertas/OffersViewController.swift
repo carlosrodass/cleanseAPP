@@ -5,18 +5,7 @@ class OffersViewController: UIViewController {
         
     @IBOutlet weak var MyCollectionView: UICollectionView!
     
-    
-//    let offers : [Offer] = [Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Mercadona", market: "Sal",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Carrefour", market: "Albaricoque",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Carrefour", market: "Manzanas",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Mercadona", market: "Cereza",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Lidl", market: "Platano",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
-//                            Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5)]
-    
- 
+    let offers : [Offer] = [Offer.init(image: "ff", offer: "Lidl", market: "Manzanas",points: 10, stock: 5)]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,53 +22,24 @@ class OffersViewController: UIViewController {
         ///register
         self.MyCollectionView?.register(HeaderCollectionReusableView.self,
                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.indentifier)
-        
-//        offerRequest()
-        fillOffer() ///Desde aqui se inicializa la peticion
+        ///Request
+        let request = Request.shared.getOffers()
+         request.response(completionHandler: { (response) in
+
+             guard let data = response.data else {return}
+             do{
+                 debugPrint(data)
+                 
+             }catch{
+                 print("estoy aqui == \(error)")
+             }
+         })
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-    }
-    
-    
-    func fillOffer()->Array<Offer>{
- 
-        let request = Request.shared.getOffers()
-        request.response(completionHandler: { (response) in
-
-            guard let data = response.data else {return}
-            do{
-//                self.dataUser = try JSONDecoder().decode(Offer.self, from: data)
-                ///añadir datos al array
-//                let offers : [Offer] = [Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Mercadona", market: "Sal",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Carrefour", market: "Albaricoque",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Carrefour", market: "Manzanas",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Mercadona", market: "Cereza",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Lidl", market: "Platano",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
-//                                        Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5)]
-//                return offers
-                debugPrint(data)
-            }catch{
-                print("estoy aqui == \(error)")
-            }
-        })
-        
-        let offers : [Offer] = [Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Mercadona", market: "Sal",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Carrefour", market: "Albaricoque",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Carrefour", market: "Manzanas",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "cc"), offer: "Mercadona", market: "Cereza",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "pp"), offer: "Lidl", market: "Platano",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "aa"), offer: "Eroski", market: "Aguacate",points: 10, stock: 5),
-                                Offer.init(image: #imageLiteral(resourceName: "mm"), offer: "Lidl", market: "Manzanas",points: 10, stock: 5)]
-        return offers
     }
     
     ///Header
@@ -102,16 +62,17 @@ extension OffersViewController: UICollectionViewDataSource{
     ///Numero de celdas a mostrar
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        let ofertas = fillOffer()
-        return ofertas.count
+//        let ofertas = fillOffer()
+        return offers.count
     }
     
     ///Añadiendo datos en cada una de las celdas
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = MyCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        let ofertas = fillOffer()
-        cell.setData(with: ofertas[indexPath.row])
+
+        cell.setData(with: offers[indexPath.row])
         
+        //        let ofertas = fillOffer()
 ///        cell.setArr(imagen: self.offerImage[indexPath.row], market: self.offerMarket[indexPath.row], offer: self.offerName[indexPath.row])
         
         cell.setupCell()
@@ -142,8 +103,8 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let vc = segue.destination as! BuyOfferViewController
             let cell = sender as! ItemCell
             let indexPath = MyCollectionView.indexPath(for: cell)
-            let ofertas = fillOffer()
-            let offer = ofertas[indexPath!.row]
+//            let ofertas = fillOffer()
+            let offer = offers[indexPath!.row]
             vc.offer = offer.self
             
             print("Objeto:  \(vc.offer = offer)")
