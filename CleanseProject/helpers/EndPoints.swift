@@ -27,6 +27,8 @@ class Endpoints {
     let trade:String = "containers/show/{userId}/{containerId}"
     let allContainers:String = "containers/all"
     let oneContainer:String = "containers/show/{street_name}"
+    ///Ofertas compradas
+    let buyedOffers:String = "buyed/all/{id}"
    
 
  

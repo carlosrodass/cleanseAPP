@@ -81,6 +81,19 @@ static let shared = Request()
         }
         
     }
+    
+    
+    func getOfferBuyed()-> DataRequest{
+        
+        let headers:HTTPHeaders = [
+            "Accept":"application/json",
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+        ]
+        
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.buyedOffers, method: .get, headers: headers).response { response in
+            debugPrint(response)
+        }
+    }
   
  
 

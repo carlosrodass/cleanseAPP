@@ -8,6 +8,7 @@ class Offer: Encodable, Decodable{
     private var _market: String
     private var _points: Int
     private var _stock: Int
+    private var _offerId: Int
     
     
     enum CodingKeys:String, CodingKey {
@@ -16,15 +17,17 @@ class Offer: Encodable, Decodable{
         case _market = "market"
         case _points = "points"
         case _stock = "stock"
+        case _offerId = "offerId"
     }
     
 
-    init(image:String,offer:String, market:String, points:Int, stock:Int){
+    init(image:String,offer:String, market:String, points:Int, stock:Int, offerId:Int){
         self._image = image
         self._offer = offer
         self._market = market
         self._points = points
         self._stock = stock
+        self._offerId = offerId
     }
 
     ///comprar ofertas
@@ -42,6 +45,15 @@ class Offer: Encodable, Decodable{
         }
         set(newImage){
             self._image = newImage
+        }
+    }
+    
+    var gsOfferId:Int{
+        get{
+            return self._offerId
+        }
+        set(newOfferId){
+            self._offerId = newOfferId
         }
     }
     

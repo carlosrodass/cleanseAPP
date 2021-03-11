@@ -28,20 +28,17 @@ class BuyOfferViewController: UIViewController {
     
     @IBAction func buyButton(_ sender: Any) {
         
-        
         ///Comprobacion previa de los puntos del usuario
         
         
         ///Request enviando nombre de la oferta / supermercado / puntos del usuario
-        let userToken:String = UserDefaults.standard.string(forKey: "token")!
-        print("token de userdefault \(userToken)")
-
         let parameters : [String:String] = [
 
-            "token" : userToken, ///User Id
-            "offer_market" : offer!.gsMarket, ///Market name
+            "user_id" : "userToken", ///User Id
+            "offer_id" : String(offer!.gsOfferId), ///Offer id
+            "market_name" : offer!.gsMarket, ///Market name
             "offer_name" : offer!.gsOfferName,///Offer name
-            "offer_points" : "Aqui mandar ptos del usuario", ///User points
+            "user_points" : "Aqui mandar ptos del usuario", ///User points || Preguntar ¿los guardo en userdefaults y los saco aqui?
             
         ]
 

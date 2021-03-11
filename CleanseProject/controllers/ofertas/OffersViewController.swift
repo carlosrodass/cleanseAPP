@@ -30,6 +30,7 @@ class OffersViewController: UIViewController {
              do{
                 let jobsDataArray = try JSONDecoder().decode([Offer].self, from: data)
                 
+                //Rellenar el array de ofertas con el array de json que viene del servidor
                 print(jobsDataArray)
                 
              }catch{
@@ -63,8 +64,6 @@ extension OffersViewController: UICollectionViewDataSource{
     
     ///Numero de celdas a mostrar
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-//        let ofertas = fillOffer()
         return offers.count
     }
     
@@ -73,10 +72,7 @@ extension OffersViewController: UICollectionViewDataSource{
         let cell = MyCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
 
         cell.setData(with: offers[indexPath.row])
-        
-        //        let ofertas = fillOffer()
-///        cell.setArr(imagen: self.offerImage[indexPath.row], market: self.offerMarket[indexPath.row], offer: self.offerName[indexPath.row])
-        
+                
         cell.setupCell()
         
         return cell
