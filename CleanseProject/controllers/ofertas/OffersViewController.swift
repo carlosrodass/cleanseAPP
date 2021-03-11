@@ -5,7 +5,7 @@ class OffersViewController: UIViewController {
         
     @IBOutlet weak var MyCollectionView: UICollectionView!
     
-    let offers : [Offer] = [Offer.init(image: "ff", offer: "Lidl", market: "Manzanas",points: 10, stock: 5)]
+    var offers : [Offer] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,10 @@ class OffersViewController: UIViewController {
 
              guard let data = response.data else {return}
              do{
-                 debugPrint(data)
-                 
+                let jobsDataArray = try JSONDecoder().decode([Offer].self, from: data)
+                
+                print(jobsDataArray)
+                
              }catch{
                  print("estoy aqui == \(error)")
              }
