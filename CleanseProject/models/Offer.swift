@@ -3,7 +3,7 @@ import Foundation
 
 class Offer: Encodable, Decodable{
     
-    private var _image:String
+//    private var _image:String
     private var _offer:String
     private var _market: String
     private var _points: Int
@@ -12,7 +12,7 @@ class Offer: Encodable, Decodable{
     
     
     enum CodingKeys:String, CodingKey {
-        case _image = "image"
+//        case _image = "image"
         case _offer = "offer"
         case _market = "market"
         case _points = "points"
@@ -21,8 +21,8 @@ class Offer: Encodable, Decodable{
     }
     
 
-    init(image:String,offer:String, market:String, points:Int, stock:Int, offerId:Int){
-        self._image = image
+    init(offer:String, market:String, points:Int, stock:Int, offerId:Int){
+//        self._image = image
         self._offer = offer
         self._market = market
         self._points = points
@@ -39,14 +39,14 @@ class Offer: Encodable, Decodable{
         return["offer":_offer, "market":_market, "points":_points, "stock":_stock]
     }
     
-    var gsImage:String{
-        get{
-            return self._image
-        }
-        set(newImage){
-            self._image = newImage
-        }
-    }
+//    var gsImage:String{
+//        get{
+//            return self._image
+//        }
+//        set(newImage){
+//            self._image = newImage
+//        }
+//    }
     
     var gsOfferId:Int{
         get{

@@ -6,6 +6,9 @@ class OffersViewController: UIViewController {
     @IBOutlet weak var MyCollectionView: UICollectionView!
     
     var offers : [Offer] = []
+        
+//        [Offer.init(image: "ff", offer: "salchichas", market: "lidl", points: 20, stock: 20, offerId: 2),
+//                            Offer.init(image: "ff", offer: "chocolate", market: "marcadona", points: 15, stock: 48, offerId: 1)]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +31,13 @@ class OffersViewController: UIViewController {
 
              guard let data = response.data else {return}
              do{
-                let jobsDataArray = try JSONDecoder().decode([Offer].self, from: data)
-                
+    
                 //Rellenar el array de ofertas con el array de json que viene del servidor
-                print(jobsDataArray)
+                self.offers = try
+                    JSONDecoder().decode([Offer].self, from: data) //Da error porque la resp del serv es dictionary
+                
+                self.MyCollectionView.reloadData()
+                print(self.offers)
                 
              }catch{
                  print("estoy aqui == \(error)")
@@ -72,7 +78,6 @@ extension OffersViewController: UICollectionViewDataSource{
         let cell = MyCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
 
         cell.setData(with: offers[indexPath.row])
-                
         cell.setupCell()
         
         return cell
@@ -105,7 +110,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let offer = offers[indexPath!.row]
             vc.offer = offer.self
             
-            print("Objeto:  \(vc.offer = offer)")
+//            print("Objeto:  \(vc.offer = offer)")
             present(vc, animated: true)
         }
     }

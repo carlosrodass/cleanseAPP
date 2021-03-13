@@ -56,21 +56,21 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         })
         
         ///Request con lista de compras realizadas por el usuario(Nombre del supermercado y puntos gastados)
-//        let requestB = Request.shared.getOfferBuyed()
-//
-//        requestB.response(completionHandler: { (response) in
-//            debugPrint(response)
-//
-//            guard let data = response.data else{return}
-//
-//            do{
-//                //Rellenar array de ofertas compradas
-//                print(data)
-//
-//            }catch{
-//                print("error == \(error)")
-//            }
-//        })
+        let requestB = Request.shared.getOfferBuyed()
+
+        requestB.response(completionHandler: { (response) in
+            debugPrint(response)
+
+            guard let data = response.data else{return}
+
+            do{
+                //Rellenar array de ofertas compradas
+                print(data)
+
+            }catch{
+                print("error == \(error)")
+            }
+        })
         
         arrayOffersBuyed = [Buyed.init(image: "ff", market: "Mercadona", points: 10),
                             Buyed.init(image: "aa", market: "carrefour", points: 10),

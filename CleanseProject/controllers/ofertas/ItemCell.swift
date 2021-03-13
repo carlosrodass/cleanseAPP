@@ -6,9 +6,9 @@ class ItemCell: UICollectionViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var cellOfferLabel: UILabel!
     
-    //Object
+//    //Object
     func setData(with offer : Offer){
-        cellImage.image = UIImage(named: offer.gsImage)
+        cellImage.image = UIImage(named: "ff")
         cellLabel.text = offer.gsMarket
         cellOfferLabel.text = offer.gsOfferName
     }
