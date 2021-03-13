@@ -38,22 +38,22 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         roundButtons()
         
         ///Request con informacion del usuario (ptos y nombre del usuario)
-//        let requestI = Request.shared.InfoUser()
-//
-//        requestI.response(completionHandler: { (response) in
-//            debugPrint(response)
-//
-//            guard let data = response.data else{return}
-//
-//            do{
-//                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
-//                self.userNameProfile.text = self.dataUser?.username
-//                self.pointsProfile.text = String(self.dataUser!.puntos)
-//
-//            }catch{
-//                print("error == \(error)")
-//            }
-//        })
+        let requestI = Request.shared.InfoUser()
+
+        requestI.response(completionHandler: { (response) in
+            debugPrint(response)
+
+            guard let data = response.data else{return}
+
+            do{
+                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
+                self.userNameProfile.text = self.dataUser?.username
+                self.pointsProfile.text = String(self.dataUser!.puntos)
+
+            }catch{
+                print("error == \(error)")
+            }
+        })
         
         ///Request con lista de compras realizadas por el usuario(Nombre del supermercado y puntos gastados)
 //        let requestB = Request.shared.getOfferBuyed()

@@ -12,7 +12,7 @@ class Endpoints {
     private init() {}
     static let shared = Endpoints()
     
-    let baseURL = "http://localhost:8888/API-cleanse/public/api/"
+    let baseURL = "http://100.26.59.63/api/"
     
     ///verificacion
     let login:String = "login"
