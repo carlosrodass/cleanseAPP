@@ -19,16 +19,17 @@ class Endpoints {
     let register:String = "register"
     ///Perfil
     let getProfile:String = "users/profile"
-    let updateProfile:String = "users/update/{id}"
+    let updateProfile:String = "users/update"
+    let logOut:String = "users/logout"
     ///Ofertas
     let buyOffer:String = "offers/trade"
     let getOffers:String = "offers/all"
     ///contenedores
-    let trade:String = "containers/show/{userId}/{containerId}"
-    let allContainers:String = "containers/all"
-    let oneContainer:String = "containers/show/{street_name}"
+    let trade:String = "containers/trade"
+    let showContainers:String = "containers/all"
+    let containerByName:String = "containers/show"
     ///Ofertas compradas
-    let buyedOffers:String = "buyed/all/{id}"
+    let buyedOffers:String = "buyed/show"
    
 
  
