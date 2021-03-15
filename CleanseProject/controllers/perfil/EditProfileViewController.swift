@@ -16,17 +16,34 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var changePassField: UITextField!
     @IBOutlet weak var profileimage: UIImageView!
     
-
-    @IBAction func applyChangesButton(_ sender: Any) {
+    @IBOutlet weak var changeConfirmPasswor: UITextField!
     
+    @IBAction func applyChangesButton(_ sender: Any) {
+        
+    
+        let changeUsername : String = changeUserNameField.text!
+        let changeemail : String = changeEmailField.text!
+        let changePassword : String = changePassField.text!
+        let changeConfirmPass : String = changeConfirmPasswor.text!
+        let parametros : [String: String] = [
+            
+            
+            "username" : changeUsername,
+            "email" : changeemail,
+            "password" : changePassword,
+            "password_confirmation" : changeConfirmPass
+                   
+               ]
+
+        Request.shared.updateProfile(parameters: parametros).responseJSON{response in
+            debugPrint(response)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         roundImage()
-
-        // Do any additional setup after loading the view.
     }
     
     

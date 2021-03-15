@@ -1,35 +1,10 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Lottie
 
-class AppDelgate: UIResponder, UIApplicationDelegate {
- 
-   var window: UIWindow?
-   // Important: location manager is declared as a class attribute in order to keep a strong reference. Otherwise, if it was deallocated all delegate method wouldn't be triggered
-   var locationManager : CLLocationManager?
- 
-    internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       // Override point for customization after application launch.
-       locationManager = CLLocationManager()
-       locationManager?.requestAlwaysAuthorization()
-       return true
-   }
-}
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-   @IBOutlet weak var geofencesLabel: UILabel!
-   @IBOutlet weak var mapView: MKMapView!
- 
-   var locationManager : CLLocationManager?
- 
-   override func viewDidLoad() {
-       super.viewDidLoad()
-       // Do any additional setup after loading the view, typically from a nib.
-       if let appDelegate = UIApplication.shared.delegate as? AppDelgate {
-           locationManager = appDelegate.locationManager
-           locationManager?.delegate = self
-       }
-   }
-}
+
+
 class MapViewController: UIViewController , CLLocationManagerDelegate{
 
     @IBOutlet weak var mapView: MapView!
@@ -44,11 +19,25 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     @IBOutlet weak var tripTimeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
-  
+    @IBOutlet weak var viewpoinsID: UIView!
+    
+    @IBOutlet weak var viewpoinidbut: UIView!
+    @IBOutlet weak var viewpoinsidtop: UIView!
+    
+    @IBOutlet weak var aumentadorbotellaskg: UIStepper!
+    @IBOutlet weak var directionViewTopConstrainPoint: NSLayoutConstraint!
+    @IBOutlet weak var goPoint: UIView!
+    @IBOutlet weak var directionViewPoint: UIView!
+    @IBOutlet weak var numberPlastic: UILabel!
+    
+    @IBOutlet weak var numberIdcontainer: UILabel!
     @IBOutlet weak var advisoryStackView: UIStackView!
     @IBOutlet weak var directionViewTopConstraint: NSLayoutConstraint!
    
+    @IBOutlet weak var sendPoint: UIButton!
+  
     
+    private let animatViewww = AnimationView()
     private let locationService = LocationService()
     private var poiType: POIType?
     private var pois = [POI]()
@@ -104,7 +93,12 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         controlView.layer.cornerRadius = 10.0
         searchView.layer.cornerRadius = 20.0
         directionView.layer.cornerRadius = 20.0
+        directionViewPoint.layer.cornerRadius = 30.0
         goButton.layer.cornerRadius = 8.0
+        sendPoint.layer.cornerRadius = 20.0
+        viewpoinsID.layer.cornerRadius = 12.0
+        viewpoinsidtop.layer.cornerRadius = 10.0
+        viewpoinidbut.layer.cornerRadius = 10.0
         
         mapCenterLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
         
@@ -113,6 +107,83 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
 
 
     // MARK: - IBAction
+   
+    @IBAction func sendnumberplastic(_ sender: Any) {
+        
+      
+        let alerterror = UIAlertController(title: "Algo salió mal", message: "El ID del contenedor es incorrecto", preferredStyle: .alert)
+
+        let tradePlastic : String = numberPlastic.text!
+        let container_id : String = numberIdcontainer.text!
+        
+        let parametros : [String: String] = [
+                   "trash": tradePlastic,
+                   "container_id": container_id
+                   
+               ]
+
+        Request.shared.tradePlastic(parameters: parametros)
+            
+            .validate(statusCode: 200..<300)
+            .responseJSON{ response in
+            
+                switch response.result {
+                   
+                case .success:
+                    
+                    
+
+                   let alertacept = UIAlertController(title: "ok", message: "Puntos guardados", preferredStyle: .alert)
+                    
+                    alertacept.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alertacept, animated: true, completion: nil)
+                   
+      
+                
+                   debugPrint(response)
+                 
+                case let .failure(error):
+                   
+
+                    alerterror.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alerterror, animated: true, completion: nil)
+                    print(error)
+                }
+      
+            }
+
+        
+    }
+    
+    @IBAction func addPlasticView(_ sender: Any) {
+        
+        directionViewaPoints(shown: true)
+        
+        
+        
+    }
+  
+
+    @IBAction func addIDContainer(_ sender: UIStepper) {
+        
+        numberIdcontainer.text = String(Int(sender.value))
+        
+    }
+    
+    @IBAction func addkgPlastic(_ sender: UIStepper) {
+        
+        
+        numberPlastic.text = String(Int(sender.value))
+        
+       
+        
+      
+        
+        
+        
+
+        
+    }
     
     @IBAction func didTapUserLocation(_ sender: UIButton) {
         centerToUserLocation()
@@ -131,6 +202,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     @IBAction func didTapCloseSlideView(_ sender: UIButton) {
         closeSlideView()
         
+        
         if sender.tag == 1 {
             clearMapView()
         }
@@ -142,10 +214,10 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         
         switch sender.tag {
         case 0:
-            poiType = .puntolimpio
+            poiType = .supermercado
             
         case 1:
-            poiType = .supermercado
+            poiType = .puntoLimpio
             
         default:
             break
@@ -265,6 +337,19 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     
     
     // MARK: - Private Function
+    private func directionViewaPoints(shown:Bool){
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let weakSelf = self else { return }
+            
+            weakSelf.directionViewTopConstrainPoint.constant = shown
+                ? 400
+                : 0
+        
+            weakSelf.view.layoutIfNeeded()
+        }
+        
+    }
     
     private func centerToUserLocation() {
         let mapRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
@@ -340,6 +425,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         clearSearchTextField()
         searchView(shown: false)
         directionView(shown: false)
+        directionViewaPoints(shown: false)
     }
     
     private func centerMap(to poi: POI) {

@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     var dataUser:Userr?
     var buyed:Buyed?
 
-    var arrayOffersBuyed : [Buyed] = []
+    var byOffers : [Buyed] = []
     
     //Oulets
     @IBOutlet weak var tableView: UITableView!
@@ -30,64 +30,89 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         roundButtons()
         tableView.delegate = self
         tableView.dataSource = self
+                
+//
+//        ///Request con informacion del usuario (ptos y nombre del usuario)
+//        let requestI = Request.shared.InfoUser()
+//
+//        requestI.response(completionHandler: { (response) in
+//            debugPrint(response)
+//
+//            guard let data = response.data else{return}
+//
+//            do{
+//                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
+//                self.userNameProfile.text = self.dataUser?.username
+//                self.pointsProfile.text = String(self.dataUser!.puntos)
+//
+//            }catch{
+//                print("error == \(error)")
+//            }
+//        })
+        
+//        ///Request con lista de compras realizadas por el usuario(Nombre del supermercado y puntos gastados)
+//        let requestB = Request.shared.getOfferBuyed()
+//
+//        requestB.responseJSON { (response) in
+//            if let body = response.value as? [[String:Any]]{
+//                for i in 0..<body.count{
+//                    self.byOffers.append(Buyed(market: body[i]["Market"] as! Int, points: body[i]["Points"] as! Int))
+//                }
+//                print(self.byOffers)
+//                self.tableView.reloadData()
+//            }
+//        }
+        
+    
         
         
-        arrayOffersBuyed = [Buyed.init(market: "Mercadona", points: 10),
-                                     Buyed.init(market: "carrefour", points: 10),
-                                     Buyed.init(market: "lidl", points: 10)
-                 ]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-      
-        ///Request con informacion del usuario (ptos y nombre del usuario)
-        let requestI = Request.shared.InfoUser()
+           ///Request con informacion del usuario (ptos y nombre del usuario)
+           let requestI = Request.shared.InfoUser()
 
-        requestI.response(completionHandler: { (response) in
-            debugPrint(response)
+           requestI.response(completionHandler: { (response) in
+               debugPrint(response)
 
-            guard let data = response.data else{return}
+               guard let data = response.data else{return}
 
-            do{
-                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
-                self.userNameProfile.text = self.dataUser?.username
-                self.pointsProfile.text = String(self.dataUser!.puntos)
+               do{
+                   self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
+                   self.userNameProfile.text = self.dataUser?.username
+                   self.pointsProfile.text = String(self.dataUser!.puntos)
 
-            }catch{
-                print("error == \(error)")
-            }
-        })
+               }catch{
+                   print("error == \(error)")
+               }
+           })
+        
         
         ///Request con lista de compras realizadas por el usuario(Nombre del supermercado y puntos gastados)
         let requestB = Request.shared.getOfferBuyed()
 
-        requestB.response(completionHandler: { (response) in
-            debugPrint(response)
-
-            guard let data = response.data else{return}
-
-            do{
-                //Rellenar array de ofertas compradas
-                print(data)
-
-            }catch{
-                print("error == \(error)")		
+        requestB.responseJSON { (response) in
+            if let body = response.value as? [[String:Any]]{
+                for i in 0..<body.count{
+                    self.byOffers.append(Buyed(market: body[i]["Market"] as! Int, points: body[i]["Points"] as! Int))
+                }
+                print(self.byOffers)
+                self.tableView.reloadData()
             }
-        })
-        
-    
-        
-        
-    }
+        }
+           
+     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return arrayOffersBuyed.count
+       return byOffers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycell") as! offersBuyedCell
-        
-//        cell.setData(with: arrayOffersBuyed[indexPath.row])
-        cell.cellMarketLabel.text = arrayOffersBuyed[indexPath.row]._market
-        cell.cellPointsLabel.text = String(arrayOffersBuyed[indexPath.row]._points)
+        cell.cellMarketLabel.text = String(byOffers[indexPath.row]._market)
+        cell.cellPointsLabel.text = String(byOffers[indexPath.row]._points)
         
         return cell
     }

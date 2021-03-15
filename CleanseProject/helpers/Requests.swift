@@ -96,6 +96,31 @@ static let shared = Request()
     }
   
  
+    func tradePlastic(parameters:[String:String])  -> DataRequest{
+        
+        let headers:HTTPHeaders = [
+            "Accept":"application/json",
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+        ]
+///        let headers:HTTPHeader = []
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.trade, method: .post, parameters:parameters, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
+///        debugPrint(response, "respuesta")
+        }
+    }
+    func updateProfile (parameters:[String:String])  -> DataRequest{
+        
+        let headers:HTTPHeaders = [
+            "Accept":"application/json",
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+        ]
+///        let headers:HTTPHeader = []
+        return AF.request(Endpoints.shared.baseURL+Endpoints.shared.updateProfile, method: .put, parameters:parameters, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
+///        debugPrint(response, "respuesta")
+        }
+    }
+  
+ 
 
     
 }
+
