@@ -8,51 +8,33 @@
 
 import Foundation
 
-class Buyed{
-    private var _image:String
-    private var _market: String
-    private var _points: Int
+class Buyed: Encodable, Decodable{
+     var _market: String
+     var _points: Int
     
     
     enum CodingKeys:String, CodingKey {
-        case _image = "image"
         case _market = "market"
         case _points = "points"
         
     }
     
-    init(image: String, market:String, points:Int){
-        self._image = image
+    init(market:String, points:Int){
         self._market = market
         self._points = points
     }
     
-    var gsImage:String{
-        get{
-            return self._image
-        }
-        set(newImage){
-            self._image = newImage
-        }
+    public func getBuyedlist()->[String:Any]{
+    
+        return ["market":_market,"points":_points]
+    
+    }
+    public func upBuyedserver()->[String:Any]{
+        
+        return ["market":_market,"points":_points]
+    
     }
     
-    
-    var gsMarket:String{
-        get{
-            return self._market
-        }
-        set(newMarket){
-            self._market = newMarket
-        }
-    }
-    
-    var gsPoints:Int{
-        get{
-            return self._points
-        }
-        set(newPoints){
-            self._points = newPoints
-        }
-    }
+
 
 }

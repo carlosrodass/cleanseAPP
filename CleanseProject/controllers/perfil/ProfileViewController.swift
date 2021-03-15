@@ -13,30 +13,31 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 
     var dataUser:Userr?
     var buyed:Buyed?
-    
+
     var arrayOffersBuyed : [Buyed] = []
     
     //Oulets
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var roundProfileImage: UIImageView!
     @IBOutlet weak var logOutOulet: UIButton!
-    @IBOutlet weak var saveOulet: UIButton!
     @IBOutlet weak var userNameProfile: UILabel!
     @IBOutlet weak var pointsProfile: UILabel!
-    
-    
-    @IBAction func logOutButton(_ sender: Any) {
-    }
-    
-    @IBAction func saveChangesButton(_ sender: Any) {
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         roundImage()
         roundButtons()
+        tableView.delegate = self
+        tableView.dataSource = self
         
+        
+        arrayOffersBuyed = [Buyed.init(market: "Mercadona", points: 10),
+                                     Buyed.init(market: "carrefour", points: 10),
+                                     Buyed.init(market: "lidl", points: 10)
+                 ]
+        
+      
         ///Request con informacion del usuario (ptos y nombre del usuario)
         let requestI = Request.shared.InfoUser()
 
@@ -68,14 +69,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 print(data)
 
             }catch{
-                print("error == \(error)")
+                print("error == \(error)")		
             }
         })
         
-        arrayOffersBuyed = [Buyed.init(image: "ff", market: "Mercadona", points: 10),
-                            Buyed.init(image: "aa", market: "carrefour", points: 10),
-                            Buyed.init(image: "ff", market: "lidl", points: 10)
-        ]
+    
         
         
     }
@@ -85,11 +83,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = offersBuyedCell(style: offersBuyedCell.CellStyle.subtitle, reuseIdentifier: "mycell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mycell") as! offersBuyedCell
         
-        cell.setData(with: arrayOffersBuyed[indexPath.row])
+//        cell.setData(with: arrayOffersBuyed[indexPath.row])
+        cell.cellMarketLabel.text = arrayOffersBuyed[indexPath.row]._market
+        cell.cellPointsLabel.text = String(arrayOffersBuyed[indexPath.row]._points)
         
-
         return cell
     }
     
@@ -106,9 +105,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         //logout button style
         logOutOulet.layer.cornerRadius = 10
         logOutOulet.clipsToBounds = true
-        
-        //save changes button style
-        saveOulet.layer.cornerRadius = 10
-        saveOulet.clipsToBounds = true
+
     }
+    
+    @IBAction func logOutButton(_ sender: Any) {
+    }
+    
 }
