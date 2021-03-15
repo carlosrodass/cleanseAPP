@@ -6,9 +6,8 @@ class OffersViewController: UIViewController {
     @IBOutlet weak var MyCollectionView: UICollectionView!
     
     var offers : [Offer] = []
-        
-//        [Offer.init(image: "ff", offer: "salchichas", market: "lidl", points: 20, stock: 20, offerId: 2),
-//                            Offer.init(image: "ff", offer: "chocolate", market: "marcadona", points: 15, stock: 48, offerId: 1)]
+    var imagenes : [UIImage] = [#imageLiteral(resourceName: "aa"), #imageLiteral(resourceName: "ff")]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,25 +24,17 @@ class OffersViewController: UIViewController {
         ///register
         self.MyCollectionView?.register(HeaderCollectionReusableView.self,
                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.indentifier)
-        ///Request
+        ///offers request
         let request = Request.shared.getOffers()
-         request.response(completionHandler: { (response) in
-
-             guard let data = response.data else {return}
-             do{
-    
-                //Rellenar el array de ofertas con el array de json que viene del servidor
-                self.offers = try
-                    JSONDecoder().decode([Offer].self, from: data) //Da error porque la resp del serv es dictionary
-                
-                self.MyCollectionView.reloadData()
+        request.responseJSON { (response) in
+            if let body = response.value as? [[String:Any]]{
+                for i in 0..<body.count{
+                    self.offers.append(Offer(offer: body[i]["Offer"] as! String, market: body[i]["Market"] as! String, points: body[i]["Points"] as! Int, stock: body[i]["Stock"] as! Int, offerId: body[i]["id"] as! Int))
+                }
                 print(self.offers)
-                
-             }catch{
-                 print("estoy aqui == \(error)")
-             }
-         })
-        
+                self.MyCollectionView.reloadData()
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -76,8 +67,11 @@ extension OffersViewController: UICollectionViewDataSource{
     ///Añadiendo datos en cada una de las celdas
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = MyCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
-
-        cell.setData(with: offers[indexPath.row])
+        
+        cell.cellOfferLabel.text = offers[indexPath.row].gsOfferName
+        cell.cellLabel.text = offers[indexPath.row].gsMarket
+        cell.cellImage.image = imagenes[indexPath.row]
+        
         cell.setupCell()
         
         return cell
@@ -106,11 +100,10 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let vc = segue.destination as! BuyOfferViewController
             let cell = sender as! ItemCell
             let indexPath = MyCollectionView.indexPath(for: cell)
-//            let ofertas = fillOffer()
-            let offer = offers[indexPath!.row]
-            vc.offer = offer.self
-            
-//            print("Objeto:  \(vc.offer = offer)")
+
+            vc.labelOfferName.text = String(offers[indexPath!.row].gsOfferName)
+            vc.labelOfferDes.text = String(offers[indexPath!.row].gsMarket)
+
             present(vc, animated: true)
         }
     }
