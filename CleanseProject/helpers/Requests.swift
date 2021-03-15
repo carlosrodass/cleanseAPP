@@ -43,7 +43,7 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-          "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+          "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "Token")!
             
         ]
         
@@ -56,7 +56,7 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "Token")!
         ]
         
         return AF.request(Endpoints.shared.baseURL+Endpoints.shared.getOffers, method: .get, headers: headers).response { response in
@@ -73,7 +73,7 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "Token")!
         ]
         
         return AF.request(Endpoints.shared.baseURL+Endpoints.shared.buyOffer, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers, interceptor:nil).response { response in
@@ -87,7 +87,7 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "Token")!
         ]
         
         return AF.request(Endpoints.shared.baseURL+Endpoints.shared.buyedOffers, method: .get, headers: headers).response { response in
@@ -100,7 +100,7 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "Token")!
         ]
 ///        let headers:HTTPHeader = []
         return AF.request(Endpoints.shared.baseURL+Endpoints.shared.trade, method: .post, parameters:parameters, encoder: JSONParameterEncoder.default, headers: headers).response{ response in
@@ -111,7 +111,7 @@ static let shared = Request()
         
         let headers:HTTPHeaders = [
             "Accept":"application/json",
-            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "token")!
+            "Authorization":"Bearer " + UserDefaults.standard.string(forKey: "Token")!
         ]
 ///        let headers:HTTPHeader = []
         return AF.request(Endpoints.shared.baseURL+Endpoints.shared.updateProfile, method: .put, parameters:parameters, encoder: JSONParameterEncoder.default, headers: headers).response{ response in

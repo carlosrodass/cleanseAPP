@@ -52,7 +52,10 @@ class BuyOfferViewController: UIViewController {
 
             guard let data = response.data else {return}
             do{
-                debugPrint(data) ///La respuesta debe ser que se ha comprado y esta informacion debe mostrarse en la lista de compras
+                debugPrint(data)
+                ///case status code 200 ---
+                ///case status code another
+                ///La respuesta debe ser que se ha comprado y esta informacion debe mostrarse en la lista de compras
             }catch{
                 print("estoy aqui")
             }

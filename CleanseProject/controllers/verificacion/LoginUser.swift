@@ -41,9 +41,9 @@ class LoginUser: UIViewController {
             
             let token = response.value as! [String:String]//accediendo al valor token: "94290rsewqrw"
 
-            UserDefaults.standard.set(token["token"], forKey: "token")
+            UserDefaults.standard.set(token["Token"], forKey: "Token")
 
-            debugPrint(UserDefaults.standard.set(token["token"], forKey: "token"))
+            debugPrint(UserDefaults.standard.set(token["Token"], forKey: "Token"))
             
            
            

@@ -21,7 +21,7 @@ class UserRegister: UIViewController {
         let email : String = emailRegister.text!
         let pass : String = password.text!
         let confirmpassword : String = confirmPassword.text!
-        let puntos : String = "0"
+       
         
         
         //Comprobacion de campos
@@ -40,8 +40,8 @@ class UserRegister: UIViewController {
                    "username": username,
                    "password": pass,
                    "email":email,
-                   "password_confirmation":confirmpassword,
-                   "points":puntos
+                   "password_confirmation":confirmpassword
+                 
                ]
         Request.shared.register(parameters: parametros).responseJSON{ response in
                 

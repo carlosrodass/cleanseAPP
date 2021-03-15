@@ -47,7 +47,6 @@ class OffersViewController: UIViewController {
         let header = MyCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.indentifier, for: indexPath) as! HeaderCollectionReusableView
         
         header.configure()
-        
         return header
     }
     
@@ -90,7 +89,6 @@ extension OffersViewController: UICollectionViewDelegateFlowLayout{
 extension OffersViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
     }
     
 ///Segue pasando datos entre controllers
@@ -100,10 +98,8 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let vc = segue.destination as! BuyOfferViewController
             let cell = sender as! ItemCell
             let indexPath = MyCollectionView.indexPath(for: cell)
-
-            vc.labelOfferName.text = String(offers[indexPath!.row].gsOfferName)
-            vc.labelOfferDes.text = String(offers[indexPath!.row].gsMarket)
-
+            
+            vc.offer = offers[indexPath!.row]
             present(vc, animated: true)
         }
     }
