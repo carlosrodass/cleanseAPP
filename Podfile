@@ -9,4 +9,6 @@ target 'CleanseProject' do
 
 	pod 'Alamofire', '~> 5.2‘
 
+	pod 'BulletinBoard'
+
 end

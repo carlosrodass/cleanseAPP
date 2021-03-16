@@ -2,6 +2,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import Lottie
+import BLTNBoard
 
 
 
@@ -76,20 +77,20 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         
         return alertController
     }()
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         
                  
-        
+        //Delegates
         locationManager?.delegate = self
-             
-        
-        
         locationService.delegate = self
         searchCompleter.delegate = self
         
+        //Style
         controlView.layer.cornerRadius = 10.0
         searchView.layer.cornerRadius = 20.0
         directionView.layer.cornerRadius = 20.0
@@ -101,7 +102,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         viewpoinidbut.layer.cornerRadius = 10.0
         
         mapCenterLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
-        
         registerAnnotationView()
     }
 
@@ -131,19 +131,12 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
                    
                 case .success:
                     
-                    
-
-                   let alertacept = UIAlertController(title: "ok", message: "Puntos guardados", preferredStyle: .alert)
-                    
+                    let alertacept = UIAlertController(title: "ok", message: "Puntos guardados", preferredStyle: .alert)
                     alertacept.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alertacept, animated: true, completion: nil)
-                   
-      
-                
-                   debugPrint(response)
+                    debugPrint(response)
                  
                 case let .failure(error):
-                   
 
                     alerterror.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     self.present(alerterror, animated: true, completion: nil)
@@ -151,13 +144,12 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
                 }
       
             }
-
-        
     }
     
     @IBAction func addPlasticView(_ sender: Any) {
         
         directionViewaPoints(shown: true)
+        
         
         
         

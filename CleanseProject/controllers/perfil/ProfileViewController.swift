@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import BLTNBoard
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -31,41 +32,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
                 
-//
-//        ///Request con informacion del usuario (ptos y nombre del usuario)
-//        let requestI = Request.shared.InfoUser()
-//
-//        requestI.response(completionHandler: { (response) in
-//            debugPrint(response)
-//
-//            guard let data = response.data else{return}
-//
-//            do{
-//                self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
-//                self.userNameProfile.text = self.dataUser?.username
-//                self.pointsProfile.text = String(self.dataUser!.puntos)
-//
-//            }catch{
-//                print("error == \(error)")
-//            }
-//        })
-        
-//        ///Request con lista de compras realizadas por el usuario(Nombre del supermercado y puntos gastados)
-//        let requestB = Request.shared.getOfferBuyed()
-//
-//        requestB.responseJSON { (response) in
-//            if let body = response.value as? [[String:Any]]{
-//                for i in 0..<body.count{
-//                    self.byOffers.append(Buyed(market: body[i]["Market"] as! Int, points: body[i]["Points"] as! Int))
-//                }
-//                print(self.byOffers)
-//                self.tableView.reloadData()
-//            }
-//        }
-        
-    
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -138,6 +104,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func logOutButton(_ sender: Any) {
+        
+        
     }
     
 }

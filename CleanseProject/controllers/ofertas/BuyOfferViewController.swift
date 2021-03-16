@@ -1,4 +1,5 @@
 import UIKit
+import BLTNBoard
 
 class BuyOfferViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class BuyOfferViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         roundButton()
+        
         
 //      imageOffer.image = offer?._image
         labelOfferName.text = offer?.gsMarket
@@ -36,7 +38,7 @@ class BuyOfferViewController: UIViewController {
     @IBAction func buyButton(_ sender: Any) {
         
         ///Comprobacion previa de los puntos del usuario
-        
+       
         
         ///Request enviando nombre de la oferta / supermercado / puntos del usuario
         let parameters : [String:String] = [

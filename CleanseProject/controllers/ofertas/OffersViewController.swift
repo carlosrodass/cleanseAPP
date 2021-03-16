@@ -1,5 +1,6 @@
 
 import UIKit
+import BLTNBoard
 
 class OffersViewController: UIViewController {
         
@@ -7,6 +8,26 @@ class OffersViewController: UIViewController {
     
     var offers : [Offer] = []
     var imagenes : [UIImage] = [#imageLiteral(resourceName: "aa"), #imageLiteral(resourceName: "ff")]
+    
+    private lazy var boardManager: BLTNItemManager = {
+   
+    let item = BLTNPageItem(title: "Offer")
+    item.image = UIImage(named: "ff")
+    item.actionButtonTitle = "Continue"
+    item.alternativeButtonTitle = "Maybe later"
+    item.descriptionText = "Would you like to stay in the loop and get notify?"
+    
+    item.actionHandler = { _ in
+        
+    }
+    
+    item.alternativeHandler = { _ in
+        
+    }
+    
+    return BLTNItemManager(rootItem: item)
+    
+}()
 
 
     override func viewDidLoad() {
@@ -85,10 +106,15 @@ extension OffersViewController: UICollectionViewDelegateFlowLayout{
     }
 }
 
+
+
+
 ///Highligth de cada elemento de la lista
 extension OffersViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        boardManager.showBulletin(above: self)
+        print(indexPath.row)
     }
     
 ///Segue pasando datos entre controllers
