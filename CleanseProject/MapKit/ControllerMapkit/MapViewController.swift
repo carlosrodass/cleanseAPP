@@ -78,6 +78,37 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         return alertController
     }()
     
+    // Create UITextField
+    let myTextField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 300.00, height: 30.00))
+    
+    private lazy var boardManager: BLTNItemManager = {
+   
+    let item = BulletinItem(title: "Offer")
+    item.image = UIImage(named: "ff")
+    item.textField.placeholder = "Something"
+//    item.actionButtonTitle = "Continue"
+//    item.alternativeButtonTitle = "Maybe later"
+//    item.textField
+//    item.descriptionText = "Would you like to stay in the loop and get notify?"
+        
+        let greenColor = UIColor(red: 0.294, green: 0.85, blue: 0.392, alpha: 1)
+        item.appearance.actionButtonColor = greenColor
+        item.appearance.actionButtonTitleColor = .white
+      
+    
+    
+    item.actionHandler = { _ in
+        
+    }
+    
+    item.alternativeHandler = { _ in
+        
+    }
+    
+    return BLTNItemManager(rootItem: item)
+    
+    }()
+    
 
 
     override func viewDidLoad() {
@@ -106,7 +137,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     }
 
 
-    // MARK: - IBAction
+    // MARK: - IBAction trading plastic
    
     @IBAction func sendnumberplastic(_ sender: Any) {
         
@@ -131,14 +162,14 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
                    
                 case .success:
                     
-                    let alertacept = UIAlertController(title: "ok", message: "Puntos guardados", preferredStyle: .alert)
-                    alertacept.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    let alertacept = UIAlertController(title: "Points", message: "You reach more points! congratulations!", preferredStyle: .alert)
+                    alertacept.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alertacept, animated: true, completion: nil)
                     debugPrint(response)
                  
                 case let .failure(error):
 
-                    alerterror.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    alerterror.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
                     self.present(alerterror, animated: true, completion: nil)
                     print(error)
                 }
@@ -148,8 +179,11 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     
     @IBAction func addPlasticView(_ sender: Any) {
         
-        directionViewaPoints(shown: true)
+//        directionViewaPoints(shown: true)
+        boardManager.showBulletin(above: self)
         
+//        BulletinItem.initialize()
+    
         
         
         
@@ -481,9 +515,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     }
     func regionToMonitor()->CLCircularRegion{
         
-        
-       
-     
         let autentia = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 40.436563, longitude: -3.716541), radius: 100, identifier: "autentia")
         
         autentia.notifyOnExit = true
