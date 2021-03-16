@@ -191,8 +191,8 @@
 		E759EDD425EE941A00FBA2D5 /* ControllerMapkit */ = {
 			isa = PBXGroup;
 			children = (
-				E758494325EE5D7D00F4921A /* MapViewController.swift */,
 				1FDF958D2600B4B1009E843B /* BulletinItem.swift */,
+				E758494325EE5D7D00F4921A /* MapViewController.swift */,
 			);
 			path = ControllerMapkit;
 			sourceTree = "<group>";

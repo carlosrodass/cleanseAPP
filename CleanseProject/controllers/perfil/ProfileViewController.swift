@@ -60,16 +60,22 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let requestB = Request.shared.getOfferBuyed()
 
         requestB.responseJSON { (response) in
+            
             if let body = response.value as? [[String:Any]]{
-                for i in 0..<body.count{
-                    self.byOffers.append(Buyed(market: body[i]["Market"] as! Int, points: body[i]["Points"] as! Int))
-                }
-                print(self.byOffers)
-                self.tableView.reloadData()
+                
+                if let data = body as? [[String:Any]]{
+                    
+                    for i in 0..<data.count{
+                        self.byOffers.append(Buyed(market: body[i]["Market"] as! Int, points: body[i]["Points"] as! Int))
+                    }
+                    print(self.byOffers)
+                    self.tableView.reloadData()
             }
+        
         }
            
      }
+}
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

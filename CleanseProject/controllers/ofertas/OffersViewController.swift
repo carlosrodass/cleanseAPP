@@ -7,7 +7,7 @@ class OffersViewController: UIViewController {
     @IBOutlet weak var MyCollectionView: UICollectionView!
     
     var offers : [Offer] = []
-    var imagenes : [UIImage] = [#imageLiteral(resourceName: "aa"), #imageLiteral(resourceName: "ff")]
+    var imagenes : [UIImage] = [#imageLiteral(resourceName: "aa"), #imageLiteral(resourceName: "ff"), #imageLiteral(resourceName: "pp")]
     
     private lazy var boardManager: BLTNItemManager = {
    

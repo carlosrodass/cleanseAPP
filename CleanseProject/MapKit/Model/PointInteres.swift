@@ -9,7 +9,7 @@
 import MapKit
 
 enum POIType: String {
-    case supermercado, puntoLimpio, pin
+    case supermercado, PuntoLimpio, pin
 }
 
 class POI: NSObject, MKAnnotation {
@@ -23,7 +23,7 @@ class POI: NSObject, MKAnnotation {
         case .supermercado:
             return .orange
             
-        case .puntoLimpio:
+        case .PuntoLimpio:
             return .init(red: 51/255, green: 131/255, blue: 51/255, alpha: 1.0)
             
         case .pin:

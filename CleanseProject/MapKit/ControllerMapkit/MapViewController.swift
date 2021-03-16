@@ -81,27 +81,53 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     // Create UITextField
     let myTextField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 300.00, height: 30.00))
     
+    let variousIDs : [Int] = [1,2]
+    
     private lazy var boardManager: BLTNItemManager = {
    
-    let item = BulletinItem(title: "Offer")
-    item.image = UIImage(named: "ff")
-    item.textField.placeholder = "Something"
-//    item.actionButtonTitle = "Continue"
-//    item.alternativeButtonTitle = "Maybe later"
-//    item.textField
-//    item.descriptionText = "Would you like to stay in the loop and get notify?"
-        
-        let greenColor = UIColor(red: 0.294, green: 0.85, blue: 0.392, alpha: 1)
-        item.appearance.actionButtonColor = greenColor
-        item.appearance.actionButtonTitleColor = .white
-      
-    
+    let item = BulletinItem(title: "Trade trash")
+    item.image = UIImage(named: "cargo")
+    item.actionButtonTitle = "Continue"
+    item.alternativeButtonTitle = "Maybe later"
+    item.descriptionText = "Would you like to trade plastic with us?"
+    let greenColor = UIColor(red: 0.294, green: 0.85, blue: 0.392, alpha: 1)
+    item.appearance.actionButtonColor = greenColor
+    item.appearance.actionButtonTitleColor = .white
     
     item.actionHandler = { _ in
         
+        let tradePlastic : String = item.textField.text!
+        let container_id : String = "1"
+        
+        let parametros : [String: String] = [
+                   "trash": tradePlastic,
+                   "container_id": container_id
+                   ]
+
+        Request.shared.tradePlastic(parameters: parametros).responseJSON {
+            response in
+            switch response.result {
+                  case .success:
+                    
+                      let alertacept = UIAlertController(title: "Points", message: "You reach more points! congratulations!", preferredStyle: .alert)
+                      alertacept.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                      self.present(alertacept, animated: true, completion: nil)
+                      debugPrint(response)
+                   
+                  case let .failure(error):
+                    
+                    let alerterror = UIAlertController(title: "Algo salió mal", message: "El ID del contenedor es incorrecto", preferredStyle: .alert)
+                      alerterror.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                      self.present(alerterror, animated: true, completion: nil)
+                      print(error)
+            }
+        }
+     
     }
     
     item.alternativeHandler = { _ in
+        
+        self.dismiss(animated: true)
         
     }
     
@@ -114,8 +140,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
-                 
         //Delegates
         locationManager?.delegate = self
         locationService.delegate = self
@@ -132,85 +156,18 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         viewpoinsidtop.layer.cornerRadius = 10.0
         viewpoinidbut.layer.cornerRadius = 10.0
         
+        //Map
         mapCenterLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
         registerAnnotationView()
     }
 
 
-    // MARK: - IBAction trading plastic
-   
-    @IBAction func sendnumberplastic(_ sender: Any) {
-        
-      
-        let alerterror = UIAlertController(title: "Algo salió mal", message: "El ID del contenedor es incorrecto", preferredStyle: .alert)
-
-        let tradePlastic : String = numberPlastic.text!
-        let container_id : String = numberIdcontainer.text!
-        
-        let parametros : [String: String] = [
-                   "trash": tradePlastic,
-                   "container_id": container_id
-                   
-               ]
-
-        Request.shared.tradePlastic(parameters: parametros)
-            
-            .validate(statusCode: 200..<300)
-            .responseJSON{ response in
-            
-                switch response.result {
-                   
-                case .success:
-                    
-                    let alertacept = UIAlertController(title: "Points", message: "You reach more points! congratulations!", preferredStyle: .alert)
-                    alertacept.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alertacept, animated: true, completion: nil)
-                    debugPrint(response)
-                 
-                case let .failure(error):
-
-                    alerterror.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                    self.present(alerterror, animated: true, completion: nil)
-                    print(error)
-                }
-      
-            }
-    }
-    
     @IBAction func addPlasticView(_ sender: Any) {
         
-//        directionViewaPoints(shown: true)
         boardManager.showBulletin(above: self)
-        
-//        BulletinItem.initialize()
     
-        
-        
-        
     }
   
-
-    @IBAction func addIDContainer(_ sender: UIStepper) {
-        
-        numberIdcontainer.text = String(Int(sender.value))
-        
-    }
-    
-    @IBAction func addkgPlastic(_ sender: UIStepper) {
-        
-        
-        numberPlastic.text = String(Int(sender.value))
-        
-       
-        
-      
-        
-        
-        
-
-        
-    }
-    
     @IBAction func didTapUserLocation(_ sender: UIButton) {
         centerToUserLocation()
     }
@@ -243,7 +200,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
             poiType = .supermercado
             
         case 1:
-            poiType = .puntoLimpio
+            poiType = .PuntoLimpio
             
         default:
             break
@@ -724,30 +681,30 @@ extension MapViewController: MKMapViewDelegate {
         selectedAnnotation = view
     }
     
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        guard let annotation = annotation as? MKPointAnnotation, let poiType = poiType else { return nil }
-//
-//        let identifier = "pinView-\(poiType.rawValue)"
-//        let annotationView: MKMarkerAnnotationView
-//
-//        if let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
-//            view.annotation = annotation
-//            annotationView = view
-//        }
-//        else {
-//            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            annotationView.canShowCallout = true
-//
-//            let addressLabel = UILabel()
-//            addressLabel.numberOfLines = 0
-//            addressLabel.text = annotation.subtitle
-//            addressLabel.font = UIFont.systemFont(ofSize: 12)
-//
-//            annotationView.detailCalloutAccessoryView = addressLabel
-//        }
-//
-//        return annotationView
-//    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? MKPointAnnotation, let poiType = poiType else { return nil }
+
+        let identifier = "pinView-\(poiType.rawValue)"
+        let annotationView: MKMarkerAnnotationView
+
+        if let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+            view.annotation = annotation
+            annotationView = view
+        }
+        else {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView.canShowCallout = true
+
+            let addressLabel = UILabel()
+            addressLabel.numberOfLines = 0
+            addressLabel.text = annotation.subtitle
+            addressLabel.font = UIFont.systemFont(ofSize: 12)
+
+            annotationView.detailCalloutAccessoryView = addressLabel
+        }
+
+        return annotationView
+    }
 }
 
 
