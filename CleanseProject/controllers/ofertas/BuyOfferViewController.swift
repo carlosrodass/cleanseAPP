@@ -20,7 +20,7 @@ class BuyOfferViewController: UIViewController {
         
 //      imageOffer.image = offer?._image
         labelOfferName.text = offer?.gsMarket
-        labelOfferDes.text = "Cantidad disponible de la oferta : \(offer!.gsStock) La oferta que has elegido del supermercado \(offer!.gsOfferName) costaria un total de \(offer!.gsPoints). Para conjear esta oferta pulsa el boton de comprar y enseña el código de la oferta en el supermercado marcado."
+        labelOfferDes.text = "Actualmente quedan \(offer!.gsStock) productos! ¿Quieres comprar ahora \(offer!.gsOfferName) del supermercado \(offer!.gsMarket)? costaria un total de \(offer!.gsPoints).Pulsa comprar y será tuyo!."
         
         sup = offer!.gsMarket
         of = offer!.gsOfferName
