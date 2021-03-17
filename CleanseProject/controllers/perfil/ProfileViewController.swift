@@ -31,6 +31,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         roundButtons()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.separatorInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
                 
     }
     
@@ -89,6 +91,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell.cellMarketLabel.text = String(byOffers[indexPath.row]._market)
         cell.cellPointsLabel.text = String(byOffers[indexPath.row]._points)
+        
+//        cell.separatorInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+        
+        cell.setupCell()
+        
+       
         
         return cell
     }
