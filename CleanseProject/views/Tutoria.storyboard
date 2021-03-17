@@ -1392,14 +1392,14 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BDJ-Xj-373">
                                 <rect key="frame" x="30" y="250" width="354" height="308"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tomates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8M-GT-Olq" userLabel="offerNameQR">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="30.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tomates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8M-GT-Olq" userLabel="offerNameQR">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="86.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="shopping" translatesAutoresizingMaskIntoConstraints="NO" id="rjE-71-lmS" userLabel="imageQR">
-                                        <rect key="frame" x="0.0" y="50.5" width="354" height="207.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="qrcode" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rjE-71-lmS" userLabel="imageQR">
+                                        <rect key="frame" x="0.0" y="107.5" width="354" height="149"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-md-9We">
                                         <rect key="frame" x="0.0" y="278" width="354" height="30"/>
@@ -1411,12 +1411,19 @@
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="donButtonAction:" destination="1i4-a7-bjf" eventType="touchUpInside" id="35Q-qb-LW4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Cjc-md-9We" secondAttribute="trailing" id="84U-7V-2bG"/>
                                     <constraint firstItem="rjE-71-lmS" firstAttribute="trailing" secondItem="BDJ-Xj-373" secondAttribute="trailingMargin" id="JwW-fQ-NQ7"/>
+                                    <constraint firstAttribute="trailing" secondItem="H8M-GT-Olq" secondAttribute="trailing" id="Mk7-FG-BgT"/>
                                     <constraint firstItem="Cjc-md-9We" firstAttribute="leading" secondItem="BDJ-Xj-373" secondAttribute="leading" id="duD-j7-HxT"/>
+                                    <constraint firstItem="H8M-GT-Olq" firstAttribute="top" secondItem="BDJ-Xj-373" secondAttribute="top" id="mc2-dZ-tq2"/>
+                                    <constraint firstItem="H8M-GT-Olq" firstAttribute="leading" secondItem="BDJ-Xj-373" secondAttribute="leading" id="nqT-i1-Pfj"/>
+                                    <constraint firstItem="rjE-71-lmS" firstAttribute="top" secondItem="H8M-GT-Olq" secondAttribute="bottom" constant="20" id="svM-yd-Myd"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -1431,6 +1438,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="EGU-xl-5bh"/>
                     <connections>
+                        <outlet property="doneButton" destination="Cjc-md-9We" id="VEj-uu-f49"/>
                         <outlet property="imageQr" destination="rjE-71-lmS" id="Ppv-GF-nAJ"/>
                         <outlet property="offerQrName" destination="H8M-GT-Olq" id="mOI-ll-elq"/>
                     </connections>
@@ -1456,6 +1464,7 @@
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="ribbon" width="256" height="256"/>
         <image name="shopping" width="256" height="256"/>
         <image name="supermercado" width="512" height="512"/>

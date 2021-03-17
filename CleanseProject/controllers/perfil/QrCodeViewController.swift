@@ -14,20 +14,37 @@ class QrCodeViewController: UIViewController {
 
     @IBOutlet weak var offerQrName: UILabel!
     @IBOutlet weak var imageQr: UIImageView!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Setting texton screen
         offerQrName.text = buyed!._market
+        imageQr.image = generateQRCode(from: "https://www.youtube.com/watch?v=khYjXjIPa-8")
         
-        if let myString = offerQrName.text{
-            imageQr.image = generateQRCode(from: myString)
-        }else{
-            imageQr.image = generateQRCode(from: "Carlos is the best programmer ever")
-        }
+        //ButtonStyle
+        roundButton()
+        
+//        if let myString = offerQrName.text{
+//
+//        }else{
+//            imageQr.image = generateQRCode(from: "Carlos is the best programmer ever")
+//        }
     }
     
+    private func roundButton(){
+        //signIn button style
+        doneButton.layer.cornerRadius = 10
+        doneButton.clipsToBounds = true
+    }
+    
+    
+    @IBAction func donButtonAction(_ sender: Any) {
+        
+        self.dismiss(animated: true)
+        
+    }
     func generateQRCode(from string: String) -> UIImage? {
         let data = string.data(using: String.Encoding.ascii)
 
