@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var logOutOulet: UIButton!
     @IBOutlet weak var userNameProfile: UILabel!
     @IBOutlet weak var pointsProfile: UILabel!
+    @IBOutlet weak var editOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +50,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 
                do{
                    self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
-                   self.userNameProfile.text = self.dataUser?.username
-                   self.pointsProfile.text = String(self.dataUser!.puntos)
+                   self.userNameProfile.text = "@ \(self.dataUser!.username)"
+                   self.pointsProfile.text = "\(String(self.dataUser!.puntos)) points"
 
                }catch{
                    print("error == \(error)")
@@ -68,7 +69,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 if let data = body as? [[String:Any]]{
                     
                     for i in 0..<data.count{
-                        self.byOffers.append(Buyed(market: body[i]["Market"] as! Int, points: body[i]["Points"] as! Int))
+                        self.byOffers.append(Buyed(market: body[i]["Market"] as! String, points: body[i]["Points"] as! Int))
                     }
                     print(self.byOffers)
                     self.tableView.reloadData()
@@ -89,8 +90,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycell") as! offersBuyedCell
         
-        cell.cellMarketLabel.text = String(byOffers[indexPath.row]._market)
-        cell.cellPointsLabel.text = String(byOffers[indexPath.row]._points)
+        cell.cellMarketLabel.text = "Offer: \(String(byOffers[indexPath.row]._market))"
+        cell.cellPointsLabel.text = "Buyed for : \(String(byOffers[indexPath.row]._points)) points"
         
 //        cell.separatorInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
         
@@ -114,6 +115,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         //logout button style
         logOutOulet.layer.cornerRadius = 10
         logOutOulet.clipsToBounds = true
+        
+        editOutlet.layer.cornerRadius = 10
+        editOutlet.clipsToBounds = true
 
     }
     

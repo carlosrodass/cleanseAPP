@@ -9,7 +9,7 @@
 import Foundation
 
 class Buyed: Encodable, Decodable{
-     var _market: Int
+     var _market: String
      var _points: Int
     
     
@@ -19,7 +19,7 @@ class Buyed: Encodable, Decodable{
         
     }
     
-    init(market:Int, points:Int){
+    init(market:String, points:Int){
         self._market = market
         self._points = points
     }
