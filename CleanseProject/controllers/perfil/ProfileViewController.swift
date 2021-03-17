@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         
         tableView.separatorInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-                
+        self.tableView.allowsSelection = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,33 +92,50 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell.cellMarketLabel.text = "Offer: \(String(byOffers[indexPath.row]._market))"
         cell.cellPointsLabel.text = "Buyed for : \(String(byOffers[indexPath.row]._points)) points"
-        
-//        cell.separatorInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
-        
         cell.setupCell()
-        
-       
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                
+//        if let viewController = storyboard?.instantiateViewController(identifier: "Qr") as? QrCodeViewController {
+//            viewController.buyed = byOffers[indexPath.row]
+//                navigationController?.pushViewController(viewController, animated: true)
+//            }
+        
+        print("selected cell \(indexPath.row)")
+    }
     
+//    ///Segue pasando datos entre controllers
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+            if segue.identifier == "qrcode" {
+                let vc = segue.destination as! QrCodeViewController
+                let cell = sender as! offersBuyedCell
+                let indexPath = tableView.indexPath(for: cell)
+
+                vc.buyed = byOffers[indexPath!.row]
+                present(vc, animated: true)
+            }
+        }
+    
+    
+    //Image style
     private func roundImage(){
-        //profile image style
         roundProfileImage.layer.cornerRadius = roundProfileImage.frame.size.width / 2
         roundProfileImage.layer.borderColor = UIColor.white.cgColor
         roundProfileImage.layer.borderWidth = 2
         roundProfileImage.clipsToBounds = true
     }
     
+    //Buttons styles
     private func roundButtons(){
-        //logout button style
         logOutOulet.layer.cornerRadius = 10
         logOutOulet.clipsToBounds = true
         
         editOutlet.layer.cornerRadius = 10
         editOutlet.clipsToBounds = true
-
     }
     
     @IBAction func logOutButton(_ sender: Any) {

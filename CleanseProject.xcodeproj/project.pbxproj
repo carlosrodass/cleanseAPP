@@ -11,6 +11,7 @@
 		1F21992925D888A80036EA1F /* ecology.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F21992825D888A80036EA1F /* ecology.json */; };
 		1F21992B25D8A5900036EA1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21992A25D8A5900036EA1F /* ProfileViewController.swift */; };
 		1F5E65DB25FFB0BB002EFCAD /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5E65DA25FFB0BB002EFCAD /* Trade.swift */; };
+		1F6619DF26026F4E00D083C1 /* QrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6619DE26026F4E00D083C1 /* QrCodeViewController.swift */; };
 		1F766DC625D59F0F00674387 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC525D59F0F00674387 /* people.json */; };
 		1F766DC825D59F1B00674387 /* forest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F766DC725D59F1B00674387 /* forest.json */; };
 		1FA72DB725F02BE7008BBAC7 /* BuyOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA72DB625F02BE7008BBAC7 /* BuyOfferViewController.swift */; };
@@ -68,6 +69,7 @@
 		1F21992825D888A80036EA1F /* ecology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ecology.json; sourceTree = "<group>"; };
 		1F21992A25D8A5900036EA1F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F5E65DA25FFB0BB002EFCAD /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
+		1F6619DE26026F4E00D083C1 /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
 		1F766DC525D59F0F00674387 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		1F766DC725D59F1B00674387 /* forest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forest.json; sourceTree = "<group>"; };
 		1FA72DB625F02BE7008BBAC7 /* BuyOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyOfferViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				1F21992A25D8A5900036EA1F /* ProfileViewController.swift */,
 				1FB063DF25FA882D00641292 /* offersBuyedCell.swift */,
 				1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */,
+				1F6619DE26026F4E00D083C1 /* QrCodeViewController.swift */,
 			);
 			path = perfil;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				1FE2AAD125DC36EB00657D0B /* OffersViewController.swift in Sources */,
 				E791A77625C888E900108B89 /* BienvenidoCleanse.swift in Sources */,
 				7F06C1B025D6B0E500AC5417 /* UserRegister.swift in Sources */,
+				1F6619DF26026F4E00D083C1 /* QrCodeViewController.swift in Sources */,
 				7F0E92B525FA461400FB545B /* RouteAdvisor.swift in Sources */,
 				E73487D525E9DF1D002C2B8B /* MapKitController.swift in Sources */,
 				1F5E65DB25FFB0BB002EFCAD /* Trade.swift in Sources */,
