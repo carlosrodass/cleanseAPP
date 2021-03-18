@@ -15,8 +15,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "incre")
-        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "buena")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 

@@ -25,6 +25,7 @@ class EditProfileViewController: UIViewController {
         let changeemail : String = changeEmailField.text!
         let changePassword : String = changePassField.text!
         let changeConfirmPass : String = changeConfirmPasswor.text!
+        
         let parametros : [String: String] = [
             
             

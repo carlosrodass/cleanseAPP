@@ -49,9 +49,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                guard let data = response.data else{return}
 
                do{
-                   self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
-                   self.userNameProfile.text = "@ \(self.dataUser!.username)"
-                   self.pointsProfile.text = "\(String(self.dataUser!.puntos)) points"
+                    self.dataUser = try JSONDecoder().decode(Userr.self, from: data)
+                    self.userNameProfile.text = "@ \(self.dataUser!.username)"
+                    self.pointsProfile.text = "\(String(self.dataUser!.puntos)) points"
+                
+                    UserDefaults.standard.set(self.dataUser!.username, forKey: "username")
 
                }catch{
                    print("error == \(error)")
@@ -64,20 +66,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 
         requestB.responseJSON { (response) in
             
-            if let body = response.value as? [[String:Any]]{
-                
-                if let data = body as? [[String:Any]]{
+                if let data = response.value as? [[String:Any]]{
                     
                     for i in 0..<data.count{
-                        self.byOffers.append(Buyed(market: body[i]["Market"] as! String, points: body[i]["Points"] as! Int))
+                        self.byOffers.append(Buyed(market: data[i]["Market"] as! String, points: data[i]["Points"] as! Int))
                     }
                     print(self.byOffers)
                     self.tableView.reloadData()
             }
-        
         }
-           
-     }
 }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,15 +96,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 
-//        if let viewController = storyboard?.instantiateViewController(identifier: "Qr") as? QrCodeViewController {
-//            viewController.buyed = byOffers[indexPath.row]
-//                navigationController?.pushViewController(viewController, animated: true)
-//            }
-        
         print("selected cell \(indexPath.row)")
     }
     
-//    ///Segue pasando datos entre controllers
+    ///Segue pasando datos entre controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
             if segue.identifier == "qrcode" {
@@ -121,7 +113,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     
     
-    //Image style
+    ///Image style
     private func roundImage(){
         roundProfileImage.layer.cornerRadius = roundProfileImage.frame.size.width / 2
         roundProfileImage.layer.borderColor = UIColor.white.cgColor
@@ -129,11 +121,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         roundProfileImage.clipsToBounds = true
     }
     
-    //Buttons styles
+    ///Buttons styles
     private func roundButtons(){
-        logOutOulet.layer.cornerRadius = 10
-        logOutOulet.clipsToBounds = true
-        
         editOutlet.layer.cornerRadius = 10
         editOutlet.clipsToBounds = true
     }

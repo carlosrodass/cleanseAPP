@@ -82,6 +82,8 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     let myTextField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 300.00, height: 30.00))
     
     let variousIDs : [Int] = [1,2]
+    var randomElement  = 1
+    
     
     private lazy var boardManager: BLTNItemManager = {
    
@@ -93,11 +95,10 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     let greenColor = UIColor(red: 0.294, green: 0.85, blue: 0.392, alpha: 1)
     item.appearance.actionButtonColor = greenColor
     item.appearance.actionButtonTitleColor = .white
-    
     item.actionHandler = { _ in
         
         let tradePlastic : String = item.textField.text!
-        let container_id : String = "1"
+        let container_id : String = String(self.randomElement)
         
         let parametros : [String: String] = [
                    "trash": tradePlastic,
@@ -159,6 +160,8 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         //Map
         mapCenterLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
         registerAnnotationView()
+        
+        var randomElement = variousIDs.randomElement()!
     }
 
 

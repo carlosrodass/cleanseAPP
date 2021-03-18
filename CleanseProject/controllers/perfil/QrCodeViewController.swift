@@ -15,12 +15,16 @@ class QrCodeViewController: UIViewController {
     @IBOutlet weak var offerQrName: UILabel!
     @IBOutlet weak var imageQr: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var offerQR: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let username : String = UserDefaults.standard.string(forKey: "username")!
+        
         //Setting texton screen
-        offerQrName.text = buyed!._market
+        offerQrName.text = "Hi,\(username)!"
+        offerQR.text = "Scan this code to buy \(buyed!._market)"
         imageQr.image = generateQRCode(from: "https://www.youtube.com/watch?v=khYjXjIPa-8")
         
         //ButtonStyle
