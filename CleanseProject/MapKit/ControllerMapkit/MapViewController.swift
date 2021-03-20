@@ -162,7 +162,11 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
 //                if let data = response.value as? [[String:Any]]{
 //
 //                    for i in 0..<data.count{
-//                        self.containerList.append(Container(street_name: data[i]["Street_name"] as! String, street_number: data[i]["Street_number"] as! Int, lat: data[i]["Lat"] as! Double, long: data[i]["Long"] as! Double))
+//                        self.containerList.append(Container(
+//                                                    street_name: data[i]["Street_name"] as! String
+//                                                        ,street_number: data[i]["Street_number"] as! Int
+//                                                            ,lat: data[i]["Latitude"] as! Double
+//                                                            ,long: data[i]["Longitude"] as! Double))
 //                    }
 //                    print(self.containerList)
 //
