@@ -25,7 +25,7 @@ class QrCodeViewController: UIViewController {
         //Setting texton screen
         offerQrName.text = "Hi,\(username)!"
         offerQR.text = "Scan this code to buy \(buyed!._market)"
-        imageQr.image = generateQRCode(from: "https://www.youtube.com/watch?v=khYjXjIPa-8")
+        imageQr.image = generateQRCode(from: "https://www.youtube.com/watch?v=pK060iUFWXg")
         
         //ButtonStyle
         roundButton()

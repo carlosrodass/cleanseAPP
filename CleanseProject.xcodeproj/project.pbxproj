@@ -18,6 +18,7 @@
 		1FA72DB925F030C4008BBAC7 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA72DB825F030C4008BBAC7 /* HeaderCollectionReusableView.swift */; };
 		1FB063DC25FA82DD00641292 /* Buyed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB063DB25FA82DD00641292 /* Buyed.swift */; };
 		1FB063E025FA882D00641292 /* offersBuyedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB063DF25FA882D00641292 /* offersBuyedCell.swift */; };
+		1FDEC5C026069520003FF2E8 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDEC5BF26069520003FF2E8 /* Container.swift */; };
 		1FDF958E2600B4B1009E843B /* BulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF958D2600B4B1009E843B /* BulletinItem.swift */; };
 		1FE2AACD25DC2ECD00657D0B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */; };
 		1FE2AAD125DC36EB00657D0B /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */; };
@@ -76,6 +77,7 @@
 		1FA72DB825F030C4008BBAC7 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		1FB063DB25FA82DD00641292 /* Buyed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buyed.swift; sourceTree = "<group>"; };
 		1FB063DF25FA882D00641292 /* offersBuyedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offersBuyedCell.swift; sourceTree = "<group>"; };
+		1FDEC5BF26069520003FF2E8 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		1FDF958D2600B4B1009E843B /* BulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinItem.swift; sourceTree = "<group>"; };
 		1FE2AACC25DC2ECD00657D0B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1FE2AAD025DC36EB00657D0B /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				1FEB029625F0086600C0DA9B /* Offer.swift */,
 				1FB063DB25FA82DD00641292 /* Buyed.swift */,
 				1F5E65DA25FFB0BB002EFCAD /* Trade.swift */,
+				1FDEC5BF26069520003FF2E8 /* Container.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				7F0E92B725FA46E700FB545B /* SearchService.swift in Sources */,
 				E759EDD325EE916A00FBA2D5 /* LocationService.swift in Sources */,
 				E791A73C25C87EB700108B89 /* SceneDelegate.swift in Sources */,
+				1FDEC5C026069520003FF2E8 /* Container.swift in Sources */,
 				1FB063DC25FA82DD00641292 /* Buyed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

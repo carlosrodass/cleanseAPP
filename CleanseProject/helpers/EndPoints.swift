@@ -12,7 +12,7 @@ class Endpoints {
     private init() {}
     static let shared = Endpoints()
     
-    let baseURL = "http://100.26.59.63/api/"
+    let baseURL = "http://54.90.104.81/api/"
     
     ///verificacion
     let login:String = "login"
@@ -26,7 +26,7 @@ class Endpoints {
     let getOffers:String = "offers/all"
     ///contenedores
     let trade:String = "containers/trade"
-    let showContainers:String = "containers/all"
+    let getContainers:String = "containers/all"
     let containerByName:String = "containers/show"
     ///Ofertas compradas
     let buyedOffers:String = "buyed/show"

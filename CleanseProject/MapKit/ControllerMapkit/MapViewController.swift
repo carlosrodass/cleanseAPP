@@ -7,7 +7,10 @@ import BLTNBoard
 
 
 class MapViewController: UIViewController , CLLocationManagerDelegate{
-
+    
+    var container:Container?
+    var containerList : [Container] = []
+    
     @IBOutlet weak var mapView: MapView!
     @IBOutlet weak var controlView: UIView!
     @IBOutlet weak var searchView: UIView!
@@ -54,7 +57,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     
     var locationManager : CLLocationManager?
     private lazy var locationAlert: UIAlertController = {
-        let alertController = UIAlertController(title: "Autorización de hubicación", message: "cleanse puede proporcionar los puntos de interés en función de su hubicación actual. Para cambiar el permiso de ubicación, actualice su configuración de privacidad.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Autorización de ubicación", message: "cleanse puede proporcionar los puntos de interés en función de su hubicación actual. Para cambiar el permiso de ubicación, actualice su configuración de privacidad.", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         let settingAction = UIAlertAction(title: "Configuración de actualización", style: .default, handler: { (_) in
@@ -83,6 +86,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     
     let variousIDs : [Int] = [1,2]
     var randomElement  = 1
+//    self.randomElement = variousIDs.randomElement()!
     
     
     private lazy var boardManager: BLTNItemManager = {
@@ -146,22 +150,27 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         locationService.delegate = self
         searchCompleter.delegate = self
         
-        //Style
-        controlView.layer.cornerRadius = 10.0
-        searchView.layer.cornerRadius = 20.0
-        directionView.layer.cornerRadius = 20.0
-        directionViewPoint.layer.cornerRadius = 30.0
-        goButton.layer.cornerRadius = 8.0
-        sendPoint.layer.cornerRadius = 20.0
-        viewpoinsID.layer.cornerRadius = 12.0
-        viewpoinsidtop.layer.cornerRadius = 10.0
-        viewpoinidbut.layer.cornerRadius = 10.0
-        
         //Map
         mapCenterLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
         registerAnnotationView()
         
-        var randomElement = variousIDs.randomElement()!
+        //Loading containers from database
+//        let requestB = Request.shared.getContainers()
+//
+//        requestB.responseJSON { (response) in
+//
+//                if let data = response.value as? [[String:Any]]{
+//
+//                    for i in 0..<data.count{
+//                        self.containerList.append(Container(street_name: data[i]["Street_name"] as! String, street_number: data[i]["Street_number"] as! Int, lat: data[i]["Lat"] as! Double, long: data[i]["Long"] as! Double))
+//                    }
+//                    print(self.containerList)
+//
+//            }
+//        }
+        //loadContainers(poi:container!)
+        
+        
     }
 
 
@@ -322,7 +331,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     }
     
     
-    // MARK: - Private Function
+  
     private func directionViewaPoints(shown:Bool){
         
         UIView.animate(withDuration: 0.3) { [weak self] in
@@ -419,14 +428,14 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         closeSlideView()
     }
     
-//    private func addAnnotation(for poi: POI) {
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = poi.coordinate
-//        annotation.title = poi.title
-//        annotation.subtitle = poi.subtitle
-//
-//        mapView.addAnnotation(annotation)
-//    }
+    private func loadContainers(poi: Container) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: poi.gsLat, longitude: poi.gsLong)
+        annotation.title = poi.gsStreetName
+        annotation.subtitle = String(poi.gsStreetNumber)
+
+        mapView.addAnnotation(annotation)
+    }
     
     private func registerAnnotationView() {
 //        mapView.register(POIAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
