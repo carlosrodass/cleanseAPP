@@ -10,6 +10,8 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     
     var container:Container?
     var containerList : [Container] = []
+    var latitude : [Double] = [40.4167, 40.4187]
+    var longitude : [Double] = [-3.70325, -3.67800]
     
     @IBOutlet weak var mapView: MapView!
     @IBOutlet weak var controlView: UIView!
@@ -75,14 +77,13 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     private lazy var routeAlert: UIAlertController = {
         let alertController = UIAlertController(title: "Route Error", message: "Directions are not available to this destination", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
         alertController.addAction(okAction)
         
         return alertController
     }()
     
     // Create UITextField
-    let myTextField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 300.00, height: 30.00))
+    let myTextField: UITextField = UITextField(frame: CGRect(x: 0, y: 0, width: 300.00, height: 20.00))
     
     let variousIDs : [Int] = [1,2]
     var randomElement  = 1
@@ -95,7 +96,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     item.image = UIImage(named: "cargo")
     item.actionButtonTitle = "Continue"
     item.alternativeButtonTitle = "Maybe later"
-    item.descriptionText = "Would you like to trade plastic with us?"
+    item.descriptionText = "Introduce in KG your plastic"
     let greenColor = UIColor(red: 0.294, green: 0.85, blue: 0.392, alpha: 1)
     item.appearance.actionButtonColor = greenColor
     item.appearance.actionButtonTitleColor = .white
@@ -155,26 +156,27 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         registerAnnotationView()
         
         //Loading containers from database
-//        let requestB = Request.shared.getContainers()
-//
-//        requestB.responseJSON { (response) in
-//
-//                if let data = response.value as? [[String:Any]]{
-//
-//                    for i in 0..<data.count{
-//                        self.containerList.append(Container(
-//                                                    street_name: data[i]["Street_name"] as! String
-//                                                        ,street_number: data[i]["Street_number"] as! Int
-//                                                            ,lat: data[i]["Latitude"] as! Double
-//                                                            ,long: data[i]["Longitude"] as! Double))
-//                    }
-//                    print(self.containerList)
-//
-//            }
-//        }
-        //loadContainers(poi:container!)
+        let requestB = Request.shared.getContainers()
+
+        requestB.responseJSON { [self]  (response) in
+            
+                if let data = response.value as? [[String:Any]]{
+                    
+                    for i in 0..<latitude.count{
+                        
+                        let annotation = MKPointAnnotation()
+                        annotation.coordinate = CLLocationCoordinate2D(latitude: self.latitude[i] , longitude: self.longitude[i])
+                        annotation.title = data[i]["Street_name"] as? String
+                        annotation.subtitle = data[i]["Street_number"] as? String
+                                                
+                        mapView.addAnnotation(annotation)
+
+                    }
+                }
+        }
         
-        
+//        loadContainers(poi:containerList)
+    
     }
 
 
@@ -432,13 +434,19 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         closeSlideView()
     }
     
-    private func loadContainers(poi: Container) {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: poi.gsLat, longitude: poi.gsLong)
-        annotation.title = poi.gsStreetName
-        annotation.subtitle = String(poi.gsStreetNumber)
-
-        mapView.addAnnotation(annotation)
+    private func loadContainers(poi: [Container]) {
+//        let annotation = MKPointAnnotation()
+//
+//        print(poi)
+////        for i in 0...1 {
+////
+////        }
+//
+////        annotation.coordinate = CLLocationCoordinate2D(latitude: poi.gsLat, longitude: poi.gsLong)
+////        annotation.title = poi.gsStreetName
+////        annotation.subtitle = String(poi.gsStreetNumber)
+//
+////        mapView.addAnnotation(annotation)
     }
     
     private func registerAnnotationView() {
