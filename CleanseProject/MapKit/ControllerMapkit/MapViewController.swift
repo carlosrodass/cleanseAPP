@@ -10,8 +10,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
     
     var container:Container?
     var containerList : [Container] = []
-    var latitude : [Double] = [40.4167, 40.4187]
-    var longitude : [Double] = [-3.70325, -3.67800]
     
     @IBOutlet weak var mapView: MapView!
     @IBOutlet weak var controlView: UIView!
@@ -162,20 +160,18 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
             
                 if let data = response.value as? [[String:Any]]{
                     
-                    for i in 0..<latitude.count{
+                    for i in 0..<data.count{
                         
                         let annotation = MKPointAnnotation()
-                        annotation.coordinate = CLLocationCoordinate2D(latitude: self.latitude[i] , longitude: self.longitude[i])
+                        annotation.coordinate = CLLocationCoordinate2D(latitude: data[i]["Latitude"] as! Double, longitude: data[i]["Longitude"] as! Double)
                         annotation.title = data[i]["Street_name"] as? String
-                        annotation.subtitle = data[i]["Street_number"] as? String
+                        annotation.subtitle = String(data[i]["Street_number"] as! Int)
                                                 
                         mapView.addAnnotation(annotation)
 
                     }
                 }
         }
-        
-//        loadContainers(poi:containerList)
     
     }
 
@@ -433,21 +429,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
         setMapRegion(center: CLLocation(latitude: poi.coordinate.latitude, longitude: poi.coordinate.longitude))
         closeSlideView()
     }
-    
-    private func loadContainers(poi: [Container]) {
-//        let annotation = MKPointAnnotation()
-//
-//        print(poi)
-////        for i in 0...1 {
-////
-////        }
-//
-////        annotation.coordinate = CLLocationCoordinate2D(latitude: poi.gsLat, longitude: poi.gsLong)
-////        annotation.title = poi.gsStreetName
-////        annotation.subtitle = String(poi.gsStreetNumber)
-//
-////        mapView.addAnnotation(annotation)
-    }
+
     
     private func registerAnnotationView() {
 //        mapView.register(POIAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
