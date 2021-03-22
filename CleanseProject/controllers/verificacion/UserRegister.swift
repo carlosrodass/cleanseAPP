@@ -27,6 +27,7 @@ class UserRegister: UIViewController {
         //Comprobacion de campos
         if(username.isEmpty || email.isEmpty || pass.isEmpty || confirmpassword.isEmpty){
             
+            
             let alert = UIAlertController(title: "fields empty ", message: "Some field is empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
                 print("presionado")
@@ -36,6 +37,7 @@ class UserRegister: UIViewController {
 
                }
         
+        if(confirmpassword.description == pass.description){
         let parametros : [String: String] = [
                    "username": username,
                    "password": pass,
@@ -43,9 +45,46 @@ class UserRegister: UIViewController {
                    "password_confirmation":confirmpassword
                  
                ]
-        Request.shared.register(parameters: parametros).responseJSON{ response in
+        Request.shared.register(parameters: parametros)
+            .validate(statusCode: 200..<300)
+            .responseJSON{ response in
                 
         debugPrint(response)
+            
+            switch response.result {
+               
+            case .success:
+                
+               let alertacept = UIAlertController(title: "ok", message: "Usuario creado", preferredStyle: .alert)
+  
+               let OKAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(_)in
+               self.performSegue(withIdentifier: "irlogin", sender: self)
+    })
+
+               alertacept.addAction(OKAction)
+               self.present(alertacept, animated: true, completion: nil)
+             
+            case let .failure(error):
+                
+                let alerterror = UIAlertController(title: "Algo salió mal", message: "Email no valido debe rellenar el campo", preferredStyle: .alert)
+               
+
+                alerterror.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alerterror, animated: true, completion: nil)
+                print(error)
+            }
+
+            }
+            
+        }else{
+            
+            let alertpass = UIAlertController(title: " algo salio mal ", message: "las contraseñas no coinciden", preferredStyle: .alert)
+            alertpass.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
+                print("presionado")
+            }))
+            
+            present(alertpass, animated: true)
+            
         }
         
     }

@@ -167,7 +167,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate{
                         annotation.title = data[i]["Street_name"] as? String
                         annotation.subtitle = String(data[i]["Street_number"] as! Int)
                                                 
-                        mapView.addAnnotation(annotation)
+                        self.mapView.addAnnotation(annotation)
 
                     }
                 }

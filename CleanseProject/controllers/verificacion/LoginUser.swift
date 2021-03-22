@@ -15,6 +15,8 @@ class LoginUser: UIViewController {
     
     @IBAction func EnviarLogin(_ sender: Any) {
         
+        let alerterror = UIAlertController(title: "Algo salió mal", message: "Email o contraseña no valido vuelve a intentarlo", preferredStyle: .alert)
+               let alertacept = UIAlertController(title: "ok", message: "Usuario y contraseña correcto", preferredStyle: .alert)
         let emailField = email.text
         let pass = password.text
         
@@ -37,19 +39,37 @@ class LoginUser: UIViewController {
         ]
         print(parametros)
         
-        Request.shared.login(parameters: parametros).responseJSON{ response in
-            
-            let token = response.value as! [String:String]//accediendo al valor token: "94290rsewqrw"
+        Request.shared.login(parameters: parametros)
+            .validate(statusCode: 200..<300)
+                .responseJSON{ response in
+                
+         
+                
+                    switch response.result {
+                       
+                    case .success:
+                        
+                        let token = response.value as! [String:String]//accediendo al valor token: "94290rsewqrw"
 
-            UserDefaults.standard.set(token["Token"], forKey: "Token")
+                        UserDefaults.standard.set(token["Token"], forKey: "Token")
 
-            debugPrint(UserDefaults.standard.set(token["Token"], forKey: "Token"))
-            
-           
-           
-            
-    }
+                        debugPrint(UserDefaults.standard.set(token["Token"], forKey: "Token"))
 
+                       
+                        self.performSegue(withIdentifier: "irmapa", sender: nil)
+          
+              
+                     
+                    case let .failure(error):
+                       
+
+                        alerterror.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                        self.present(alerterror, animated: true, completion: nil)
+                        print(error)
+                    }
+               
+                
+        }
    }
     
     private func roundButton(){
