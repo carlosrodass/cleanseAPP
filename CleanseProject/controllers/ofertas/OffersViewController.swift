@@ -7,7 +7,7 @@ class OffersViewController: UIViewController {
     @IBOutlet weak var MyCollectionView: UICollectionView!
     
     var offers : [Offer] = []
-    var imagenes : [UIImage] = [#imageLiteral(resourceName: "aa"), #imageLiteral(resourceName: "ff"), #imageLiteral(resourceName: "pp"), #imageLiteral(resourceName: "cc"), #imageLiteral(resourceName: "ff"), #imageLiteral(resourceName: "mm"), #imageLiteral(resourceName: "pp"), #imageLiteral(resourceName: "aa"), #imageLiteral(resourceName: "cc")]
+    var imagenes : [UIImage] = [#imageLiteral(resourceName: "chocolate"), #imageLiteral(resourceName: "ff"), #imageLiteral(resourceName: "lays"), #imageLiteral(resourceName: "cc"), #imageLiteral(resourceName: "helado"), #imageLiteral(resourceName: "tarta"), #imageLiteral(resourceName: "pp"), #imageLiteral(resourceName: "avena"), #imageLiteral(resourceName: "muf")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
